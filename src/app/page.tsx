@@ -6,22 +6,22 @@ import { ComprehensiveArticle } from '@/components/article/ComprehensiveArticle'
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#F8FBFF] text-[#0F172A] relative overflow-hidden selection:bg-[#4F46E5]/15 selection:text-[#4F46E5]">
+    <div className="flex flex-col min-h-screen bg-[#F7FAFF] text-[#07152F] relative overflow-hidden selection:bg-[#2453FF]/15 selection:text-[#2453FF]">
       {/* Subtle Ambient Background Gradients & Grid Depth */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[780px] bg-gradient-to-b from-[#EEF5FF]/90 via-[#F8FBFF]/40 to-transparent pointer-events-none -z-10"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-[820px] bg-gradient-to-b from-[#EBF2FF]/80 via-[#F7FAFF]/40 to-transparent pointer-events-none -z-10"
         aria-hidden="true"
       />
       <div
-        className="absolute top-12 left-1/2 -translate-x-1/2 w-full h-[640px] bg-grid-pattern opacity-40 pointer-events-none -z-10"
+        className="absolute top-12 left-1/2 -translate-x-1/2 w-full h-[680px] bg-grid-pattern opacity-40 pointer-events-none -z-10"
         aria-hidden="true"
       />
       <div
-        className="hero-glow top-24 left-[15%] bg-[#4F46E5]/10 -z-10"
+        className="hero-glow top-20 left-[18%] bg-[#2453FF]/8 -z-10"
         aria-hidden="true"
       />
       <div
-        className="hero-glow top-44 right-[12%] bg-[#38BDF8]/12 -z-10"
+        className="hero-glow top-40 right-[10%] bg-[#4779FF]/10 -z-10"
         aria-hidden="true"
       />
 

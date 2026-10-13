@@ -21,15 +21,15 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[#E4EAF3] bg-white/80 backdrop-blur-md transition-colors">
+    <header className="sticky top-0 z-40 w-full border-b border-[#E2EAF7] bg-white/85 backdrop-blur-md transition-colors">
       <div className="max-w-[1240px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand Logo & Wordmark */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5546F5] rounded-xl p-1"
+          className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] rounded-xl p-1"
           aria-label="IQ Test Homepage"
         >
-          <div className="w-9 h-9 rounded-xl bg-[#5546F5] flex items-center justify-center text-white shadow-xs group-hover:bg-[#4338CA] transition-colors">
+          <div className="w-9 h-9 rounded-xl bg-[#2453FF] flex items-center justify-center text-white shadow-xs group-hover:bg-[#1B40DF] transition-colors">
             {/* Geometric IQ Symbol */}
             <svg
               viewBox="0 0 24 24"
@@ -47,10 +47,10 @@ export const Header: React.FC<HeaderProps> = ({
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="font-extrabold text-lg tracking-tight leading-none text-[#0B1220]">
-              IQ <span className="text-[#5546F5]">Test</span>
+            <span className="font-extrabold text-lg tracking-tight leading-none text-[#07152F]">
+              IQ <span className="text-[#2453FF]">Test</span>
             </span>
-            <span className="text-[10px] font-semibold tracking-wider uppercase text-[#526179]">
+            <span className="text-[10px] font-bold tracking-wider uppercase text-[#60718B] mt-0.5">
               Reasoning Assessment
             </span>
           </div>
@@ -58,32 +58,32 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Center Navigation Links (Hidden on mobile) */}
         {!isTestActive && (
-          <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-[#526179]">
+          <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-[#60718B]">
             <button
               type="button"
               onClick={() => scrollTo('how-it-works')}
-              className="hover:text-[#5546F5] transition-colors focus:outline-none"
+              className="hover:text-[#2453FF] transition-colors focus:outline-none"
             >
               How It Works
             </button>
             <button
               type="button"
               onClick={() => scrollTo('what-it-measures')}
-              className="hover:text-[#5546F5] transition-colors focus:outline-none"
+              className="hover:text-[#2453FF] transition-colors focus:outline-none"
             >
               What It Measures
             </button>
             <button
               type="button"
               onClick={() => scrollTo('practice-examples')}
-              className="hover:text-[#5546F5] transition-colors focus:outline-none"
+              className="hover:text-[#2453FF] transition-colors focus:outline-none"
             >
               Practice
             </button>
             <button
               type="button"
               onClick={() => scrollTo('faq')}
-              className="hover:text-[#5546F5] transition-colors focus:outline-none"
+              className="hover:text-[#2453FF] transition-colors focus:outline-none"
             >
               FAQ
             </button>
@@ -95,14 +95,14 @@ export const Header: React.FC<HeaderProps> = ({
           {!isTestActive ? (
             <Link
               href="/test"
-              className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-white bg-[#5546F5] hover:bg-[#4338CA] active:scale-[0.98] transition-all shadow-xs hover:shadow-md hover:shadow-[#5546F5]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#5546F5]"
+              className="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-white bg-[#2453FF] hover:bg-[#1B40DF] active:scale-[0.98] transition-all shadow-xs hover:shadow-md hover:shadow-[#2453FF]/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2453FF]"
             >
               <span>Start Free Test</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           ) : (
-            <div className="flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full bg-[#F0EEFF] text-[#5546F5] border border-[#5546F5]/20">
-              <span className="w-2 h-2 rounded-full bg-[#5546F5] animate-pulse" />
+            <div className="flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full bg-[#EAF2FF] text-[#2453FF] border border-[#2453FF]/20">
+              <span className="w-2 h-2 rounded-full bg-[#2453FF] animate-pulse" />
               <span>Assessment In Progress</span>
             </div>
           )}

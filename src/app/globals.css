@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F8FBFF;
+  --surface: #FFFFFF;
+  --section-alt: #F2F7FF;
+  --primary-blue: #4F46E5;
+  --accent-blue: #3B82F6;
+  --light-blue-surface: #EEF4FF;
+  --heading-text: #0F172A;
+  --body-text: #5B6B82;
+  --border: #E5EDF7;
+  --success: #15803D;
+  --error: #DC2626;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--body-text);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle faint dot grid background texture */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(79, 70, 229, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Premium SaaS Card System */
+.premium-card {
+  background-color: #FFFFFF;
+  border-radius: 22px;
+  border: 1px solid #E5EDF7;
+  box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.05), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(79, 70, 229, 0.04);
+  border-color: rgba(79, 70, 229, 0.3);
+}
+
+/* Soft hero glow */
+.hero-glow {
+  position: absolute;
+  width: 580px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Primary CTA Subtle Glow & Pulse */
+.cta-glow {
+  box-shadow: 0 8px 25px -4px rgba(79, 70, 229, 0.38), 0 2px 6px -2px rgba(79, 70, 229, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-glow:hover {
+  box-shadow: 0 12px 30px -4px rgba(79, 70, 229, 0.5), 0 4px 10px -2px rgba(79, 70, 229, 0.25);
+  transform: translateY(-1.5px);
+}
+
+/* Soft Keyframe Animations */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-float-card {
+  animation: floatGentle 4.5s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F6FB;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD8E9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9DB4D0;
+}
+
+/* Print Styles for Assessment Report */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+}
+
+@media not print {
+  .print-only {
+    display: none !important;
+  }
+}
+
+/* Reduced Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

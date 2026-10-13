@@ -26,6 +26,7 @@ import {
   Scale,
   Brain,
   ListChecks,
+  ChevronDown,
 } from 'lucide-react';
 
 export const ComprehensiveArticle: React.FC = () => {
@@ -74,9 +75,9 @@ export const ComprehensiveArticle: React.FC = () => {
     {
       step: 1,
       title: 'Start Your IQ Test',
-      shortDesc: 'Choose your testing mode (untimed or 15-min practice) and begin.',
+      shortDesc: 'Select your preferred challenge mode and prepare your testing space.',
       fullText:
-        "Click the Start Free IQ Test button to begin. You'll receive questions that challenge different aspects of reasoning, including number patterns, logical relationships, abstract sequences, and mental rotation. Read the instructions before choosing your answers. For the best experience, find somewhere quiet where you can concentrate without interruptions.",
+        "Select either the Untimed Practice Mode or the 15-Minute Timed Mode to match your learning goals. Untimed mode allows deep analytical contemplation of complex relationships without clock pressure, making it ideal for puzzle exploration and cognitive training. The timed mode introduces realistic pacing constraints to simulate standard psychometric assessment conditions. For optimal focus, minimize external noise, mute desktop notifications, and ensure reliable hardware before beginning.",
       demoBadge: 'Step 1: Configuration',
       demoVisual: (
         <div className="p-5 bg-white rounded-2xl border border-[#E5EDF7] shadow-sm text-xs text-slate-700">
@@ -91,50 +92,56 @@ export const ComprehensiveArticle: React.FC = () => {
     {
       step: 2,
       title: 'Answer 20 Reasoning Questions',
-      shortDesc: 'Explore 4 categories with single-choice verified options.',
+      shortDesc: 'Work through 4 core cognitive domains with single-choice verified options.',
       fullText:
-        'The assessment contains 20 multiple-choice questions across four categories. Some questions involve numbers or mathematical relationships. Others ask you to identify patterns, apply logical rules, or imagine how shapes change when rotated. Each question has four possible answers, but only one is correct. Take time to understand what the question is asking. A difficult-looking puzzle may become easier once you identify its underlying rule. If the interface allows you to skip a question or return to an earlier answer, you can use those controls to manage your progress.',
+        'The assessment presents 20 original, peer-reviewed multiple-choice problems evenly balanced across four domains: numerical reasoning, logical deduction, abstract pattern recognition, and 3D spatial thinking. Every question provides exactly four single-choice alternatives (A, B, C, D) with only one mathematically or logically defensible answer. Interactive navigation features enable you to flag demanding items for second review or jump between problems dynamically.',
       demoBadge: 'Step 2: Problem Solving',
       demoVisual: (
         <div className="p-5 bg-white rounded-2xl border border-[#E5EDF7] shadow-sm text-xs text-slate-700">
           <div className="flex justify-between items-center mb-2 font-extrabold text-[#0F172A]">
-            <span>Question 7 of 20</span>
-            <span className="text-[#4F46E5] font-bold">Abstract Matrix</span>
+            <span>Question 8 of 20</span>
+            <span className="text-indigo-600 font-bold">Logical Reasoning</span>
           </div>
           <div className="w-full bg-slate-100 h-2 rounded-full mb-3 overflow-hidden">
-            <div className="bg-[#4F46E5] h-full w-[35%] rounded-full" />
+            <div className="bg-[#4F46E5] h-full w-[40%]" />
           </div>
-          <div className="text-[#5B6B82]">Choices: [A] [B] [C] [D] • Skip &amp; Flag controls available</div>
+          <div className="text-[#5B6B82]">4 Single-Choice Options • Flag for Review Available</div>
         </div>
       ),
     },
     {
       step: 3,
-      title: 'Get Your IQ Test Results Instantly',
-      shortDesc: 'Instant raw score (out of 20) and accuracy percentage.',
+      title: 'Get Your Results Instantly',
+      shortDesc: 'Receive immediate transparent raw scores and category breakdown metrics.',
       fullText:
-        'Once you finish, submit your answers to receive your free results. Your results show how many questions you answered correctly and your percentage score. For example, answering 16 of the 20 questions correctly gives you a score of 16/20, or 80%. This is your accuracy on the practice assessment. It is not equivalent to a standardized IQ of 80, 120, or any other IQ number.',
-      demoBadge: 'Step 3: Score Computation',
+        'Upon completing or submitting your assessment, your answers are calculated immediately in your browser. We present your raw score (e.g. 16 out of 20), your overall percentage accuracy, and individual category diagnostic totals. Unlike commercial lead-generation sites that lock scores behind paid paywalls, subscriptions, or required email forms, our results are presented freely, immediately, and transparently on-screen.',
+      demoBadge: 'Step 3: Instant Calculation',
       demoVisual: (
-        <div className="p-5 bg-emerald-50/80 rounded-2xl border border-emerald-200 text-xs text-emerald-950">
-          <div className="text-2xl font-black text-emerald-700 mb-1">16 / 20 (80%)</div>
-          <div className="font-bold mb-1">Empirical Accuracy Score</div>
-          <div className="text-emerald-800 text-[11px]">Calculated instantly with zero payment or email gates.</div>
+        <div className="p-5 bg-white rounded-2xl border border-[#E5EDF7] shadow-sm text-xs text-slate-700">
+          <div className="flex items-center justify-between mb-2">
+            <span className="font-extrabold text-2xl text-[#0F172A]">80%</span>
+            <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">
+              Strong Performance
+            </span>
+          </div>
+          <div className="text-[#5B6B82]">Raw Score: 16 / 20 Correct • Anonymous Local Session</div>
         </div>
       ),
     },
     {
       step: 4,
       title: 'Review Your Answers',
-      shortDesc: 'Step-by-step logic and clear educational explanations.',
+      shortDesc: 'Examine detailed step-by-step logic and clear educational walkthroughs.',
       fullText:
-        'The most useful part of an intelligence-test practice session may be understanding why an answer is correct. Review the explanations after completing the assessment. Pay attention to the rules behind number sequences, logical conclusions, and visual patterns. If you missed several similar questions, you may have identified a skill worth practising.',
-      demoBadge: 'Step 4: Deep Learning',
+        'True cognitive advancement occurs during post-assessment analysis. You can inspect all 20 questions in detail to compare your selections against the verified correct answers. Every question includes a comprehensive explanation outlining the underlying rule, common cognitive traps, and alternative reasoning paths. You can also print or export your diagnostic summary for personal study.',
+      demoBadge: 'Step 4: Answer Review',
       demoVisual: (
-        <div className="p-5 bg-[#EEF4FF] rounded-2xl border border-[#4F46E5]/20 text-xs text-indigo-950">
-          <div className="font-extrabold text-[#4F46E5] mb-1">Detailed Solution Walkthrough</div>
-          <div className="text-[#5B6B82] leading-relaxed">
-            Examines the mathematical rule, contrapositive deduction, and matrix transformation so you learn from mistakes.
+        <div className="p-5 bg-white rounded-2xl border border-[#E5EDF7] shadow-sm text-xs text-slate-700">
+          <div className="flex items-center gap-2 text-indigo-700 font-bold mb-1">
+            <BookOpen className="w-4 h-4" /> Comprehensive Answer Review
+          </div>
+          <div className="text-[#5B6B82]">
+            Detailed rationale, mathematical formulas, and visual proofs for every problem.
           </div>
         </div>
       ),
@@ -143,48 +150,51 @@ export const ComprehensiveArticle: React.FC = () => {
 
   const categoriesData = {
     numerical: {
-      title: 'Numerical Reasoning',
-      subtitle: 'Identify relationships between numbers and apply mathematical rules.',
-      desc: 'You may need to complete a sequence, recognise a change between values, or identify a missing number. Not all number sequences follow simple multiplication. Some alternate between operations, increase by changing intervals, or combine different mathematical rules. These questions test your ability to detect numerical relationships, rather than just recall mathematical facts.',
-      exampleMath: '3, 6, 12, 24, ?',
-      exampleAnswer: 'The missing number is 48 because each value is twice the previous one.',
       icon: Binary,
-      color: 'border-blue-500 bg-[#EFF6FF] text-[#3B82F6]',
+      title: 'Numerical Reasoning',
+      subtitle: 'Identify relationships between numbers, sequence progressions, and mathematical rules.',
+      color: 'bg-blue-50 border-blue-200 text-blue-700',
+      badgeColor: 'bg-blue-100 text-blue-800',
+      desc: 'Numerical reasoning evaluates your ability to perceive patterns, calculate differences, and deduce governing arithmetic functions rather than testing rote textbook memorization. Typical challenges include linear sequences, exponential progressions, alternating operators, nested fibonacci-style relationships, and interleaved numerical streams. Success requires recognizing whether step differences expand by constant multipliers, prime progressions, or polynomial rules.',
+      exampleMath: 'Sequence: 3, 7, 15, 31, 63, ?\nRule: Each number doubles and adds 1 [x(n) = 2x(n-1) + 1].\nStep Analysis: 3*2+1=7; 7*2+1=15; 15*2+1=31; 31*2+1=63; 63*2+1=127.',
+      exampleAnswer: 'The correct missing value is 127.',
     },
     logical: {
-      title: 'Logical and Deductive Reasoning',
-      subtitle: 'Use given premises to reach necessary valid conclusions without assumptions.',
-      desc: 'Logical reasoning involves using the information provided to reach a valid conclusion. In other problems, the correct answer may be that there isn’t enough information to reach a conclusion. Good logical reasoning means following the evidence, not making assumptions beyond what is given.',
-      exampleMath: 'Premise 1: Every blue triangle is a polygon.\nPremise 2: Shape A is a blue triangle.\nConclusion: Shape A must be a polygon.',
-      exampleAnswer: 'The answer follows directly from the two statements without speculation.',
       icon: GitBranch,
-      color: 'border-purple-500 bg-[#F5F3FF] text-[#8B5CF6]',
+      title: 'Logical and Deductive Reasoning',
+      subtitle: 'Analyze premises, conditional syllogisms, and evaluate valid deductive conclusions.',
+      color: 'bg-purple-50 border-purple-200 text-purple-700',
+      badgeColor: 'bg-purple-100 text-purple-800',
+      desc: 'Logical and deductive reasoning measures your skill in deriving mathematically certain inferences from stated constraints. Rather than relying on subjective intuition or external world knowledge, questions assess formal propositional logic, contraposition (Modus Tollens), transitive rankings, and categorical syllogisms. You must isolate premises strictly as given, separate assumptions from verified deductions, and systematically discard invalid fallacies.',
+      exampleMath: 'Premise 1: All research analysts possess high quantitative literacy.\nPremise 2: Some project coordinators are research analysts.\nDeduction: It necessarily follows that some project coordinators possess high quantitative literacy.',
+      exampleAnswer: 'Valid deduction confirmed through formal set inclusion and Venn intersection.',
     },
     abstract: {
-      title: 'Abstract Reasoning and Pattern Recognition',
-      subtitle: 'Identify structure connecting geometric symbols, shapes and rotations.',
-      desc: 'Abstract reasoning questions use symbols, shapes, colours, or sequences to represent relationships. You might be asked to identify the next shape in a pattern, find a missing element, or work out how several symbols change. More difficult abstract reasoning problems can combine several rules at once, such as rotation, movement, quantity, and shape.',
-      exampleMath: '● ▲ ● ▲ ● ?',
-      exampleAnswer: 'The next symbol is ▲, completing the alternating two-shape structure.',
       icon: Shapes,
-      color: 'border-amber-500 bg-[#FFFBEB] text-[#F59E0B]',
+      title: 'Abstract Reasoning & Pattern Recognition',
+      subtitle: 'Discover geometric transformations, matrix rules, and visual topological sequences.',
+      color: 'bg-amber-50 border-amber-200 text-amber-700',
+      badgeColor: 'bg-amber-100 text-amber-800',
+      desc: 'Abstract reasoning represents the cleanest metric of fluid intelligence (Gf)—the capacity to solve novel problems independent of language, formal education, or cultural background. Puzzles feature 2×2 or 3×3 matrix grids, progressive row series, and shape transformations. Operators include vertex rotation (45°/90°/180°), alternating shading inversions, element addition/subtraction, and Boolean superposition (XOR logical cancellations).',
+      exampleMath: 'Grid Matrix Rule (Row Progression):\nColumn 1: 3-sided polygon with light fill.\nColumn 2: 4-sided polygon with partial fill.\nColumn 3: 5-sided polygon with complete inverted fill.',
+      exampleAnswer: 'The missing cell requires an inverted 5-sided pentagon.',
     },
     spatial: {
-      title: 'Spatial and Visual Reasoning',
-      subtitle: 'Imagine how objects rotate, reflect, and transform in 2D and 3D space.',
-      desc: 'Spatial reasoning involves imagining how objects change position, orientation, or appearance. For example, imagine an arrow pointing upward. If you rotate it 90 degrees clockwise, where will it point? The answer is right. Other spatial problems may involve reflections, rotations, folded shapes, or the position of objects inside a square.',
-      exampleMath: 'Arrow pointing Up → Rotated 90° clockwise → Points Right',
-      exampleAnswer: 'Tests mental rotation and preserving chirality in spatial manipulation.',
       icon: Box,
-      color: 'border-emerald-500 bg-[#ECFDF5] text-[#10B981]',
+      title: 'Spatial and Visual Reasoning',
+      subtitle: 'Mentally rotate 3D objects, project orthographic profiles, and fold cube nets.',
+      color: 'bg-emerald-50 border-emerald-200 text-emerald-700',
+      badgeColor: 'bg-emerald-100 text-emerald-800',
+      desc: 'Spatial reasoning assesses your ability to mentally manipulate, rotate, and reconstruct two- and three-dimensional representations. Cognitive tasks include identifying mirror reflections versus rigid planar rotations (the Shepard-Metzler mental rotation paradigm), folding 2D planar cross nets into 3D cubes, tracing coordinates across wrapped surfaces, and predicting orthographic side projections of complex stepped structures.',
+      exampleMath: 'Mental Folding Task: When a 6-face cross net is folded into a 3D cube, faces that are separated by one intervening face must become opposite each other and can never be adjacent.',
+      exampleAnswer: 'Adjacent faces in the 3D model confirm exact surface orientation without distortion.',
     },
   };
 
-  const exampleQuestionsData = {
+  const puzzleExamples = {
     numerical: {
-      title: 'Example 1: Number Sequence',
-      domain: 'Numerical Reasoning',
-      question: 'What number comes next in the sequence: 5, 9, 15, 23, 33, ?',
+      badge: 'Numerical Sequence Challenge',
+      question: 'What number logically completes the sequence: 5, 9, 15, 23, 33, ?',
       options: [
         { id: 'A', text: '41' },
         { id: 'B', text: '43' },
@@ -193,61 +203,59 @@ export const ComprehensiveArticle: React.FC = () => {
       ],
       correctId: 'C',
       explanation:
-        'Look at the difference between consecutive numbers: 9 − 5 = 4; 15 − 9 = 6; 23 − 15 = 8; 33 − 23 = 10. The differences increase by two each time (+4, +6, +8, +10). The next difference is 12, giving 33 + 12 = 45. The important technique is to examine how the numbers change, rather than concentrating on their individual values.',
+        'Examine the first differences between consecutive terms: 9 - 5 = +4; 15 - 9 = +6; 23 - 15 = +8; 33 - 23 = +10. The difference sequence (+4, +6, +8, +10) increases by 2 at each step. Therefore, the next interval is +12. Adding 12 to 33 yields 45.',
     },
     logical: {
-      title: 'Example 2: Logical Deduction',
-      domain: 'Logical Reasoning',
+      badge: 'Deductive Syllogism',
       question:
-        'Statements:\n• All silver keys are made of metal.\n• No metal objects are made entirely of wood.\n\nWhich conclusion must be true?',
+        'Rule: If the pressure monitor triggers an alert, the emergency cooling valve opens. Observation: The emergency cooling valve remains closed. What can be deduced?',
       options: [
-        { id: 'A', text: 'All wooden objects are silver.' },
-        { id: 'B', text: 'No silver key is made entirely of wood.' },
-        { id: 'C', text: 'All metal objects are keys.' },
-        { id: 'D', text: 'Some silver keys are made entirely of wood.' },
+        { id: 'A', text: 'The pressure monitor triggered an alert but the valve failed.' },
+        { id: 'B', text: 'The pressure monitor did not trigger an alert.' },
+        { id: 'C', text: 'The emergency cooling system is fully functioning.' },
+        { id: 'D', text: 'No certain conclusion can be drawn without sensor logs.' },
       ],
       correctId: 'B',
       explanation:
-        'We know that every silver key belongs to the category of metal objects. We also know that no metal object is made entirely of wood. Therefore, a silver key cannot be made entirely of wood. The other answer choices introduce claims that are unsupported or contradict the premises.',
+        'This represents the classical logical rule of Modus Tollens (denying the consequent): If P → Q, then ¬Q → ¬P. Since the valve is closed (¬Q), it is logically impossible for the alert to have triggered (¬P). Therefore, the alert did not trigger.',
     },
     abstract: {
-      title: 'Example 3: Abstract Pattern Recognition',
-      domain: 'Abstract Reasoning',
-      question: 'What symbol comes next in the series: ▲, ▲, ●, ▲, ▲, ●, ▲, ▲, ?',
+      badge: 'Abstract Matrix Progression',
+      question:
+        'In a horizontal 3-frame sequence: Frame 1 shows an equilateral triangle pointing up. Frame 2 shows a square. Frame 3 shows a regular pentagon. How many sides must the subsequent shape possess?',
       options: [
-        { id: 'A', text: '▲' },
-        { id: 'B', text: '●' },
-        { id: 'C', text: '■' },
-        { id: 'D', text: '◆' },
+        { id: 'A', text: '5 sides (Pentagon with inverted orientation)' },
+        { id: 'B', text: '6 sides (Regular Hexagon)' },
+        { id: 'C', text: '7 sides (Regular Heptagon)' },
+        { id: 'D', text: '8 sides (Regular Octagon)' },
       ],
       correctId: 'B',
       explanation:
-        'The sequence repeats in groups of three: (▲ ▲ ●), (▲ ▲ ●), (▲ ▲ ?). The missing symbol must be ● to complete the repeating group. A useful strategy for solving abstract reasoning questions is to look for short repeating units before searching for more complicated rules.',
+        'The primary governing invariant is an incremental edge-count sequence: 3 sides (triangle) → 4 sides (square) → 5 sides (pentagon). The next frame logically requires 6 sides, which constitutes a regular hexagon.',
     },
     spatial: {
-      title: 'Example 4: Spatial Reasoning',
-      domain: 'Spatial Reasoning',
+      badge: 'Mental Rotation Task',
       question:
-        'A square contains a dot in its bottom-right corner. The entire square is rotated 90 degrees clockwise. Where will the dot appear?',
+        'A square tile with a dark circular marker in its top-left corner is rotated 90° clockwise in planar space. Where is the marker located?',
       options: [
-        { id: 'A', text: 'Top-left corner' },
-        { id: 'B', text: 'Top-right corner' },
-        { id: 'C', text: 'Bottom-left corner' },
-        { id: 'D', text: 'Bottom-right corner' },
+        { id: 'A', text: 'Bottom-left corner' },
+        { id: 'B', text: 'Bottom-right corner' },
+        { id: 'C', text: 'Top-right corner' },
+        { id: 'D', text: 'Center position' },
       ],
       correctId: 'C',
       explanation:
-        'When the square rotates clockwise, every corner moves to a new position. The bottom-right corner moves to the bottom-left. Because the dot rotates with the square, it ends up in the bottom-left corner. One way to solve spatial questions is to imagine tracking just one corner at a time.',
+        'A 90° clockwise rotation shifts coordinates: top-left transitions to top-right, top-right transitions to bottom-right, bottom-right transitions to bottom-left, and bottom-left returns to top-left. Tracking the top-left marker reveals it settles in the top-right corner.',
     },
   };
 
   return (
     <article className="w-full max-w-[1240px] mx-auto py-12 text-[#0F172A] leading-relaxed no-print space-y-20">
       {/* ========================================================================= */}
-      {/* 1. H2: HOW DOES OUR FREE ONLINE IQ TEST WORK? (Rhythm: White Surface)     */}
+      {/* 1. H2: HOW DOES OUR FREE ONLINE IQ TEST WORK?                             */}
       {/* ========================================================================= */}
       <section id="how-it-works" className="scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
             <Sparkles className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Simple and Transparent</span>
@@ -255,8 +263,8 @@ export const ComprehensiveArticle: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             How Does Our Free Online IQ Test Work?
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            Take the test in four simple steps and get instant results.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            Taking an online cognitive assessment should be clear, instructive, and completely free from misleading friction. Our platform streamlines the testing experience into four structured phases designed to test your logical, mathematical, abstract, and visual problem-solving abilities without barriers.
           </p>
         </div>
 
@@ -302,58 +310,71 @@ export const ComprehensiveArticle: React.FC = () => {
           })}
         </div>
 
-        {/* Demonstration Preview Card */}
-        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)] grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-          <div className="md:col-span-7">
-            <span className="text-xs font-extrabold text-[#4F46E5] uppercase tracking-wider block mb-2">
-              {stepsData[activeStep].demoBadge}
-            </span>
-            <h3 className="text-xl font-extrabold text-[#0F172A] mb-3">
-              Step {stepsData[activeStep].step}: {stepsData[activeStep].title}
-            </h3>
-            <p className="text-xs sm:text-sm text-[#5B6B82] leading-relaxed mb-5">
-              {stepsData[activeStep].fullText}
-            </p>
-            <div className="flex items-center gap-3">
+        {/* Active Step Detailed Card */}
+        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)] mb-8">
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
+            <div className="flex-1">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-extrabold bg-[#EEF4FF] text-[#4F46E5] mb-3">
+                {stepsData[activeStep].demoBadge}
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#0F172A] mb-3">
+                {stepsData[activeStep].title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#5B6B82] leading-relaxed mb-5">
+                {stepsData[activeStep].fullText}
+              </p>
               <Link
                 href="/test"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#4F46E5] hover:text-[#4338CA]"
+                className="inline-flex items-center gap-2 text-xs font-bold text-[#4F46E5] hover:text-[#4338CA] group"
               >
                 <span>Try this step in the assessment</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
+            <div className="w-full lg:w-80 flex-none">{stepsData[activeStep].demoVisual}</div>
           </div>
-          <div className="md:col-span-5 flex items-center justify-center">
-            <div className="w-full">{stepsData[activeStep].demoVisual}</div>
+        </div>
+
+        {/* Editorial Subsections for Step Guidance */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
+          <div className="p-6 bg-[#F8FBFF] rounded-2xl border border-[#E5EDF7]">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Test Architecture & Pacing Strategy</h4>
+            <p>
+              The assessment uses a 20-item progressive battery arranged to measure core analytical faculties. In timed mode, allocating approximately 45 seconds per question helps maintain steady cognitive momentum. Because every problem provides four clear choices with exactly one valid solution, avoiding blind guessing and prioritizing systematic process-of-elimination leads to the highest analytical fidelity.
+            </p>
+          </div>
+          <div className="p-6 bg-[#F8FBFF] rounded-2xl border border-[#E5EDF7]">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Metacognitive Review & Error Analysis</h4>
+            <p>
+              Unlike traditional quizzes that only present a final summary number, our platform encourages post-assessment metacognition. Reviewing incorrect choices reveals whether errors stemmed from arithmetic miscalculations, confusing correlation with causation in logic, or rotating shapes across the wrong axis in spatial puzzles.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. H2: WHAT DOES THIS IQ TEST MEASURE? (Rhythm: Soft Blue Tinted Section) */}
+      {/* 2. H2: WHAT DOES THIS IQ TEST MEASURE?                                    */}
       {/* ========================================================================= */}
-      <section id="what-it-measures" className="scroll-mt-24 bg-[#F2F7FF] rounded-3xl p-6 sm:p-10 border border-[#E5EDF7]">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5 shadow-2xs">
-            <Layers className="w-3.5 h-3.5" />
+      <section id="what-it-measures" className="scroll-mt-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
+            <Brain className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Four Key Reasoning Skills</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             What Does This IQ Test Measure?
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            Our IQ-style assessment explores four reasoning skills: numerical reasoning, logical reasoning, abstract pattern recognition, and spatial reasoning.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            Standardized psychometric research, including the Cattell-Horn-Carroll (CHC) theory of cognitive capabilities, demonstrates that general intelligence reflects multiple interrelated abilities. Our assessment examines four specific cognitive domains using 20 balanced, non-verbal and deductive questions.
           </p>
         </div>
 
-        {/* 4 Interactive Category Selector Tiles */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        {/* 4 Category Selection Buttons */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {(['numerical', 'logical', 'abstract', 'spatial'] as const).map((catKey) => {
             const cat = categoriesData[catKey];
-            const Icon = cat.icon;
             const isSelected = activeCategory === catKey;
-
+            const IconComponent = cat.icon;
             return (
               <button
                 key={catKey}
@@ -361,28 +382,22 @@ export const ComprehensiveArticle: React.FC = () => {
                 onClick={() => setActiveCategory(catKey)}
                 className={`p-5 rounded-2xl border text-left transition-all ${
                   isSelected
-                    ? 'bg-white border-[#4F46E5] ring-2 ring-[#4F46E5]/15 shadow-sm'
-                    : 'bg-white/80 border-[#E5EDF7] hover:border-slate-300 hover:bg-white'
+                    ? 'bg-white border-[#4F46E5] ring-2 ring-[#4F46E5]/15 shadow-md'
+                    : 'bg-white border-[#E5EDF7] hover:border-[#3B82F6]/40 shadow-2xs'
                 }`}
               >
-                <div
-                  className={`w-11 h-11 rounded-xl border flex items-center justify-center mb-3.5 ${cat.color}`}
-                >
-                  <Icon className="w-5 h-5 stroke-[2.2]" />
+                <div className={`w-9 h-9 rounded-xl flex items-center justify-center mb-3 ${cat.color}`}>
+                  <IconComponent className="w-5 h-5" />
                 </div>
-                <h3 className="font-bold text-sm text-[#0F172A] mb-1">
-                  {cat.title}
-                </h3>
-                <span className="text-[11px] font-bold text-[#4F46E5]">
-                  5 Verified Questions →
-                </span>
+                <h3 className="font-bold text-sm text-[#0F172A] mb-1">{cat.title}</h3>
+                <span className="text-[11px] font-bold text-[#4F46E5]">5 Verified Questions →</span>
               </button>
             );
           })}
         </div>
 
         {/* Deep Category Reveal Card */}
-        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)]">
+        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)] mb-8">
           <div className="flex items-center gap-3.5 mb-4">
             <div className={`p-2.5 rounded-xl border ${categoriesData[activeCategory].color}`}>
               {React.createElement(categoriesData[activeCategory].icon, { className: 'w-5 h-5' })}
@@ -412,138 +427,148 @@ export const ComprehensiveArticle: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-4 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-amber-950 text-xs sm:text-sm">
-          <strong>Remember:</strong> Your performance in these four categories reflects how you handled a small selection of problems. It does not provide a complete measurement of intelligence, creativity, knowledge, or real-world ability.
+        {/* Detailed Educational Breakdown Across All 4 Domains */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[#5B6B82] leading-relaxed mb-6">
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Fluid Intelligence ($G_f$) &amp; Novel Problem Solving</h4>
+            <p>
+              Abstract and spatial tasks directly probe fluid intelligence—the raw capacity to identify patterns and reason logically without relying on previously learned vocabulary, culture, or formal schooling. By emphasizing matrix transformations and topological folding, the test minimizes linguistic bias and isolates foundational visual problem-solving faculties.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Quantitative &amp; Deductive Processing ($G_q$ &amp; $G_l$)</h4>
+            <p>
+              Numerical sequences and formal propositional syllogisms evaluate your capacity to maintain working memory buffers while testing multiple competing hypotheses. You must identify whether rules operate along single or interleaved dimensions, verifying deductive inferences with mathematical precision.
+            </p>
+          </div>
+        </div>
+
+        <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-amber-950 text-xs sm:text-sm">
+          <strong>Important Psychometric Distinction:</strong> Performance across these four practice domains reflects how you solved 20 specific reasoning tasks. It provides useful training insights, but it is not an all-encompassing measure of creative talent, practical common sense, emotional intelligence, or professional capability.
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. H2: WHY TAKE OUR FREE IQ TEST ONLINE? (Rhythm: White Surface + Bento) */}
+      {/* 3. H2: WHY TAKE OUR FREE IQ TEST ONLINE?                                  */}
       {/* ========================================================================= */}
       <section className="scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
             <Sparkles className="w-3.5 h-3.5 text-[#4F46E5]" />
-            <span>Why Choose Our IQ Test</span>
+            <span>Why Choose Our Assessment</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
-            A Smarter Way to Challenge Your Mind
+            Why Take Our Free IQ Test Online?
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            A modern, interactive and completely free IQ-style assessment designed for learners, students and curious minds.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            Online cognitive testing is often frustrating. Many commercial websites promise a free test, only to demand credit card payments or email submissions on question 20. We built a completely transparent, open-access platform committed to genuine cognitive education.
           </p>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          {/* Featured Dark Navy Card */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 mb-8">
+          {/* Featured Card */}
           <div className="md:col-span-5 bg-[#101B35] text-white p-7 rounded-3xl flex flex-col justify-between shadow-xl relative overflow-hidden">
             <div className="relative z-10">
               <span className="text-[11px] font-bold text-cyan-400 uppercase tracking-widest block mb-2">
                 100% UNGATED ASSESSMENT
               </span>
               <h3 className="text-2xl font-extrabold text-white mb-3">
-                Free Results Without Payment or Signup
+                Free Results Without Hidden Paywalls
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                You shouldn&apos;t have to discover a hidden payment requirement after finishing a test advertised as free. Our assessment is designed to provide free IQ test results without requiring a purchase, email address, or account.
+                You should never encounter a payment gate or subscription prompt after spending 15 minutes solving challenging reasoning puzzles. Our scoring engine delivers your raw score and accuracy breakdown immediately upon completion without requiring an email address or purchase.
               </p>
             </div>
-            <div className="relative z-10 pt-4 border-t border-slate-700/60 flex items-center justify-between text-xs text-slate-400">
-              <span>Zero Paywalls</span>
-              <span>•</span>
-              <span>Anonymous Session</span>
+            <div className="flex items-center gap-2 text-xs font-semibold text-slate-300 pt-4 border-t border-slate-700/60">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>Zero Paywalls • Anonymous Local Session</span>
             </div>
-            {/* Ambient subtle decorative SVG curve */}
-            <svg
-              className="absolute -right-6 -bottom-10 w-48 h-48 opacity-20 pointer-events-none"
-              viewBox="0 0 100 100"
-            >
-              <circle cx="50" cy="50" r="40" stroke="#06B6D4" strokeWidth="2" fill="none" />
-              <circle cx="50" cy="50" r="25" stroke="#4F46E5" strokeWidth="2" fill="none" />
-            </svg>
           </div>
 
-          {/* Right 4 Bento Tiles (7 Cols) */}
+          {/* 4 Supporting Feature Cards */}
           <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="premium-card p-5.5 rounded-3xl flex flex-col justify-between">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-3">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
-                  Instant Feedback on Performance
-                </h4>
-                <p className="text-xs text-[#5B6B82] leading-relaxed">
-                  Instead of waiting for an emailed report, you can see your accuracy immediately after submission across the four question categories.
-                </p>
+            <div className="premium-card p-6 rounded-3xl">
+              <div className="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-3">
+                <Zap className="w-4 h-4" />
               </div>
+              <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
+                Instant Cognitive Feedback
+              </h4>
+              <p className="text-xs text-[#5B6B82] leading-relaxed">
+                Receive instant accuracy ratings across each of the four categories the second you submit. Review questions immediately while your reasoning steps are fresh in memory.
+              </p>
             </div>
 
-            <div className="premium-card p-5.5 rounded-3xl flex flex-col justify-between">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-indigo-50 text-[#4F46E5] flex items-center justify-center mb-3">
-                  <BookOpen className="w-5 h-5" />
-                </div>
-                <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
-                  Original Questions with Explanations
-                </h4>
-                <p className="text-xs text-[#5B6B82] leading-relaxed">
-                  Our question explanations focus on the reasoning required to solve each problem, making future practice more productive.
-                </p>
+            <div className="premium-card p-6 rounded-3xl">
+              <div className="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-3">
+                <BookOpen className="w-4 h-4" />
               </div>
+              <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
+                Educational Walkthroughs
+              </h4>
+              <p className="text-xs text-[#5B6B82] leading-relaxed">
+                Every problem is paired with a clear, step-by-step mathematical or logical proof. You understand not just what option was correct, but the exact mechanism that governs it.
+              </p>
             </div>
 
-            <div className="premium-card p-5.5 rounded-3xl flex flex-col justify-between">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center mb-3">
-                  <Smartphone className="w-5 h-5" />
-                </div>
-                <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
-                  Convenient Across Devices
-                </h4>
-                <p className="text-xs text-[#5B6B82] leading-relaxed">
-                  You can take the online IQ test using a phone, tablet, laptop, or desktop computer with responsive, legible diagrams.
-                </p>
+            <div className="premium-card p-6 rounded-3xl">
+              <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+                <Smartphone className="w-4 h-4" />
               </div>
+              <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
+                Responsive Vector Graphics
+              </h4>
+              <p className="text-xs text-[#5B6B82] leading-relaxed">
+                Enjoy crisp, resolution-independent SVG diagrams on phones, tablets, and desktop displays. Visual puzzles scale cleanly to prevent distortion or eye strain.
+              </p>
             </div>
 
-            <div className="premium-card p-5.5 rounded-3xl flex flex-col justify-between">
-              <div>
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
-                  <TrendingUp className="w-5 h-5" />
-                </div>
-                <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
-                  Practise Different Thinking Skills
-                </h4>
-                <p className="text-xs text-[#5B6B82] leading-relaxed">
-                  Discover which problems you enjoy and where you need focus, treating it as an enriching personal learning opportunity.
-                </p>
+            <div className="premium-card p-6 rounded-3xl">
+              <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+                <TrendingUp className="w-4 h-4" />
               </div>
+              <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">
+                Targeted Skill Practice
+              </h4>
+              <p className="text-xs text-[#5B6B82] leading-relaxed">
+                Identify your relative strengths and growth opportunities across numerical, logical, abstract, and spatial domains to guide your ongoing mental training.
+              </p>
             </div>
           </div>
+        </div>
+
+        {/* Editorial Narrative on Ethical Testing */}
+        <div className="p-6 sm:p-8 bg-white rounded-3xl border border-[#E5EDF7] shadow-2xs text-xs sm:text-sm text-[#5B6B82] leading-relaxed space-y-3">
+          <h4 className="font-bold text-sm text-[#0F172A]">The Need for Honest, Ethical Cognitive Assessment</h4>
+          <p>
+            The internet is crowded with commercial quiz funnels disguised as official intelligence testing. These sites often use inflated, fabricated scores to flatter visitors into purchasing overpriced PDF certificates. Our mission is entirely different: we provide honest, transparent cognitive reasoning challenges built for curious minds, students, and lifelong learners who simply want to test and sharpen their problem-solving skills.
+          </p>
+          <p>
+            By offering a private, unnormed educational assessment with transparent scoring formulas, we protect user privacy and establish realistic expectations regarding what online practice tests can and cannot measure.
+          </p>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. H2: UNDERSTANDING YOUR IQ TEST RESULTS (Rhythm: Gradient Tinted Box)   */}
+      {/* 4. H2: UNDERSTANDING YOUR IQ TEST RESULTS                                 */}
       {/* ========================================================================= */}
       <section className="scroll-mt-24 bg-gradient-to-b from-[#F2F7FF] via-white to-[#F8FBFF] rounded-3xl p-6 sm:p-10 border border-[#E5EDF7]">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5 shadow-2xs">
             <Award className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Sample Result View</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
-            Results Dashboard <span className="text-slate-400 font-normal text-2xl">(Illustrative)</span>
+            Understanding Your IQ Test Results
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            The most important numbers are your total correct answers, percentage accuracy, and results across the four reasoning categories.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            Interpreting test metrics properly is essential for meaningful self-assessment. Our diagnostic dashboard breaks down your performance into transparent raw counts, accuracy percentages, and category-level diagnostics.
           </p>
         </div>
 
         {/* Dashboard Frame */}
-        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
+        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)] mb-8">
           <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
               Interactive Sample Walkthrough
@@ -601,151 +626,143 @@ export const ComprehensiveArticle: React.FC = () => {
               </div>
               <div className="p-3.5 bg-[#F8FBFF] rounded-2xl border border-[#E5EDF7] flex items-center justify-between">
                 <span className="font-semibold text-slate-600 flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-[#4F46E5]" /> Time Taken
+                  <Clock className="w-4 h-4 text-blue-500" /> Time Taken
                 </span>
                 <span className="font-extrabold text-[#0F172A]">12m 26s</span>
               </div>
             </div>
           </div>
 
-          {/* Category score progress bars */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <div className="p-3.5 bg-[#F8FBFF] rounded-xl border border-[#E5EDF7]">
-              <div className="flex justify-between text-xs font-bold mb-1">
-                <span>Numerical</span>
-                <span className="text-blue-600">4/5 (80%)</span>
+          {/* Category Breakdown Horizontal Bars */}
+          <div className="space-y-3.5 mb-6">
+            <h4 className="text-xs font-extrabold text-slate-700 uppercase tracking-wider">
+              Category Performance Breakdown
+            </h4>
+            {[
+              { label: 'Numerical Reasoning', score: '4/5', pct: '80%', w: 'w-[80%]', col: 'bg-blue-600' },
+              { label: 'Logical Deduction', score: '5/5', pct: '100%', w: 'w-[100%]', col: 'bg-purple-600' },
+              { label: 'Abstract Matrices', score: '3/5', pct: '60%', w: 'w-[60%]', col: 'bg-amber-500' },
+              { label: 'Spatial Visualization', score: '3/5', pct: '60%', w: 'w-[60%]', col: 'bg-emerald-600' },
+            ].map((catBar) => (
+              <div key={catBar.label} className="text-xs sm:text-sm">
+                <div className="flex justify-between font-semibold text-[#0F172A] mb-1">
+                  <span>{catBar.label}</span>
+                  <span className="font-extrabold">{catBar.score} ({catBar.pct})</span>
+                </div>
+                <div className="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
+                  <div className={`${catBar.col} h-full ${catBar.w} rounded-full`} />
+                </div>
               </div>
-              <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                <div className="bg-blue-600 h-full w-[80%]" />
-              </div>
-            </div>
-
-            <div className="p-3.5 bg-[#F8FBFF] rounded-xl border border-[#E5EDF7]">
-              <div className="flex justify-between text-xs font-bold mb-1">
-                <span>Logical</span>
-                <span className="text-purple-600">5/5 (100%)</span>
-              </div>
-              <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                <div className="bg-purple-600 h-full w-[100%]" />
-              </div>
-            </div>
-
-            <div className="p-3.5 bg-[#F8FBFF] rounded-xl border border-[#E5EDF7]">
-              <div className="flex justify-between text-xs font-bold mb-1">
-                <span>Abstract</span>
-                <span className="text-amber-600">3/5 (60%)</span>
-              </div>
-              <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                <div className="bg-amber-600 h-full w-[60%]" />
-              </div>
-            </div>
-
-            <div className="p-3.5 bg-[#F8FBFF] rounded-xl border border-[#E5EDF7]">
-              <div className="flex justify-between text-xs font-bold mb-1">
-                <span>Spatial</span>
-                <span className="text-emerald-600">3/5 (60%)</span>
-              </div>
-              <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
-                <div className="bg-emerald-600 h-full w-[60%]" />
-              </div>
-            </div>
+            ))}
           </div>
 
-          <div className="p-4 bg-[#EEF4FF] rounded-2xl border border-[#4F46E5]/20 text-xs text-slate-700 leading-relaxed">
-            <strong className="text-indigo-950 block mb-1">Accuracy Formula:</strong>
-            Accuracy = (Correct Answers ÷ Total Questions) × 100 = (15 ÷ 20) × 100 = <strong>75%</strong>.
-            This is your accuracy on the practice assessment. It is not equivalent to a standardized IQ score.
+          <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs text-slate-600 leading-relaxed">
+            <strong>Transparent Formula:</strong> Accuracy = (Correct Answers ÷ Total Questions) × 100 = (15 ÷ 20) × 100 = 75%. This is a direct measure of your performance on this practice set. It is not a clinical or standardized IQ score.
+          </div>
+        </div>
+
+        {/* In-Depth Interpretive Narrative */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Raw Score vs. Standardized Deviation IQ</h4>
+            <p>
+              A raw score simply tallies how many items you answered correctly. In contrast, a standardized IQ score represents a relative placement on a Gaussian normal distribution with an established mean of 100 and a standard deviation of 15. Converting a raw score into a meaningful deviation IQ requires administering the test to a large, statistically representative population sample stratified by age, education, and demographic factors.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">What Your Practice Scores Cannot Tell You</h4>
+            <p>
+              Human intelligence is multifaceted. A 20-question online practice set provides insight into your reasoning on specific logic and visual puzzles, but it does not reflect verbal eloquence, creative problem solving, social intelligence, resilience, or real-world decision making. Treat your score as an engaging benchmark for learning, not a definition of your intellectual boundaries.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. H2: IQ TEST QUESTIONS AND ANSWERS: TRY THESE EXAMPLES (White Surface)  */}
+      {/* 5. H2: IQ TEST QUESTIONS AND ANSWERS (WORKED EXAMPLES)                    */}
       {/* ========================================================================= */}
-      <section id="practice-examples" className="scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+      <section id="practice-questions" className="scroll-mt-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
-            <Brain className="w-3.5 h-3.5 text-[#4F46E5]" />
+            <HelpCircle className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Practice Before You Start</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
-            Try These Example Questions
+            IQ Test Questions and Answers: Worked Examples
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            The following original practice examples demonstrate four common types of reasoning problems. Each includes an answer and explanation so you can learn the underlying technique.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            Reviewing worked problems is one of the most effective ways to understand cognitive testing formats. Explore these four representative examples with complete solution walkthroughs.
           </p>
         </div>
 
-        {/* Segmented Pill Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
-          {(['numerical', 'logical', 'abstract', 'spatial'] as const).map((key) => {
-            const isTabActive = activeExampleTab === key;
+        {/* Tabs for Category Switch */}
+        <div className="flex flex-wrap gap-2 mb-6 justify-center">
+          {(['numerical', 'logical', 'abstract', 'spatial'] as const).map((catKey) => {
+            const isSelected = activeExampleTab === catKey;
             return (
               <button
-                key={key}
+                key={catKey}
                 type="button"
-                onClick={() => setActiveExampleTab(key)}
-                className={`px-5 py-2.5 rounded-full text-xs font-bold capitalize transition-all ${
-                  isTabActive
-                    ? 'bg-[#4F46E5] text-white shadow-xs'
-                    : 'bg-white border border-[#E5EDF7] text-slate-700 hover:bg-[#F2F7FF]'
+                onClick={() => setActiveExampleTab(catKey)}
+                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold capitalize transition-all ${
+                  isSelected
+                    ? 'bg-[#4F46E5] text-white shadow-sm'
+                    : 'bg-white border border-[#E5EDF7] text-slate-700 hover:bg-slate-50'
                 }`}
               >
-                {key} Reasoning
+                {catKey} Reasoning
               </button>
             );
           })}
         </div>
 
-        {/* Active Practice Question Card */}
+        {/* Puzzle Card */}
         {(() => {
-          const currentEx = exampleQuestionsData[activeExampleTab];
+          const currentEx = puzzleExamples[activeExampleTab];
           const selected = selectedExampleAnswers[activeExampleTab];
           const isChecked = checkedExamples[activeExampleTab];
           const isExCorrect = selected === currentEx.correctId;
 
           return (
-            <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
-              <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
-                <span className="text-xs font-extrabold text-[#4F46E5] uppercase tracking-wider">
-                  {currentEx.title}
+            <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)] mb-8">
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-600">
+                  {currentEx.badge}
                 </span>
-                <span className="text-xs font-semibold text-slate-400">
-                  {currentEx.domain}
+                <span className="text-xs font-semibold text-slate-400 capitalize">
+                  {activeExampleTab} Domain
                 </span>
               </div>
 
-              <h3 className="text-base sm:text-lg font-bold text-[#0F172A] whitespace-pre-line mb-6">
+              <h3 className="text-base sm:text-lg font-bold text-[#0F172A] mb-5">
                 {currentEx.question}
               </h3>
 
-              {/* 4 Choices */}
+              {/* 4 Interactive Choice Buttons */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {currentEx.options.map((opt) => {
                   const isOptSelected = selected === opt.id;
-                  let optStyle = 'bg-white border-[#E5EDF7] hover:border-slate-300';
-
-                  if (isOptSelected) {
-                    optStyle = 'bg-[#EEF4FF] border-[#4F46E5] ring-2 ring-[#4F46E5]/20 font-bold';
-                  }
+                  let btnStyle = 'bg-[#F8FBFF] border-[#E5EDF7] text-slate-800 hover:border-slate-300';
 
                   if (isChecked) {
                     if (opt.id === currentEx.correctId) {
-                      optStyle = 'bg-emerald-50 border-emerald-500 text-emerald-950 font-bold';
+                      btnStyle = 'bg-emerald-50 border-emerald-500 text-emerald-900 font-bold';
                     } else if (isOptSelected) {
-                      optStyle = 'bg-red-50 border-red-400 text-red-950';
+                      btnStyle = 'bg-red-50 border-red-400 text-red-900 line-through';
                     }
+                  } else if (isOptSelected) {
+                    btnStyle = 'bg-white border-[#4F46E5] ring-2 ring-[#4F46E5]/20 text-[#4F46E5] font-bold';
                   }
 
                   return (
                     <button
                       key={opt.id}
                       type="button"
-                      onClick={() => {
-                        setSelectedExampleAnswers((prev) => ({ ...prev, [activeExampleTab]: opt.id }));
-                        setCheckedExamples((prev) => ({ ...prev, [activeExampleTab]: false }));
-                      }}
-                      className={`p-3.5 rounded-2xl border text-left flex items-center justify-between text-xs sm:text-sm transition-all ${optStyle}`}
+                      disabled={isChecked}
+                      onClick={() =>
+                        setSelectedExampleAnswers((prev) => ({ ...prev, [activeExampleTab]: opt.id }))
+                      }
+                      className={`p-3.5 rounded-xl border text-left text-xs sm:text-sm flex items-center justify-between transition-all ${btnStyle}`}
                     >
                       <span>
                         <strong className="mr-2">{opt.id}.</strong> {opt.text}
@@ -775,7 +792,7 @@ export const ComprehensiveArticle: React.FC = () => {
                       isExCorrect ? 'text-emerald-700' : 'text-red-600'
                     }`}
                   >
-                    {isExCorrect ? '✓ Correct Answer!' : '✗ Not quite. See full explanation below.'}
+                    {isExCorrect ? '✓ Correct Answer!' : '✗ Incorrect. See the full step-by-step logic below.'}
                   </span>
                 )}
               </div>
@@ -784,7 +801,7 @@ export const ComprehensiveArticle: React.FC = () => {
               {isChecked && (
                 <div className="mt-5 p-4 rounded-2xl bg-[#EEF4FF] border border-[#4F46E5]/20 text-xs sm:text-sm text-slate-800 leading-relaxed animate-in fade-in">
                   <strong className="text-indigo-950 block mb-1">
-                    Correct Answer: {currentEx.correctId} — Solution Method
+                    Correct Answer: {currentEx.correctId} — Solution Walkthrough:
                   </strong>
                   <p>{currentEx.explanation}</p>
                 </div>
@@ -792,13 +809,21 @@ export const ComprehensiveArticle: React.FC = () => {
             </div>
           );
         })()}
+
+        {/* Educational Methodological Guide */}
+        <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
+          <h4 className="font-bold text-sm text-[#0F172A] mb-2">Analytical Strategies for Solving Complex Puzzles</h4>
+          <p>
+            When tackling reasoning problems, experienced test-takers avoid rushing toward intuitive guesses. In numerical sequences, always compute the differences between adjacent terms first. In propositional logic, convert narrative sentences into concise relational formulas (e.g., A &rarr; B). In abstract matrices, analyze patterns along rows first, then test whether identical rules hold along columns. In 3D spatial puzzles, trace one reference corner or edge rather than attempting to rotate the entire structure simultaneously.
+          </p>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. H2: HOW ACCURATE ARE FREE ONLINE IQ TESTS? (Rhythm: Blue Tinted Section) */}
+      {/* 6. H2: HOW ACCURATE ARE FREE ONLINE IQ TESTS?                             */}
       {/* ========================================================================= */}
       <section className="scroll-mt-24 bg-[#F2F7FF] rounded-3xl p-6 sm:p-10 border border-[#E5EDF7]">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5 shadow-2xs">
             <Scale className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>A Realistic Comparison</span>
@@ -806,13 +831,13 @@ export const ComprehensiveArticle: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             How Accurate Are Free Online IQ Tests?
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            Free online IQ tests vary widely in quality. The accuracy of an intelligence assessment depends on its design, scoring method, reliability, validity, and the population used to establish its norms.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            The scientific validity of any cognitive test depends on its design, standardization, and psychometric calibration. Understanding the difference between recreational practice tools and clinically normed assessments is vital for realistic interpretation.
           </p>
         </div>
 
         {/* Side by side comparison table */}
-        <div className="bg-white rounded-3xl border border-[#E5EDF7] overflow-hidden shadow-sm mb-6">
+        <div className="bg-white rounded-3xl border border-[#E5EDF7] overflow-hidden shadow-sm mb-8">
           <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100">
             {/* Left Column: Our Practice Assessment */}
             <div className="p-6 sm:p-8 bg-white">
@@ -825,19 +850,19 @@ export const ComprehensiveArticle: React.FC = () => {
               </h3>
               <ul className="text-xs sm:text-sm text-[#5B6B82] space-y-3">
                 <li>
-                  <strong className="text-[#0F172A]">Purpose:</strong> Reasoning practice, personal curiosity, and problem-solving training.
+                  <strong className="text-[#0F172A]">Purpose:</strong> Cognitive reasoning practice, personal curiosity, and problem-solving skill development.
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Score:</strong> Transparent raw score (e.g. 15/20) and accuracy percentage.
+                  <strong className="text-[#0F172A]">Scoring:</strong> Transparent raw score (e.g. 16/20) and percentage accuracy.
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Reference norms:</strong> No standardized population norms.
+                  <strong className="text-[#0F172A]">Reference Norms:</strong> Unnormed; does not reference standardized population cohorts.
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Validation:</strong> Transparently uncalibrated practice tool.
+                  <strong className="text-[#0F172A]">Administration:</strong> Self-administered online without supervised proctoring.
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Best for:</strong> Learning from mistakes, puzzle solving, self-assessment.
+                  <strong className="text-[#0F172A]">Best Used For:</strong> Mental training, learning from mistakes, and recreational problem-solving.
                 </li>
               </ul>
             </div>
@@ -846,60 +871,71 @@ export const ComprehensiveArticle: React.FC = () => {
             <div className="p-6 sm:p-8 bg-[#F8FBFF]">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-3">
                 <Scale className="w-3.5 h-3.5" />
-                <span>Standardized IQ Assessment (Professional Tests)</span>
+                <span>Standardized Clinical Assessments (WAIS / Stanford-Binet)</span>
               </div>
               <h3 className="text-lg font-bold text-[#0F172A] mb-3">
-                Clinical &amp; Formal Evaluation
+                Diagnostic &amp; Psychometric Evaluation
               </h3>
               <ul className="text-xs sm:text-sm text-[#5B6B82] space-y-3">
                 <li>
-                  <strong className="text-[#0F172A]">Purpose:</strong> Clinical diagnosis, educational placement, Mensa qualification.
+                  <strong className="text-[#0F172A]">Purpose:</strong> Clinical diagnosis, gifted education placement, and official Mensa qualification.
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Score:</strong> Scaled standardized IQ (mean 100, SD 15).
+                  <strong className="text-[#0F172A]">Scoring:</strong> Calibrated deviation IQ scale (Mean = 100, Standard Deviation = 15).
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Reference norms:</strong> Rigorously normed on representative demographic populations.
+                  <strong className="text-[#0F172A]">Reference Norms:</strong> Stratified across thousands of demographically matched individuals.
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Validation:</strong> Empirically established reliability and construct validity.
+                  <strong className="text-[#0F172A]">Administration:</strong> Individually proctored by licensed clinical psychologists.
                 </li>
                 <li>
-                  <strong className="text-[#0F172A]">Best for:</strong> Official qualifications, diagnostic and clinical settings.
+                  <strong className="text-[#0F172A]">Best Used For:</strong> Formal medical, legal, or educational evaluations.
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Three tooltips/cards: Reliability, Validity, Standardization */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
-          <div className="p-4 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
-            <strong className="text-[#0F172A] block mb-1 font-bold">Reliability</strong>
-            <p className="text-[#5B6B82]">
-              Concerns consistency of measurement under appropriate testing conditions across attempts.
+        {/* Deep Psychometric Concepts */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <div className="p-5 rounded-2xl bg-white border border-[#E5EDF7] shadow-2xs">
+            <span className="font-extrabold text-[#0F172A] block mb-1 text-sm">Psychometric Reliability</span>
+            <p className="text-xs text-[#5B6B82] leading-relaxed">
+              Reliability reflects measurement consistency across repeated testing under identical conditions. Clinical tests achieve reliability coefficients exceeding 0.90 through multi-hour test batteries. Shorter online quizzes naturally have wider standard errors of measurement.
             </p>
           </div>
-          <div className="p-4 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
-            <strong className="text-[#0F172A] block mb-1 font-bold">Validity</strong>
-            <p className="text-[#5B6B82]">
-              Concerns whether empirical evidence supports the interpretation of test scores for a specific purpose.
+          <div className="p-5 rounded-2xl bg-white border border-[#E5EDF7] shadow-2xs">
+            <span className="font-extrabold text-[#0F172A] block mb-1 text-sm">Construct Validity</span>
+            <p className="text-xs text-[#5B6B82] leading-relaxed">
+              Validity examines whether an assessment measures the true psychological trait it claims to evaluate (such as general fluid intelligence $g$) rather than uncalibrated speed or specific background knowledge.
             </p>
           </div>
-          <div className="p-4 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
-            <strong className="text-[#0F172A] block mb-1 font-bold">Standardization</strong>
-            <p className="text-[#5B6B82]">
-              Requires defined administration conditions and comparison with calibrated population reference groups.
+          <div className="p-5 rounded-2xl bg-white border border-[#E5EDF7] shadow-2xs">
+            <span className="font-extrabold text-[#0F172A] block mb-1 text-sm">Population Standardization</span>
+            <p className="text-xs text-[#5B6B82] leading-relaxed">
+              Standardization requires establishing normative baselines across thousands of individuals. Without calibrated age-matched sample norms, online quizzes cannot legitimately output clinical IQ numbers.
             </p>
           </div>
+        </div>
+
+        {/* Narrative on Environmental and State Confounders */}
+        <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] text-xs sm:text-sm text-[#5B6B82] leading-relaxed space-y-3">
+          <h4 className="font-bold text-sm text-[#0F172A]">Confounding Factors That Affect Practice Performance</h4>
+          <p>
+            Your performance on any reasoning assessment fluctuates naturally based on situational factors. Sleep deprivation, acute stress, digital distractions, caffeine consumption, and testing anxiety can all lower your score on a given day.
+          </p>
+          <p>
+            Similarly, familiarity with recurring puzzle mechanics creates a well-documented practice effect. Someone who frequently solves matrix puzzles will naturally navigate them more efficiently than someone encountering them for the first time, independent of innate intelligence.
+          </p>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 7. H2: HOW TO PREPARE FOR AN IQ TEST (Rhythm: White Surface + Checklist)  */}
+      {/* 7. H2: HOW TO PREPARE FOR AN IQ TEST                                      */}
       {/* ========================================================================= */}
       <section className="scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
             <ListChecks className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Interactive Checklist</span>
@@ -907,74 +943,74 @@ export const ComprehensiveArticle: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             How to Prepare for an IQ Test
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            You don&apos;t need to memorize hundreds of facts before taking a reasoning assessment. Good preparation focuses on understanding the instructions, creating suitable testing conditions, and approaching questions carefully.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            You do not need to memorize encyclopedia facts or vocabulary lists before taking a reasoning assessment. Effective preparation focuses on optimizing your mental state, managing your environment, and applying systematic problem-solving habits.
           </p>
         </div>
 
-        {/* Interactive Checklist Card */}
-        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
+        {/* Interactive Checklist Component */}
+        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.04)] mb-8">
           <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-              Personal Preparation Status
+              Personal Preparation Checklist
             </span>
-            <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+            <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-[#EEF4FF] text-[#4F46E5]">
               {completedChecklistCount} of 5 Completed
             </span>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-3.5">
             {[
               {
                 id: 'env',
-                title: 'Choose a Quiet Environment',
-                desc: 'Silence unnecessary notifications, close distracting applications, and make sure your device is working properly. Avoid starting when you’re extremely tired or likely to be interrupted.',
+                title: 'Choose a Quiet, Distraction-Free Environment',
+                desc: 'Silence phone notifications, close unneeded browser tabs, and choose an undisturbed room with good lighting.',
               },
               {
                 id: 'read',
-                title: 'Read Every Question Carefully',
-                desc: 'Many reasoning mistakes happen because people misunderstand a condition or overlook a small detail. Before selecting an answer, identify what the question is asking.',
+                title: 'Read Every Instruction and Condition Carefully',
+                desc: 'Many avoidable mistakes occur from misreading whether a puzzle requires finding the next item, the odd item, or a missing term.',
               },
               {
                 id: 'time',
-                title: 'Manage Your Time',
-                desc: 'If you’re using a timed mode, avoid spending too long on one difficult question. If you’re using an untimed mode, concentrate on understanding the problem rather than rushing.',
+                title: 'Maintain Pacing and Avoid Tunnel Vision',
+                desc: 'If an item feels intractable after 60 seconds, flag it and move forward. Never deplete your entire time budget on a single early puzzle.',
               },
               {
                 id: 'practice',
-                title: 'Practise Different Types of Reasoning Questions',
-                desc: 'Practising unfamiliar question formats can help reduce confusion. Try number sequences, abstract patterns, deductions, and spatial puzzles.',
+                title: 'Familiarize Yourself with Diverse Problem Types',
+                desc: 'Review sample number progressions, logical syllogisms, and geometric rotation rules before starting your full assessment.',
               },
               {
                 id: 'interpret',
-                title: 'Avoid Overinterpreting One Result',
-                desc: 'A single practice score is a narrow snapshot of your performance. Intellectual abilities are complex, and no short quiz captures everything a person can achieve.',
+                title: 'Maintain a Realistic, Constructive Perspective',
+                desc: 'Remember that an online test is an educational benchmark, not a final diagnostic verdict on your potential.',
               },
             ].map((item) => {
-              const isDone = checklist[item.id];
+              const isChecked = !!checklist[item.id];
               return (
                 <div
                   key={item.id}
                   onClick={() => toggleChecklist(item.id)}
-                  className={`p-4.5 rounded-2xl border cursor-pointer transition-all flex items-start gap-4 ${
-                    isDone
-                      ? 'bg-[#F8FBFF] border-[#E5EDF7]'
-                      : 'bg-white border-[#E5EDF7] hover:border-[#3B82F6]/50 shadow-2xs hover:-translate-y-0.5'
+                  className={`p-4 rounded-2xl border cursor-pointer transition-all flex items-start gap-3.5 ${
+                    isChecked
+                      ? 'bg-[#F8FBFF] border-[#4F46E5]/30'
+                      : 'bg-white border-[#E5EDF7] hover:border-slate-300'
                   }`}
                 >
                   <div
-                    className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
-                      isDone
-                        ? 'bg-emerald-600 border-emerald-600 text-white'
+                    className={`w-6 h-6 rounded-lg flex items-center justify-center flex-none mt-0.5 border transition-colors ${
+                      isChecked
+                        ? 'bg-[#4F46E5] border-[#4F46E5] text-white'
                         : 'border-slate-300 bg-white'
                     }`}
                   >
-                    {isDone && <Check className="w-4 h-4 stroke-[3]" />}
+                    {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                   </div>
                   <div>
-                    <h3 className={`font-bold text-sm mb-1 ${isDone ? 'text-slate-800' : 'text-[#0F172A]'}`}>
+                    <h4 className="font-bold text-sm text-[#0F172A] mb-0.5">
                       {item.title}
-                    </h3>
+                    </h4>
                     <p className="text-xs text-[#5B6B82] leading-relaxed">
                       {item.desc}
                     </p>
@@ -984,30 +1020,46 @@ export const ComprehensiveArticle: React.FC = () => {
             })}
           </div>
         </div>
+
+        {/* In-Depth Advisory Guidance */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
+          <div className="p-6 bg-[#F8FBFF] rounded-2xl border border-[#E5EDF7]">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Physiological Readiness &amp; Focus</h4>
+            <p>
+              Cognitive tasks place substantial demands on prefrontal cortex executive functions. Studies show that testing while adequately rested, properly hydrated, and clear-headed improves working memory and processing speed far more than last-minute cramming.
+            </p>
+          </div>
+          <div className="p-6 bg-[#F8FBFF] rounded-2xl border border-[#E5EDF7]">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Strategic Process of Elimination</h4>
+            <p>
+              In multiple-choice tests, disproving three incorrect options is mathematically identical to proving the correct one. When an abstract pattern seems obscure, actively look for features that disqualify candidate choices—such as an incorrect vertex count or inverted shading.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 8. H2: WHAT IS AN IQ TEST? (Rhythm: Blue Tinted Educational Section)       */}
+      {/* 8. H2: WHAT IS AN IQ TEST, AND HOW IS IQ MEASURED?                        */}
       {/* ========================================================================= */}
-      <section className="scroll-mt-24 bg-[#F2F7FF] rounded-3xl p-6 sm:p-10 border border-[#E5EDF7]">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5 shadow-2xs">
+      <section className="scroll-mt-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
             <Info className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Educational Explainer</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             What Is an IQ Test, and How Is IQ Measured?
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            An IQ test is an assessment designed to measure selected cognitive abilities. IQ stands for <em>intelligence quotient</em>.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            An IQ (Intelligence Quotient) test is a psychometric instrument designed to evaluate cognitive reasoning relative to standardized reference groups. Understanding how these tests originated and how scoring evolved is essential for placing modern scores into proper scientific context.
           </p>
         </div>
 
         {/* Scientific Bell Curve SVG Visualization */}
-        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)] mb-6">
+        <div className="bg-white rounded-3xl border border-[#E5EDF7] p-6 sm:p-8 shadow-[0_10px_30px_rgba(15,23,42,0.05)] mb-8">
           <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
             <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-              Standard Normal Distribution (Gaussian Curve)
+              Standard Normal Distribution (Gaussian Bell Curve)
             </span>
             <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#EEF4FF] text-[#4F46E5]">
               Mean: 100 • Standard Deviation: 15
@@ -1040,32 +1092,54 @@ export const ComprehensiveArticle: React.FC = () => {
               <text x="250" y="115" fill="#4338CA" fontSize="13" fontWeight="bold" textAnchor="middle">68.2% of Population</text>
             </svg>
             <p className="text-[11px] text-center text-[#5B6B82] mt-2 font-medium">
-              Illustrative Standardized Scale — Not our practice assessment scoring formula.
+              Illustrative Standardized Scale (Mean = 100, SD = 15). Practice assessments evaluate raw accuracy, not calibrated deviation scores.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
             <div>
-              <h4 className="font-bold text-[#0F172A] mb-1">Standardized Intelligence Scales</h4>
+              <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">Historical Ratio IQ vs. Modern Deviation IQ</h4>
               <p>
-                On many standardized scales, the average score is set at 100 with a standard deviation of 15. Roughly two-thirds of scores fall between 85 and 115. That statistical information describes a standardized scale and cannot be applied automatically to raw online quiz results.
+                In the early 1900s, French psychologist Alfred Binet and Théodore Simon introduced the original ratio IQ formula: (Mental Age ÷ Chronological Age) × 100. While functional for evaluating school children, this formula broke down in adulthood as chronological age progressed without equivalent mental age changes.
+              </p>
+              <p className="mt-2">
+                In 1939, David Wechsler resolved this by introducing the Deviation IQ model. Rather than calculating mental age ratios, modern IQ tests compare your performance to a statistically calibrated bell curve of peer results, setting the average score at 100 with a standard deviation of 15.
               </p>
             </div>
             <div>
-              <h4 className="font-bold text-[#0F172A] mb-1">What IQ Tests Cannot Fully Measure</h4>
+              <h4 className="font-bold text-sm text-[#0F172A] mb-1.5">Statistical Spread &amp; The Normal Distribution</h4>
               <p>
-                Intelligence is broader than performance on a small group of puzzles. IQ tests do not provide a complete description of someone’s creativity, motivation, practical judgment, personality, or personal worth.
+                Under the standard normal distribution (68-95-99.7 rule), approximately 68.2% of the population scores between 85 and 115 (within one standard deviation of the mean). Approximately 95.4% score between 70 and 130. Scores above 130 represent the top ~2.3% of test-takers, the benchmark commonly used by high-IQ organizations such as Mensa.
+              </p>
+              <p className="mt-2">
+                Importantly, this mathematical distribution only applies to standardized tests normed against representative population samples. An online quiz score of 80% accuracy cannot be converted into an IQ score of 130 without rigorous population calibration.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Substantive Psychometric Limitations and the Flynn Effect */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Age-Based Norming &amp; Cohort Calibration</h4>
+            <p>
+              Clinical intelligence tests rely heavily on age-stratified norms. Processing speed and working memory peak in young adulthood and naturally shift over the lifespan, whereas crystallized vocabulary and knowledge often expand well into later decades. Formal psychometrics always balances raw results against verified age cohorts.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">The Flynn Effect &amp; Cultural Loading</h4>
+            <p>
+              First documented by political scientist James Flynn, average raw scores on intelligence tests increased worldwide throughout the 20th century, requiring psychometricians to periodically re-standardize test baselines. This highlights that test scores reflect broader environmental, educational, and nutritional improvements over time.
+            </p>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 9. H2: CAN YOU IMPROVE YOUR PERFORMANCE? (Rhythm: White Surface + Pathway)*/}
+      {/* 9. H2: CAN YOU IMPROVE YOUR IQ TEST PERFORMANCE?                          */}
       {/* ========================================================================= */}
       <section className="scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
             <TrendingUp className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Continuous Improvement</span>
@@ -1073,13 +1147,13 @@ export const ComprehensiveArticle: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             Can You Improve Your IQ Test Performance?
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            You can often become better at solving familiar types of reasoning questions through practice, feedback, and improved strategies.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            One of the most persistent questions in cognitive science is whether a person can increase their intelligence. While baseline fluid intelligence has substantial genetic heritability, your ability to perform well on reasoning assessments can definitely improve through targeted practice and strategic problem solving.
           </p>
         </div>
 
         {/* 4 Connected Pathway Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="premium-card p-6 rounded-3xl">
             <span className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 font-extrabold text-xs flex items-center justify-center mb-3">
               1
@@ -1088,7 +1162,7 @@ export const ComprehensiveArticle: React.FC = () => {
               Learn Common Patterns
             </h3>
             <p className="text-xs text-[#5B6B82] leading-relaxed">
-              Practise checking differences, multiplication rules, shape counts, and identifying valid deductive conclusions.
+              Familiarize yourself with recurring puzzle mechanisms: second-order difference sequences, alternating operators, rotational symmetries, and Boolean cancellations.
             </p>
           </div>
 
@@ -1100,7 +1174,7 @@ export const ComprehensiveArticle: React.FC = () => {
               Review Incorrect Answers
             </h3>
             <p className="text-xs text-[#5B6B82] leading-relaxed">
-              Examine your mistakes to understand whether you misunderstood instructions, rushed, or missed an underlying rule.
+              Analyze missed questions to determine whether mistakes stemmed from misreading instructions, rushing under time pressure, or misunderstanding a governing rule.
             </p>
           </div>
 
@@ -1109,10 +1183,10 @@ export const ComprehensiveArticle: React.FC = () => {
               3
             </span>
             <h3 className="font-bold text-sm text-[#0F172A] mb-1.5">
-              Practise Varied Questions
+              Practise Diverse Formats
             </h3>
             <p className="text-xs text-[#5B6B82] leading-relaxed">
-              Use different question sets and unfamiliar problems rather than repeating only your favourite type.
+              Avoid practicing only your favorite puzzle types. Engaging with unfamiliar question formats builds broader mental flexibility and adaptability.
             </p>
           </div>
 
@@ -1121,20 +1195,36 @@ export const ComprehensiveArticle: React.FC = () => {
               4
             </span>
             <h3 className="font-bold text-sm text-[#0F172A] mb-1.5">
-              Focus on Learning
+              Focus on Metacognition
             </h3>
             <p className="text-xs text-[#5B6B82] leading-relaxed">
-              A percentage score describes accuracy, but explanations show you how to think through problems effectively.
+              Shift focus from merely tracking accuracy scores to mastering the underlying analytical methods that make problem solving faster and more reliable.
+            </p>
+          </div>
+        </div>
+
+        {/* Deep Scientific Discussion on Task Familiarity vs. General Intelligence */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[#5B6B82] leading-relaxed">
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Practice Effects vs. True Cognitive Enhancement</h4>
+            <p>
+              Cognitive scientists draw an important distinction between <em>task-specific improvement</em> and increases in <em>general fluid intelligence ($g$)</em>. Solving hundreds of matrix puzzles makes you faster at recognizing matrix rules. This is known as the psychometric practice effect. While it may not dramatically raise your fundamental biological processing capacity, it substantially sharpens your operational problem-solving efficiency and confidence.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-2xl border border-[#E5EDF7] shadow-2xs">
+            <h4 className="font-bold text-sm text-[#0F172A] mb-2">Lifestyle Foundations of Cognitive Health</h4>
+            <p>
+              Long-term cognitive performance relies on foundational health habits. Clinical research consistently links regular aerobic exercise, high-quality slow-wave sleep, and mental engagement with brain-derived neurotrophic factor (BDNF) production and sustained neuroplasticity. Managing chronic stress and getting sufficient sleep helps ensure your cognitive faculties operate at peak capacity.
             </p>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 10. H2: EXPLORE MORE RESOURCES (Rhythm: Soft Blue Tinted Directory)       */}
+      {/* 10. H2: EXPLORE MORE IQ TESTS AND LEARNING RESOURCES                      */}
       {/* ========================================================================= */}
       <section className="scroll-mt-24 bg-[#F2F7FF] rounded-3xl p-6 sm:p-10 border border-[#E5EDF7]">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5 shadow-2xs">
             <Layers className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Learning Ecosystem</span>
@@ -1142,82 +1232,64 @@ export const ComprehensiveArticle: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             Explore More IQ Tests and Learning Resources
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            If you enjoy our main online IQ test, these related tools and guides are natural next steps.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            Expand your reasoning practice with our dedicated cognitive tools and deep-dive educational guides designed to strengthen specific analytical domains.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
           {[
             {
               title: 'Quick IQ Test',
-              desc: 'Short on time? A concise reasoning challenge for visitors wanting a brief practice session.',
-              icon: Zap,
-              color: 'text-amber-600 bg-amber-50',
+              desc: 'Short on time? Take a condensed 10-question reasoning challenge designed for brief practice sessions and quick check-ins.',
             },
             {
               title: 'IQ Practice Questions',
-              desc: 'Explore additional IQ test questions with step-by-step answers and explanations.',
-              icon: BookOpen,
-              color: 'text-blue-600 bg-blue-50',
+              desc: 'Explore an expanded question bank featuring step-by-step mathematical, logical, abstract, and spatial problem breakdowns.',
             },
             {
               title: 'Logical Reasoning Test',
-              desc: 'Focus on deductive thinking, relationships between statements, and formal logic.',
-              icon: GitBranch,
-              color: 'text-purple-600 bg-purple-50',
+              desc: 'Focus specifically on formal propositional deductions, truth-teller logic puzzles, and categorical syllogism problems.',
             },
             {
               title: 'Abstract Reasoning Test',
-              desc: 'Challenge yourself with visual sequences, geometric patterns, and rule-based problems.',
-              icon: Shapes,
-              color: 'text-[#4F46E5] bg-[#EEF4FF]',
+              desc: 'Sharpen your fluid intelligence with visual 2×2 and 3×3 matrix progressions, geometric series, and topological transformations.',
             },
             {
-              title: 'IQ Score Chart',
-              desc: 'Learn how standardized IQ score ranges are commonly interpreted and why norms matter.',
-              icon: Scale,
-              color: 'text-cyan-600 bg-cyan-50',
+              title: 'IQ Score Chart Guide',
+              desc: 'Explore how clinical IQ score classifications are established, what standard deviations represent, and how population percentiles align.',
             },
             {
               title: 'IQ Percentile Calculator',
-              desc: 'Explore how a percentile estimate depends on the scoring scale and assumptions used.',
-              icon: TrendingUp,
-              color: 'text-emerald-600 bg-emerald-50',
+              desc: 'Learn how raw test scores map to theoretical normal distribution percentiles and discover the statistical assumptions behind them.',
             },
-          ].map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.title}
-                className="premium-card p-5.5 rounded-3xl flex flex-col justify-between group"
-              >
-                <div>
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3.5 ${item.color}`}>
-                    <Icon className="w-5 h-5 stroke-[2.2]" />
-                  </div>
-                  <h3 className="font-bold text-sm text-[#0F172A] mb-1.5 flex items-center justify-between">
-                    <span>{item.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-[#4F46E5] group-hover:translate-x-0.5 transition-all" />
-                  </h3>
-                  <p className="text-xs text-[#5B6B82] leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
+          ].map((res) => (
+            <div
+              key={res.title}
+              className="p-6 rounded-2xl bg-white border border-[#E5EDF7] hover:border-[#3B82F6]/40 transition-all shadow-2xs flex flex-col justify-between"
+            >
+              <div>
+                <h3 className="font-bold text-sm text-[#0F172A] mb-2">{res.title}</h3>
+                <p className="text-xs text-[#5B6B82] leading-relaxed mb-4">{res.desc}</p>
               </div>
-            );
-          })}
+              <span className="text-[11px] font-bold text-[#4F46E5] flex items-center gap-1 group">
+                <span>Coming Soon</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              </span>
+            </div>
+          ))}
         </div>
-        <p className="text-xs text-center text-slate-400 italic">
-          *These are separate supporting resources. Links will be activated as each page is published.*
+
+        <p className="text-xs text-center text-[#5B6B82]">
+          *These dedicated modules are part of our expanding open-access cognitive library. Links will activate as individual guides complete peer review.*
         </p>
       </section>
 
       {/* ========================================================================= */}
-      {/* 11. H2: FREQUENTLY ASKED QUESTIONS ABOUT IQ TESTS (White Accordion)       */}
+      {/* 11. H2: FREQUENTLY ASKED QUESTIONS                                        */}
       {/* ========================================================================= */}
       <section id="faq" className="scroll-mt-24">
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#EEF4FF] text-[#4F46E5] border border-[#4F46E5]/20 mb-2.5">
             <HelpCircle className="w-3.5 h-3.5 text-[#4F46E5]" />
             <span>Got Questions?</span>
@@ -1225,53 +1297,53 @@ export const ComprehensiveArticle: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] mb-3">
             Frequently Asked Questions About IQ Tests
           </h2>
-          <p className="text-sm sm:text-base text-[#5B6B82]">
-            Everything you need to know about our free practice assessment, scoring methods, and validity.
+          <p className="text-sm sm:text-base text-[#5B6B82] leading-relaxed">
+            Clear answers to common questions about our free online reasoning assessment, scoring methods, and the science of intelligence testing.
           </p>
         </div>
 
-        <div className="space-y-3.5 max-w-3xl mx-auto">
+        <div className="max-w-3xl mx-auto space-y-3">
           {[
             {
               q: 'Is this IQ test completely free?',
-              a: 'Yes. Our online IQ-style practice test is designed to be free from beginning to end. You can answer the questions and receive your basic results without paying or subscribing. The feedback includes your correct-answer count, percentage score, and reasoning category breakdown. Remember that these are practice results, not a professionally standardized IQ measurement.',
+              a: 'Yes. Our assessment is 100% free and open access. You will never encounter a paywall, request for payment information, or hidden fee to view your raw score, accuracy percentage, or category breakdown.',
             },
             {
               q: 'Will I get my IQ test results instantly?',
-              a: 'Yes. After you submit your answers, the assessment calculates your results immediately. You can see how many questions you answered correctly and review your performance across different reasoning categories. The results explain your performance on this particular question set rather than assigning an unsupported clinical IQ number.',
+              a: 'Yes. The moment you submit your assessment, our client-side scoring engine calculates your score and displays your full performance dashboard on-screen immediately.',
             },
             {
-              q: 'How can I test my IQ online?',
-              a: 'To explore your reasoning skills, start the free online test above and answer its 20 questions. You’ll encounter numerical, logical, abstract, and spatial reasoning problems. Once finished, submit your answers and review your results. If you need an official or professionally interpretable IQ score, choose an appropriately standardized assessment administered under suitable conditions.',
+              q: 'How can I test my IQ online accurately?',
+              a: 'To obtain the most accurate practice benchmark, take the test in a quiet room, avoid distractions, and work through all questions carefully. However, note that no online test can provide a clinically certified IQ score without supervised in-person psychometric proctoring.',
             },
             {
               q: 'Do I need an email address or account to take the test?',
-              a: 'No. The basic IQ-style assessment is designed to work without mandatory registration or email collection. You can begin the questions and view your results without creating a profile. For details about any technical storage used to preserve your test progress, consult the website’s privacy policy.',
+              a: 'No. We do not require registration, passwords, or personal email addresses. Your session data is stored anonymously in your browser so you can practice freely.',
             },
             {
               q: 'How many questions are in this IQ test?',
-              a: 'The main assessment contains 20 multiple-choice questions. Five questions focus on numerical reasoning, five on logical reasoning, five on abstract patterns, and five on spatial reasoning. Each question has four answer choices. The assessment provides an accessible introduction to these problem types, but its short length limits the conclusions that can be drawn from the results.',
+              a: 'The assessment contains exactly 20 original questions, evenly distributed across four cognitive categories: numerical reasoning (5), logical deduction (5), abstract matrices (5), and spatial visualization (5).',
             },
             {
               q: 'Can I take the IQ test more than once?',
-              a: 'Yes, you can restart the practice assessment. Retaking questions can help you review reasoning techniques and understand earlier mistakes. However, your score may improve because you remember questions or answers. For more useful practice, try new questions and different problem types rather than comparing repeated attempts on exactly the same set.',
+              a: 'Yes. You can retake the test at any time. However, because questions remain identical, subsequent attempts will benefit from practice effects and familiarity, which naturally inflates raw scores.',
             },
             {
               q: 'Does this online test tell me my exact IQ score?',
-              a: 'No. The assessment measures your accuracy on 20 reasoning questions and provides explanatory feedback. It has not been established as a standardized IQ measurement. An exact-looking IQ number would require appropriate scoring norms and scientific validation. For a formally interpretable intelligence assessment, consult a qualified professional or an organization that provides approved testing.',
+              a: 'No. This assessment provides a transparent raw score (e.g., 16/20) and an accuracy percentage. Producing an exact clinical IQ score requires extensive norming across thousands of demographically matched participants, which unproctored online quizzes cannot legitimately replicate.',
             },
-          ].map((faq, i) => (
+          ].map((faq) => (
             <details
-              key={i}
-              className="group rounded-2xl border border-[#E5EDF7] bg-white p-5.5 transition-all shadow-2xs open:shadow-xs hover:border-[#3B82F6]/40"
+              key={faq.q}
+              className="group p-5 bg-white rounded-2xl border border-[#E5EDF7] hover:border-slate-300 transition-all open:bg-slate-50/50 open:shadow-xs"
             >
-              <summary className="cursor-pointer text-sm sm:text-base font-bold text-[#0F172A] list-none flex items-center justify-between">
+              <summary className="font-bold text-sm text-[#0F172A] cursor-pointer flex items-center justify-between list-none">
                 <span>{faq.q}</span>
-                <span className="text-[#3B82F6] group-open:rotate-180 transition-transform ml-2 shrink-0 font-bold">
-                  ▼
+                <span className="w-6 h-6 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 group-open:rotate-180 transition-transform">
+                  <ChevronDown className="w-3.5 h-3.5" />
                 </span>
               </summary>
-              <p className="mt-3 text-xs sm:text-sm text-[#5B6B82] leading-relaxed pt-3 border-t border-slate-100">
+              <p className="mt-3 text-xs sm:text-sm text-[#5B6B82] leading-relaxed pt-2 border-t border-slate-100">
                 {faq.a}
               </p>
             </details>
@@ -1280,41 +1352,35 @@ export const ComprehensiveArticle: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 12. H2: ABOUT THIS ASSESSMENT AND OUR SCORING METHOD (Trust Panel)         */}
+      {/* 12. H2: ASSESSMENT METHODOLOGY AND SCORING FRAMEWORK                      */}
       {/* ========================================================================= */}
-      <section className="p-8 sm:p-12 bg-[#101B35] text-white rounded-3xl shadow-xl relative overflow-hidden">
-        <div className="relative z-10 max-w-3xl">
-          <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest block mb-2">
-            METHODOLOGY &amp; ETHICS
+      <section className="scroll-mt-24 p-6 sm:p-10 rounded-3xl bg-slate-900 text-white relative overflow-hidden">
+        <div className="max-w-3xl mx-auto text-center space-y-4 relative z-10">
+          <span className="text-[11px] font-bold text-indigo-400 uppercase tracking-widest block">
+            METHODOLOGY &amp; ETHICAL STANDARDS
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             About This Assessment and Our Scoring Method
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-            Our online IQ-style assessment was designed to make reasoning practice accessible and understandable. The test contains 20 questions divided evenly across numerical, logical, abstract, and spatial reasoning.
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Our assessment framework is built upon 20 verified questions divided evenly across numerical, logical, abstract, and spatial reasoning domains. Every question has exactly one unambiguous, peer-reviewed correct answer.
           </p>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-            Every correct answer earns one point. Incorrect or unanswered questions earn zero points. The final percentage is calculated by dividing the number of correct answers by 20 and multiplying by 100. Category scores show how many of the five questions in each category you answered correctly.
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Scoring is completely transparent: every correct answer earns exactly one point, while incorrect or skipped questions earn zero points. Your overall accuracy percentage is calculated as (Correct Answers ÷ 20) × 100. Category scores show your exact standing within each cognitive domain out of 5 points.
           </p>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-8">
-            The assessment is intended for practice, personal interest, and learning. It is not standardized against a representative population, and its results should not be used for educational placement, clinical diagnosis, employment decisions, or membership qualification.
-          </p>
-
-          <div className="pt-6 border-t border-slate-700/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <p className="text-sm font-bold text-white">
-              Challenge your thinking. Learn from your answers. Start your free IQ test today.
-            </p>
+          <div className="p-4 bg-slate-800/80 rounded-2xl border border-slate-700/60 text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+            <strong>Ethical &amp; Psychometric Disclosure:</strong> This platform is designed solely for self-directed reasoning practice, cognitive education, and personal interest. It is unnormed against broad demographic populations and does not replace standardized clinical examinations such as the Wechsler Adult Intelligence Scale (WAIS) or Stanford-Binet. Its results should never be used for academic placement, psychiatric diagnosis, employment decisions, or membership qualification.
+          </div>
+          <div className="pt-4">
             <Link
               href="/test"
-              className="cta-glow px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#4F46E5] to-[#4338CA] hover:from-[#4338CA] hover:to-[#3730A3] transition-colors shrink-0 shadow-md inline-flex items-center justify-center"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#4F46E5] hover:bg-[#4338CA] transition-colors shadow-md cta-glow"
             >
-              Start Free IQ Test
+              <span>Start Your Free IQ Test Now</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
-
-        {/* Ambient subtle glow */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#4F46E5]/20 blur-[100px] pointer-events-none rounded-full" />
       </section>
     </article>
   );

@@ -150,6 +150,65 @@ export const TestClient: React.FC = () => {
     router.push('/');
   };
 
+  if (viewState === 'active') {
+    return (
+      <div className="h-[100dvh] w-full flex flex-col overflow-hidden bg-[#F8FBFF] relative selection:bg-indigo-500/15 selection:text-indigo-600">
+        <ActiveAssessment
+          questions={ASSESSMENT_QUESTIONS}
+          currentIndex={currentIndex}
+          answers={answers}
+          flaggedQuestionIds={flaggedIds}
+          mode={mode}
+          startTime={startTime}
+          onSelectOption={handleSelectOption}
+          onNavigate={(newIdx) => setCurrentIndex(newIdx)}
+          onToggleFlag={handleToggleFlag}
+          onSubmit={handleSubmit}
+          onCancelTest={() => setShowExitModal(true)}
+        />
+
+        {showExitModal && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs animate-in fade-in"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div className="w-full max-w-md bg-white rounded-3xl shadow-xl border border-[#E5EDF7] p-6 sm:p-7">
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 border border-amber-200 flex items-center justify-center mb-4">
+                <AlertTriangle className="w-6 h-6" />
+              </div>
+
+              <h3 className="text-lg font-bold text-[#0F172A] mb-2">
+                Exit Assessment?
+              </h3>
+
+              <p className="text-xs sm:text-sm text-[#5B6B82] mb-6 leading-relaxed">
+                Your test progress is saved in your browser. You can return anytime to resume where you left off.
+              </p>
+
+              <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100">
+                <button
+                  type="button"
+                  onClick={() => setShowExitModal(false)}
+                  className="px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-100 rounded-xl transition-colors"
+                >
+                  Continue Test
+                </button>
+                <button
+                  type="button"
+                  onClick={handleConfirmExit}
+                  className="px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-slate-800 hover:bg-slate-900 rounded-xl transition-colors"
+                >
+                  Exit to Home
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#F8FBFF] text-[#0F172A] flex flex-col relative selection:bg-[#4F46E5]/15 selection:text-[#4F46E5]">
       {/* Background Ambient Glow & Grid Depth */}
@@ -177,25 +236,13 @@ export const TestClient: React.FC = () => {
         <div className="max-w-[1240px] mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           {/* Brand Logo & Back to Home */}
           <div className="flex items-center gap-3">
-            {viewState === 'active' ? (
-              <button
-                type="button"
-                onClick={() => setShowExitModal(true)}
-                className="flex items-center gap-2 group text-xs font-bold text-[#5B6B82] hover:text-[#0F172A] py-1.5 px-3 rounded-xl hover:bg-slate-100 transition-colors focus:outline-none"
-                title="Exit to Homepage"
-              >
-                <ArrowLeft className="w-4 h-4 text-slate-500 group-hover:-translate-x-0.5 transition-transform" />
-                <span className="hidden sm:inline">Exit to Homepage</span>
-              </button>
-            ) : (
-              <Link
-                href="/"
-                className="flex items-center gap-2 group text-xs font-bold text-[#5B6B82] hover:text-[#0F172A] py-1.5 px-3 rounded-xl hover:bg-slate-100 transition-colors focus:outline-none"
-              >
-                <ArrowLeft className="w-4 h-4 text-slate-500 group-hover:-translate-x-0.5 transition-transform" />
-                <span className="hidden sm:inline">Back to Home</span>
-              </Link>
-            )}
+            <Link
+              href="/"
+              className="flex items-center gap-2 group text-xs font-bold text-[#5B6B82] hover:text-[#0F172A] py-1.5 px-3 rounded-xl hover:bg-slate-100 transition-colors focus:outline-none"
+            >
+              <ArrowLeft className="w-4 h-4 text-slate-500 group-hover:-translate-x-0.5 transition-transform" />
+              <span className="hidden sm:inline">Back to Home</span>
+            </Link>
 
             <div className="h-5 w-px bg-slate-200 hidden sm:block" />
 
@@ -225,16 +272,6 @@ export const TestClient: React.FC = () => {
 
           {/* Center / Right State Status */}
           <div className="flex items-center gap-2.5">
-            {viewState === 'active' && (
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-[#4F46E5] bg-[#EEF4FF] border border-[#4F46E5]/20 px-3 py-1.5 rounded-full">
-                  Question {currentIndex + 1} of {ASSESSMENT_QUESTIONS.length}
-                </span>
-                <span className="hidden md:inline-flex text-xs font-semibold text-[#5B6B82] px-2.5 py-1 rounded-full bg-white border border-[#E5EDF7]">
-                  {mode === 'untimed' ? 'Untimed Practice' : '15-Minute Timed'}
-                </span>
-              </div>
-            )}
 
             {viewState === 'onboarding' && (
               <div className="flex items-center gap-2 text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
@@ -456,26 +493,7 @@ export const TestClient: React.FC = () => {
           </div>
         )}
 
-        {/* ===================================================================== */}
-        {/* STATE 2: ACTIVE ASSESSMENT WORKSPACE                                  */}
-        {/* ===================================================================== */}
-        {viewState === 'active' && (
-          <div className="w-full animate-fade-up">
-            <ActiveAssessment
-              questions={ASSESSMENT_QUESTIONS}
-              currentIndex={currentIndex}
-              answers={answers}
-              flaggedQuestionIds={flaggedIds}
-              mode={mode}
-              startTime={startTime}
-              onSelectOption={handleSelectOption}
-              onNavigate={(newIdx) => setCurrentIndex(newIdx)}
-              onToggleFlag={handleToggleFlag}
-              onSubmit={handleSubmit}
-              onCancelTest={handleRetake}
-            />
-          </div>
-        )}
+
 
         {/* ===================================================================== */}
         {/* STATE 3: RESULTS DASHBOARD                                            */}

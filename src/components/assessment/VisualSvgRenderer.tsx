@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { VisualAsset } from '@/types/assessment';
+import { QuickVisualSvgRenderer } from './QuickVisualSvgRenderer';
 
 interface VisualSvgRendererProps {
   asset: VisualAsset;
@@ -15,6 +16,17 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   isOptionThumbnail = false,
 }) => {
   const { puzzleId } = asset;
+
+  // Delegate quick test puzzles to dedicated QuickVisualSvgRenderer
+  if (puzzleId && puzzleId.startsWith('quick-')) {
+    return (
+      <QuickVisualSvgRenderer
+        asset={asset}
+        className={className}
+        isOptionThumbnail={isOptionThumbnail}
+      />
+    );
+  }
 
   // Base styling for crisp SVGs
   const svgClass = `w-full h-auto transition-transform ${className}`;

@@ -218,7 +218,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* H1 Heading with Refined Blue Gradient on 'IQ Test' */}
-            <h1 className="animate-fade-up-delay-1 text-4xl sm:text-5xl lg:text-[48px] xl:text-[56px] font-black tracking-tight text-[#07152F] leading-[1.08] mb-4 sm:mb-5">
+            <h1 className="animate-fade-up-delay-1 font-heading text-4xl sm:text-5xl lg:text-[48px] xl:text-[56px] font-black tracking-tight text-[#07152F] leading-[1.08] mb-4 sm:mb-5">
               Free Online <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2453FF] via-[#3768FF] to-[#4779FF]">
                 IQ Test
@@ -226,7 +226,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </h1>
 
             {/* Description Paragraph */}
-            <p className="animate-fade-up-delay-1 text-base sm:text-lg text-[#60718B] leading-relaxed max-w-xl mb-6 font-normal">
+            <p className="animate-fade-up-delay-1 text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl mb-6 font-medium">
               Challenge your reasoning with 20 original questions covering numbers, logic, patterns, and spatial thinking. Get instant results and clear explanations—no signup needed.
             </p>
 

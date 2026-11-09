@@ -141,7 +141,7 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
       {/* 1. COMPACT UNIFIED TOP HEADER BAR (h-14 on mobile)        */}
       {/* ========================================================= */}
       <header className="w-full shrink-0 bg-white/95 backdrop-blur-md border-b border-[#E2EAF7] relative z-30">
-        <div className="max-w-4xl mx-auto px-3 sm:px-6 h-13 sm:h-14 flex items-center justify-between gap-2">
+        <div className="max-w-4xl mx-auto px-3 sm:px-6 h-13 sm:h-14 flex items-center justify-between gap-3">
           {/* Left: Exit button */}
           <button
             type="button"
@@ -153,26 +153,16 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
             <span className="text-xs font-semibold">Exit</span>
           </button>
 
-          {/* Center: Question Counter & Progress Pill */}
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF2FF] border border-[#2453FF]/25 text-[#2453FF] text-xs font-extrabold shadow-2xs">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2453FF] animate-pulse" />
-              <span>
-                Q {currentIndex + 1} of {totalQuestions}
-              </span>
-            </div>
-
-            {/* Answered streak hint on sm+ */}
-            {answeredCount >= 2 && (
-              <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-semibold border border-emerald-200/60">
-                <Sparkles className="w-3 h-3 text-emerald-500" />
-                <span>{answeredCount}/{totalQuestions} Answered</span>
-              </span>
-            )}
+          {/* Center: Question Counter Pill */}
+          <div className="flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EAF2FF] border border-[#2453FF]/25 text-[#2453FF] text-xs font-extrabold shadow-2xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2453FF] animate-pulse" />
+            <span>
+              Question {currentIndex + 1} of {totalQuestions}
+            </span>
           </div>
 
-          {/* Right: Sound toggle, Live Timer, Navigator Drawer button */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Right: Sound toggle, Live Timer, Navigator Sheet button */}
+          <div className="flex items-center gap-2">
             {/* Sound Mute/Unmute */}
             <button
               type="button"
@@ -222,16 +212,18 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
       </header>
 
       {/* ========================================================= */}
-      {/* 2. MAIN CENTER QUESTION CANVAS (Zero-Scroll on Mobile)    */}
+      {/* 2. MAIN CENTER QUESTION CANVAS                            */}
       {/* ========================================================= */}
-      <main className="flex-1 min-h-0 w-full max-w-4xl mx-auto px-2.5 sm:px-6 py-2 sm:py-4 flex flex-col justify-center overflow-y-auto">
-        <QuestionCard
-          question={currentQuestion}
-          questionNumber={currentIndex + 1}
-          totalQuestions={totalQuestions}
-          selectedOptionId={answers[currentQuestion.id]}
-          onSelectOption={onSelectOption}
-        />
+      <main className="flex-1 min-h-0 w-full max-w-3xl mx-auto px-3 sm:px-6 py-2 sm:py-3 flex flex-col justify-start overflow-y-auto">
+        <div className="my-auto w-full">
+          <QuestionCard
+            question={currentQuestion}
+            questionNumber={currentIndex + 1}
+            totalQuestions={totalQuestions}
+            selectedOptionId={answers[currentQuestion.id]}
+            onSelectOption={onSelectOption}
+          />
+        </div>
       </main>
 
       {/* ========================================================= */}

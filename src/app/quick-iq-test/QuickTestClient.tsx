@@ -4,7 +4,10 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { AssessmentMode, AssessmentSession, AssessmentResult } from '@/types/assessment';
 import { QUICK_ASSESSMENT_QUESTIONS, QUICK_ASSESSMENT_VERSION } from '@/data/quickQuestions';
-import { QuickOnboardingCard } from '@/components/quick-assessment/QuickOnboardingCard';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
+import { QuickHeroSection } from '@/components/quick-assessment/QuickHeroSection';
+import { QuickComprehensiveArticle } from '@/components/quick-assessment/QuickComprehensiveArticle';
 import { QuickActiveAssessment } from '@/components/quick-assessment/QuickActiveAssessment';
 import { QuickResultsDashboard } from '@/components/quick-assessment/QuickResultsDashboard';
 import {
@@ -133,9 +136,10 @@ export const QuickTestClient: React.FC = () => {
   const handleConfirmExit = () => {
     setShowExitModal(false);
     setViewState('onboarding');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Dedicated full-screen zero-scroll active assessment layout
+  // Dedicated full-screen active assessment layout
   if (viewState === 'active') {
     return (
       <div className="h-[100dvh] w-full flex flex-col overflow-hidden bg-[#F7FAFF] relative selection:bg-[#2453FF]/15 selection:text-[#2453FF]">
@@ -195,11 +199,52 @@ export const QuickTestClient: React.FC = () => {
     );
   }
 
-  // Onboarding or Results state
+  // Results State
+  if (viewState === 'results' && result) {
+    return (
+      <div className="flex flex-col min-h-screen bg-[#F7FAFF] text-[#07152F] relative selection:bg-[#2453FF]/15 selection:text-[#2453FF]">
+        <Header />
+        <main className="flex-1 w-full max-w-[1240px] mx-auto px-4 sm:px-6 py-6 sm:py-10">
+          <QuickResultsDashboard
+            result={result}
+            questions={QUICK_ASSESSMENT_QUESTIONS}
+            answers={answers}
+            onRetake={handleRetake}
+          />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Onboarding View: Matching Home Page Hero Section and Design Language
   return (
-    <div className="w-full">
-      {viewState === 'onboarding' && (
-        <QuickOnboardingCard
+    <div className="flex flex-col min-h-screen bg-[#F7FAFF] text-[#07152F] relative overflow-hidden selection:bg-[#2453FF]/15 selection:text-[#2453FF]">
+      {/* Subtle Ambient Background Gradients & Grid Depth */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-[820px] bg-gradient-to-b from-[#EBF2FF]/80 via-[#F7FAFF]/40 to-transparent pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-12 left-1/2 -translate-x-1/2 w-full h-[680px] bg-grid-pattern opacity-40 pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="hero-glow top-20 left-[18%] bg-[#2453FF]/8 -z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="hero-glow top-40 right-[10%] bg-[#4779FF]/10 -z-10"
+        aria-hidden="true"
+      />
+
+      {/* Global Site Header */}
+      <Header />
+
+      {/* Main Content Area */}
+      <main className="flex-1 w-full max-w-[1240px] mx-auto px-4 sm:px-6">
+        {/* Redesigned Hero Section matching Home Page with 3D Assets & Live Preview */}
+        <QuickHeroSection
           onStart={handleStartNewTest}
           hasResumeSession={hasSavedSession}
           savedQuestionIndex={savedSessionData?.currentQuestionIndex}
@@ -207,16 +252,13 @@ export const QuickTestClient: React.FC = () => {
           onResume={handleResumeSession}
           onDiscardSession={handleDiscardSession}
         />
-      )}
 
-      {viewState === 'results' && result && (
-        <QuickResultsDashboard
-          result={result}
-          questions={QUICK_ASSESSMENT_QUESTIONS}
-          answers={answers}
-          onRetake={handleRetake}
-        />
-      )}
+        {/* Comprehensive SEO Editorial Article & Educational Features */}
+        <QuickComprehensiveArticle onStart={handleStartNewTest} />
+      </main>
+
+      {/* Global Site Footer */}
+      <Footer />
     </div>
   );
 };

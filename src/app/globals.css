@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-body), "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-heading), "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 :root {
   --background: #F7FAFF;
   --surface: #FFFFFF;
@@ -9,18 +14,44 @@
   --accent-blue: #4779FF;
   --pale-blue: #EAF2FF;
   --heading-text: #07152F;
-  --body-text: #60718B;
+  --body-text: #475569;
   --border: #E2EAF7;
   --success: #15803D;
   --error: #DC2626;
 }
 
 body {
+  font-family: var(--font-sans);
   background-color: var(--background);
   color: var(--body-text);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  color: #07152F;
+  font-weight: 800;
+}
+
+/* Glass Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 234, 247, 0.85);
+  box-shadow: 0 10px 30px -4px rgba(7, 21, 47, 0.05);
 }
 
 /* Subtle faint dot grid background texture */

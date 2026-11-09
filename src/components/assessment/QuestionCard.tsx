@@ -68,13 +68,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   };
 
   return (
-    <div className="w-full bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_4px_24px_rgba(15,23,42,0.04)] p-3.5 sm:p-6 transition-all duration-200 flex flex-col justify-between">
+    <div className="w-full bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_4px_24px_rgba(15,23,42,0.04)] p-2.5 sm:p-3.5 transition-all duration-200 flex flex-col justify-between">
       {/* Top Meta Bar */}
       <div>
-        <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3 pb-2 border-b border-slate-100">
+        <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-100">
           {/* Category Badge */}
           <div
-            className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:py-1 rounded-full text-xs font-semibold border ${category.badgeClass}`}
+            className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold border ${category.badgeClass}`}
           >
             {category.icon}
             <span>{category.label}</span>
@@ -87,21 +87,19 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
 
         {/* Question Prompt */}
-        <div className="mb-2 sm:mb-3">
-          <h2 className="text-[14px] sm:text-[17px] font-bold text-[#0F172A] leading-snug whitespace-pre-line tracking-tight">
+        <div className="mb-1.5">
+          <h2 className="text-[13px] sm:text-[15px] font-bold text-[#0F172A] leading-snug whitespace-pre-line tracking-tight">
             {question.prompt}
           </h2>
         </div>
 
         {/* Visual Stimulus Diagram (if present) */}
         {question.visualAsset && (
-          <div className="mb-2.5 sm:mb-3.5">
-            <div className="p-2 sm:p-3 bg-slate-50/80 rounded-xl sm:rounded-2xl border border-slate-200/80 flex items-center justify-center max-h-[110px] sm:max-h-[140px] overflow-hidden">
-              <div className="w-full max-w-sm [&_svg]:max-h-[95px] [&_svg]:mx-auto [&>div]:p-1 [&>div]:shadow-none [&>div]:border-0 [&>div]:bg-transparent">
-                <VisualSvgRenderer asset={question.visualAsset} />
-              </div>
-              <p className="sr-only">{question.accessibilityDescription}</p>
+          <div className="mb-1.5 flex items-center justify-center">
+            <div className="w-full flex items-center justify-center">
+              <VisualSvgRenderer asset={question.visualAsset} />
             </div>
+            <p className="sr-only">{question.accessibilityDescription}</p>
           </div>
         )}
       </div>
@@ -110,8 +108,8 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       <div
         className={
           isTwoColumnLayout
-            ? 'grid grid-cols-2 gap-2 sm:gap-2.5 mt-1 sm:mt-1.5'
-            : 'flex flex-col gap-1.5 sm:gap-2 mt-1 sm:mt-1.5'
+            ? 'grid grid-cols-2 gap-1.5 sm:gap-2 mt-1'
+            : 'flex flex-col gap-1.5 sm:gap-2 mt-1'
         }
         role="radiogroup"
         aria-label="Answer choices"
@@ -129,7 +127,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 role="radio"
                 aria-checked={isSelected}
                 onClick={() => handleOptionClick(option.id)}
-                className={`relative p-2 sm:p-2.5 rounded-xl sm:rounded-2xl border text-left flex flex-col items-center justify-between transition-all duration-150 group active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 cursor-pointer ${
+                className={`relative p-1 sm:p-1.5 rounded-xl sm:rounded-2xl border text-left flex flex-col items-center justify-between transition-all duration-150 group active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 cursor-pointer ${
                   isSelected
                     ? 'bg-gradient-to-b from-indigo-50/90 to-purple-50/60 border-indigo-600 ring-2 ring-indigo-500/25 shadow-sm'
                     : 'bg-white hover:bg-slate-50 border-slate-200/90 hover:border-indigo-300'
@@ -138,7 +136,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                 {/* Header inside visual card: Badge + Radio */}
                 <div className="w-full flex items-center justify-between gap-1 mb-0.5">
                   <span
-                    className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-extrabold transition-colors ${
+                    className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-extrabold transition-colors ${
                       isSelected
                         ? 'bg-indigo-600 text-white shadow-2xs'
                         : 'bg-slate-100 text-slate-700 group-hover:bg-indigo-50 group-hover:text-indigo-600'
@@ -147,23 +145,23 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
                     {option.id}
                   </span>
                   <div
-                    className={`w-4 h-4 rounded-full border flex items-center justify-center transition-colors ${
+                    className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center transition-colors ${
                       isSelected
                         ? 'border-indigo-600 bg-indigo-600 text-white'
                         : 'border-slate-300 bg-white group-hover:border-slate-400'
                     }`}
                   >
-                    {isSelected && <Check className="w-2.5 h-2.5 stroke-[3]" />}
+                    {isSelected && <Check className="w-2 h-2 stroke-[3]" />}
                   </div>
                 </div>
 
                 {/* SVG Thumbnail */}
-                <div className="w-full h-11 sm:h-13 flex items-center justify-center [&_svg]:max-h-10 sm:[&_svg]:max-h-12 [&_svg]:w-auto my-0.5">
+                <div className="w-full h-7 sm:h-8 flex items-center justify-center [&_svg]:max-h-6 sm:[&_svg]:max-h-7 [&_svg]:w-auto my-0.5">
                   <VisualSvgRenderer asset={option.visualAsset} isOptionThumbnail />
                 </div>
 
                 {/* Short Label */}
-                <span className="text-[10px] sm:text-[11px] font-medium text-slate-500 truncate w-full text-center px-1">
+                <span className="text-[10px] font-medium text-slate-500 truncate w-full text-center px-1">
                   {option.label}
                 </span>
               </button>

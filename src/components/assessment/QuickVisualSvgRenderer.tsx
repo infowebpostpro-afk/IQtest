@@ -105,25 +105,25 @@ export const QuickVisualSvgRenderer: React.FC<QuickVisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'quick-abs-02-stimulus') {
     return (
-      <div className="w-full max-w-xs mx-auto p-2 bg-white rounded-xl border border-slate-200">
-        <div className="grid grid-cols-2 gap-2">
+      <div className="w-full max-w-[130px] sm:max-w-[145px] mx-auto p-1.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs">
+        <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
           {/* Row 1, Col 1: Triangle + Outline Circle */}
-          <div className="p-1 bg-slate-50 rounded-lg flex items-center justify-center">
-            <svg viewBox="0 0 70 70" className={svgClass}>
+          <div className="aspect-square p-1 bg-slate-50/90 rounded-lg flex items-center justify-center border border-slate-100">
+            <svg viewBox="0 0 70 70" className="w-8 h-8 sm:w-9 sm:h-9">
               <polygon points="35,8 10,60 60,60" fill="none" stroke="#0F172A" strokeWidth="3" strokeLinejoin="round" />
               <circle cx="35" cy="40" r="9" fill="#FFFFFF" stroke="#2453FF" strokeWidth="2.5" />
             </svg>
           </div>
           {/* Row 1, Col 2: Triangle + Solid Blue Circle */}
-          <div className="p-1 bg-slate-50 rounded-lg flex items-center justify-center">
-            <svg viewBox="0 0 70 70" className={svgClass}>
+          <div className="aspect-square p-1 bg-slate-50/90 rounded-lg flex items-center justify-center border border-slate-100">
+            <svg viewBox="0 0 70 70" className="w-8 h-8 sm:w-9 sm:h-9">
               <polygon points="35,8 10,60 60,60" fill="none" stroke="#0F172A" strokeWidth="3" strokeLinejoin="round" />
               <circle cx="35" cy="40" r="9" fill="#2453FF" stroke="#2453FF" strokeWidth="1" />
             </svg>
           </div>
           {/* Row 2, Col 1: Square + Outline Star */}
-          <div className="p-1 bg-slate-50 rounded-lg flex items-center justify-center">
-            <svg viewBox="0 0 70 70" className={svgClass}>
+          <div className="aspect-square p-1 bg-slate-50/90 rounded-lg flex items-center justify-center border border-slate-100">
+            <svg viewBox="0 0 70 70" className="w-8 h-8 sm:w-9 sm:h-9">
               <rect x="12" y="12" width="46" height="46" rx="4" fill="none" stroke="#0F172A" strokeWidth="3" />
               <polygon
                 points="35,22 38,30 46,30 40,35 42,43 35,38 28,43 30,35 24,30 32,30"
@@ -134,8 +134,8 @@ export const QuickVisualSvgRenderer: React.FC<QuickVisualSvgRendererProps> = ({
             </svg>
           </div>
           {/* Row 2, Col 2: Missing Target */}
-          <div className="aspect-square bg-blue-50/50 border-2 border-dashed border-[#2453FF] rounded-lg flex items-center justify-center">
-            <span className="text-xl font-bold text-[#2453FF]">?</span>
+          <div className="aspect-square bg-blue-50/60 border-2 border-dashed border-[#2453FF] rounded-lg flex items-center justify-center">
+            <span className="text-base sm:text-lg font-black text-[#2453FF]">?</span>
           </div>
         </div>
       </div>

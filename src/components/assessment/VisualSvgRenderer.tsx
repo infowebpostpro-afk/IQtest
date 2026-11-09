@@ -36,15 +36,15 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'abs-01-stimulus') {
     return (
-      <div className="w-full max-w-xl mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-        <div className="grid grid-cols-4 gap-3">
+      <div className="w-full max-w-md mx-auto p-2 sm:p-2.5 bg-white rounded-xl border border-slate-200 shadow-2xs">
+        <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
           {/* Frame 1: 1 circle */}
           <div className="flex flex-col items-center">
             <svg viewBox="0 0 100 100" className={svgClass}>
               <rect x="10" y="10" width="80" height="80" rx="8" fill="#F8FAFC" stroke="#0F172A" strokeWidth="3" />
               <circle cx="50" cy="50" r="16" fill="none" stroke="#5046E5" strokeWidth="3" />
             </svg>
-            <span className="text-xs font-semibold text-slate-500 mt-2">1</span>
+            <span className="text-[10px] font-semibold text-slate-500 mt-1">1</span>
           </div>
           {/* Frame 2: 2 circles */}
           <div className="flex flex-col items-center">
@@ -53,7 +53,7 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
               <circle cx="50" cy="50" r="12" fill="none" stroke="#5046E5" strokeWidth="3" />
               <circle cx="50" cy="50" r="24" fill="none" stroke="#5046E5" strokeWidth="3" />
             </svg>
-            <span className="text-xs font-semibold text-slate-500 mt-2">2</span>
+            <span className="text-[10px] font-semibold text-slate-500 mt-1">2</span>
           </div>
           {/* Frame 3: 3 circles */}
           <div className="flex flex-col items-center">
@@ -63,14 +63,14 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
               <circle cx="50" cy="50" r="20" fill="none" stroke="#5046E5" strokeWidth="3" />
               <circle cx="50" cy="50" r="30" fill="none" stroke="#5046E5" strokeWidth="3" />
             </svg>
-            <span className="text-xs font-semibold text-slate-500 mt-2">3</span>
+            <span className="text-[10px] font-semibold text-slate-500 mt-1">3</span>
           </div>
           {/* Frame 4: Missing (?) */}
           <div className="flex flex-col items-center">
             <div className="w-full aspect-square bg-slate-50 border-2 border-dashed border-indigo-400 rounded-xl flex items-center justify-center">
-              <span className="text-2xl font-bold text-indigo-600">?</span>
+              <span className="text-xl font-bold text-indigo-600">?</span>
             </div>
-            <span className="text-xs font-semibold text-indigo-600 mt-2">Target</span>
+            <span className="text-[10px] font-bold text-indigo-600 mt-1">Target</span>
           </div>
         </div>
       </div>
@@ -129,32 +129,32 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'abs-02-stimulus') {
     return (
-      <div className="w-full max-w-sm mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-        <div className="grid grid-cols-2 gap-3">
+      <div className="w-full max-w-[130px] sm:max-w-[145px] mx-auto p-1.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs">
+        <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
           {/* Top-Left: White triangle with solid indigo circle */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
+            <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9">
               <polygon points="50,15 88,82 12,82" fill="#FFFFFF" stroke="#0F172A" strokeWidth="3" />
               <circle cx="50" cy="58" r="14" fill="#5046E5" stroke="none" />
             </svg>
           </div>
           {/* Top-Right: Solid indigo triangle with white circle */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
+            <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9">
               <polygon points="50,15 88,82 12,82" fill="#5046E5" stroke="#0F172A" strokeWidth="3" />
               <circle cx="50" cy="58" r="14" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2" />
             </svg>
           </div>
           {/* Bottom-Left: White hexagon with solid indigo square */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
+            <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9">
               <polygon points="50,15 85,32 85,68 50,85 15,68 15,32" fill="#FFFFFF" stroke="#0F172A" strokeWidth="3" />
               <rect x="36" y="36" width="28" height="28" rx="2" fill="#5046E5" stroke="none" />
             </svg>
           </div>
           {/* Bottom-Right: Target ? */}
           <div className="aspect-square bg-indigo-50/50 rounded-lg border-2 border-dashed border-indigo-400 flex items-center justify-center">
-            <span className="text-3xl font-bold text-indigo-600">?</span>
+            <span className="text-base sm:text-lg font-bold text-indigo-600">?</span>
           </div>
         </div>
       </div>
@@ -199,15 +199,15 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'abs-03-stimulus') {
     return (
-      <div className="w-full max-w-xl mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-        <div className="grid grid-cols-4 gap-3">
+      <div className="w-full max-w-md mx-auto p-2 sm:p-2.5 bg-white rounded-xl border border-slate-200 shadow-2xs">
+        <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
           {/* Frame 1: 12 o'clock (x=50, y=15) */}
           <div className="flex flex-col items-center">
             <svg viewBox="0 0 100 100" className={svgClass}>
               <polygon points="35,15 65,15 85,35 85,65 65,85 35,85 15,65 15,35" fill="#F8FAFC" stroke="#0F172A" strokeWidth="2.5" />
               <circle cx="50" cy="15" r="6" fill="#5046E5" />
             </svg>
-            <span className="text-xs font-semibold text-slate-500 mt-2">12:00</span>
+            <span className="text-[10px] font-semibold text-slate-500 mt-1">12:00</span>
           </div>
           {/* Frame 2: 3 o'clock (x=85, y=50) */}
           <div className="flex flex-col items-center">
@@ -215,7 +215,7 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
               <polygon points="35,15 65,15 85,35 85,65 65,85 35,85 15,65 15,35" fill="#F8FAFC" stroke="#0F172A" strokeWidth="2.5" />
               <circle cx="85" cy="50" r="6" fill="#5046E5" />
             </svg>
-            <span className="text-xs font-semibold text-slate-500 mt-2">3:00</span>
+            <span className="text-[10px] font-semibold text-slate-500 mt-1">3:00</span>
           </div>
           {/* Frame 3: 6 o'clock (x=50, y=85) */}
           <div className="flex flex-col items-center">
@@ -223,14 +223,14 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
               <polygon points="35,15 65,15 85,35 85,65 65,85 35,85 15,65 15,35" fill="#F8FAFC" stroke="#0F172A" strokeWidth="2.5" />
               <circle cx="50" cy="85" r="6" fill="#5046E5" />
             </svg>
-            <span className="text-xs font-semibold text-slate-500 mt-2">6:00</span>
+            <span className="text-[10px] font-semibold text-slate-500 mt-1">6:00</span>
           </div>
           {/* Frame 4: ? */}
           <div className="flex flex-col items-center">
             <div className="w-full aspect-square bg-slate-50 border-2 border-dashed border-indigo-400 rounded-xl flex items-center justify-center">
-              <span className="text-2xl font-bold text-indigo-600">?</span>
+              <span className="text-xl font-bold text-indigo-600">?</span>
             </div>
-            <span className="text-xs font-semibold text-indigo-600 mt-2">Next</span>
+            <span className="text-[10px] font-bold text-indigo-600 mt-1">Next</span>
           </div>
         </div>
       </div>
@@ -275,26 +275,26 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'abs-04-stimulus') {
     return (
-      <div className="w-full max-w-sm mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-        <div className="grid grid-cols-2 gap-3">
+      <div className="w-full max-w-[130px] sm:max-w-[145px] mx-auto p-1.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs">
+        <div className="grid grid-cols-2 gap-1 sm:gap-1.5">
           {/* Triangle with 1 horizontal line */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
+            <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9">
               <polygon points="50,15 88,82 12,82" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2.5" />
               <line x1="28" y1="55" x2="72" y2="55" stroke="#5046E5" strokeWidth="3" />
             </svg>
           </div>
           {/* Square with 2 horizontal lines */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
+            <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9">
               <rect x="18" y="18" width="64" height="64" rx="4" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2.5" />
               <line x1="18" y1="40" x2="82" y2="40" stroke="#5046E5" strokeWidth="3" />
               <line x1="18" y1="60" x2="82" y2="60" stroke="#5046E5" strokeWidth="3" />
             </svg>
           </div>
           {/* Pentagon with 3 horizontal lines */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
-            <svg viewBox="0 0 100 100" className="w-full h-full">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
+            <svg viewBox="0 0 100 100" className="w-8 h-8 sm:w-9 sm:h-9">
               <polygon points="50,15 88,43 73,85 27,85 12,43" fill="#FFFFFF" stroke="#0F172A" strokeWidth="2.5" />
               <line x1="18" y1="40" x2="82" y2="40" stroke="#5046E5" strokeWidth="3" />
               <line x1="22" y1="55" x2="78" y2="55" stroke="#5046E5" strokeWidth="3" />
@@ -303,7 +303,7 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
           </div>
           {/* Target ? */}
           <div className="aspect-square bg-indigo-50/50 rounded-lg border-2 border-dashed border-indigo-400 flex items-center justify-center">
-            <span className="text-3xl font-bold text-indigo-600">?</span>
+            <span className="text-base sm:text-lg font-bold text-indigo-600">?</span>
           </div>
         </div>
       </div>
@@ -359,22 +359,22 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'abs-05-stimulus') {
     return (
-      <div className="w-full max-w-md mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-        <div className="grid grid-cols-3 gap-2.5">
+      <div className="w-full max-w-[140px] sm:max-w-[155px] mx-auto p-1.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs">
+        <div className="grid grid-cols-3 gap-1">
           {/* Row 1 */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="12" y1="18" x2="48" y2="18" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
             </svg>
           </div>
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="42" y1="12" x2="42" y2="48" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
             </svg>
           </div>
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="12" y1="18" x2="48" y2="18" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
@@ -383,20 +383,20 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
           </div>
 
           {/* Row 2 */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="30" y1="12" x2="30" y2="48" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
               <line x1="12" y1="42" x2="48" y2="42" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
             </svg>
           </div>
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="12" y1="42" x2="48" y2="42" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
             </svg>
           </div>
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="30" y1="12" x2="30" y2="48" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
@@ -404,14 +404,14 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
           </div>
 
           {/* Row 3 */}
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="14" y1="14" x2="46" y2="46" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
               <line x1="12" y1="30" x2="48" y2="30" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
             </svg>
           </div>
-          <div className="aspect-square bg-slate-50 rounded-lg p-2 flex items-center justify-center border border-slate-200">
+          <div className="aspect-square bg-slate-50/90 rounded-lg p-1 flex items-center justify-center border border-slate-200">
             <svg viewBox="0 0 60 60" className="w-full h-full">
               <rect x="8" y="8" width="44" height="44" fill="none" stroke="#CBD5E1" strokeWidth="1" />
               <line x1="14" y1="46" x2="46" y2="14" stroke="#5046E5" strokeWidth="3" strokeLinecap="round" />
@@ -420,7 +420,7 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
           </div>
           {/* Row 3 Target */}
           <div className="aspect-square bg-indigo-50/50 rounded-lg border-2 border-dashed border-indigo-400 flex items-center justify-center">
-            <span className="text-3xl font-bold text-indigo-600">?</span>
+            <span className="text-xl font-bold text-indigo-600">?</span>
           </div>
         </div>
       </div>
@@ -468,9 +468,9 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'spa-01-stimulus') {
     return (
-      <div className="w-full max-w-xs mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs flex flex-col items-center">
-        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Reference Figure</span>
-        <svg viewBox="0 0 100 100" className="w-28 h-28">
+      <div className="w-full max-w-[170px] sm:max-w-[190px] mx-auto p-2 sm:p-2.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs flex flex-col items-center">
+        <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Reference Figure</span>
+        <svg viewBox="0 0 100 100" className="w-20 h-20 sm:w-22 sm:h-22">
           {/* L shape: horizontal arm at bottom left pointing right, vertical stem going up with dot at top */}
           <path d="M 25 25 L 25 75 L 75 75" fill="none" stroke="#0F172A" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
           <circle cx="25" cy="25" r="8" fill="#5046E5" />
@@ -526,8 +526,8 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'spa-02-stimulus') {
     return (
-      <div className="w-full max-w-sm mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs flex items-center justify-center">
-        <svg viewBox="0 0 140 100" className="w-full h-auto max-h-36">
+      <div className="w-full max-w-xs mx-auto p-2 sm:p-2.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs flex items-center justify-center">
+        <svg viewBox="0 0 140 100" className="w-full h-auto max-h-24 sm:max-h-28">
           {/* Reference glyph on the left: asymmetric shape pointing left */}
           <polygon points="45,20 20,40 45,60 45,80 55,80 55,20" fill="#EEF2FF" stroke="#5046E5" strokeWidth="3" />
           <circle cx="35" cy="40" r="4" fill="#5046E5" />
@@ -584,9 +584,9 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'spa-03-stimulus') {
     return (
-      <div className="w-full max-w-sm mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs flex flex-col items-center">
-        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Unfolded Cube Net</span>
-        <svg viewBox="0 0 120 160" className="w-36 h-auto">
+      <div className="w-full max-w-[190px] sm:max-w-[210px] mx-auto p-2 sm:p-2.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs flex flex-col items-center">
+        <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Unfolded Cube Net</span>
+        <svg viewBox="0 0 120 160" className="w-24 sm:w-26 h-auto">
           {/* Net Structure */}
           {/* Top: Square face (x=40, y=10) */}
           <rect x="40" y="10" width="40" height="40" fill="#F8FAFC" stroke="#0F172A" strokeWidth="2" />
@@ -676,9 +676,9 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'spa-04-stimulus') {
     return (
-      <div className="w-full max-w-sm mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs flex flex-col items-center">
-        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Initial State (t = 0)</span>
-        <svg viewBox="0 0 120 120" className="w-40 h-40">
+      <div className="w-full max-w-[210px] sm:max-w-[230px] mx-auto p-2 sm:p-2.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs flex flex-col items-center">
+        <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1">Initial State (t = 0)</span>
+        <svg viewBox="0 0 120 120" className="w-24 h-24 sm:w-28 sm:h-28">
           {/* 4x4 grid */}
           <rect x="10" y="10" width="100" height="100" fill="#F8FAFC" stroke="#0F172A" strokeWidth="2" />
           <line x1="35" y1="10" x2="35" y2="110" stroke="#E2E8F0" strokeWidth="1.5" />
@@ -693,9 +693,9 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
           {/* Row 3, Col 2: Purple Triangle (x=35..60, y=60..85 -> center 47.5, 72.5) */}
           <polygon points="47.5,65 56,79 39,79" fill="#9333EA" />
         </svg>
-        <div className="flex items-center gap-4 text-xs font-medium text-slate-600 mt-2">
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-blue-500"></span> Blue: East (+1/sec)</div>
-          <div className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-purple-600"></span> Purple: North (+1/sec)</div>
+        <div className="flex items-center gap-3 text-[10px] font-medium text-slate-600 mt-1.5">
+          <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-xs bg-blue-500"></span> Blue: East</div>
+          <div className="flex items-center gap-1"><span className="w-2 h-2 rounded-xs bg-purple-600"></span> Purple: North</div>
         </div>
       </div>
     );
@@ -768,9 +768,9 @@ export const VisualSvgRenderer: React.FC<VisualSvgRendererProps> = ({
   // =========================================================================
   if (puzzleId === 'spa-05-stimulus') {
     return (
-      <div className="w-full max-w-sm mx-auto p-4 bg-white rounded-xl border border-slate-200 shadow-xs flex flex-col items-center">
-        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">3D Isometric View</span>
-        <svg viewBox="0 0 140 120" className="w-44 h-auto">
+      <div className="w-full max-w-[200px] sm:max-w-[220px] mx-auto p-2 sm:p-2.5 bg-white rounded-xl border border-slate-200/90 shadow-2xs flex flex-col items-center">
+        <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wide mb-1">3D Isometric View</span>
+        <svg viewBox="0 0 140 120" className="w-32 sm:w-36 h-auto">
           {/* Stepped Structure Isometric: Col 1 (left) H=3, Col 2 (mid) H=2, Col 3 (right) H=1 */}
           {/* Column 1 (height 3) */}
           <polygon points="20,50 35,42 50,50 35,58" fill="#A5B4FC" stroke="#0F172A" strokeWidth="1.5" />

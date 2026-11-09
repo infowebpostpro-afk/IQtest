@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Binary,
   GitBranch,
@@ -33,6 +34,8 @@ import {
   Activity,
   Compass,
   FileCheck,
+  Maximize2,
+  Eye,
 } from 'lucide-react';
 
 export const ComprehensiveArticle: React.FC = () => {
@@ -42,6 +45,25 @@ export const ComprehensiveArticle: React.FC = () => {
 
   // 1. How It Works Stepper
   const [activeStep, setActiveStep] = useState<number>(0);
+  const [mobileVisualStep, setMobileVisualStep] = useState<number>(0);
+  const [lightboxImage, setLightboxImage] = useState<{
+    src: string;
+    title: string;
+    step: string;
+    desc: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setLightboxImage(null);
+      }
+    };
+    if (lightboxImage) {
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [lightboxImage]);
 
   // 2. Category Explorer
   const [activeCategory, setActiveCategory] = useState<'numerical' | 'logical' | 'abstract' | 'spatial'>('numerical');
@@ -67,8 +89,53 @@ export const ComprehensiveArticle: React.FC = () => {
   const completedChecklistCount = Object.values(checklist).filter(Boolean).length;
 
   // =========================================================================
-  // DATA CONSTANTS (100% PRESERVED VERBATIM)
+  // DATA CONSTANTS (100% PRESERVED VERBATIM + HIGH-RES SCREENSHOT WALKTHROUGH)
   // =========================================================================
+
+  const visualStepCards = [
+    {
+      stepNumber: '01',
+      badge: 'Step 1: Configuration',
+      title: 'Configuration',
+      subtitle: 'Untimed or Timed Mode',
+      desc: 'Select Untimed Practice for relaxed problem-solving or 15-Minute Timed mode to simulate formal psychometric testing conditions. 100% free with zero registration.',
+      src: '/images/steps/step-1-configuration.png',
+      alt: 'Step 1: Configuration - Practice Mode Selection',
+      features: ['Untimed Practice (Deep Contemplation)', '15-Minute Timed Exam Simulation', '100% Anonymous • No Signup Required'],
+      accentBadge: 'bg-blue-50 text-[#2453FF] border-blue-200',
+      glowColor: 'from-[#2453FF]/15 to-transparent',
+      borderColor: 'group-hover:border-[#2453FF]/60',
+      activeStepIndex: 0,
+    },
+    {
+      stepNumber: '02',
+      badge: 'Step 2: Problem Solving',
+      title: 'Problem Solving',
+      subtitle: '20 Single-Choice Puzzles',
+      desc: 'Tackle 20 original questions across Numerical, Logical, Abstract, and Spatial domains with active timer tracking, item navigation, and review flagging.',
+      src: '/images/steps/step-2-problem-solving.png',
+      alt: 'Step 2: Problem Solving - Test Questions Interface',
+      features: ['4 Balanced Cognitive Domains', 'Elapsed Timer & 20-Item Question Grid', 'Flag for Review & Navigation Flexibility'],
+      accentBadge: 'bg-purple-50 text-purple-700 border-purple-200',
+      glowColor: 'from-purple-500/15 to-transparent',
+      borderColor: 'group-hover:border-purple-500/60',
+      activeStepIndex: 1,
+    },
+    {
+      stepNumber: '03',
+      badge: 'Step 3: Instant Calculation',
+      title: 'Instant Calculation',
+      subtitle: 'Instant Diagnostic Breakdown',
+      desc: 'Receive your raw score (0–20), accuracy percentage, and cognitive category diagnostics calculated immediately in your browser without paywalls or email forms.',
+      src: '/images/steps/step-3-instant-calculation.png',
+      alt: 'Step 3: Instant Calculation - Real-Time Results',
+      features: ['Instant Raw Score & % Accuracy', 'Correct / Incorrect Diagnostic Counts', '100% Free Transparent Scoring'],
+      accentBadge: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+      glowColor: 'from-emerald-500/15 to-transparent',
+      borderColor: 'group-hover:border-emerald-500/60',
+      activeStepIndex: 2,
+    },
+  ];
 
   const stepsData = [
     {
@@ -83,12 +150,30 @@ export const ComprehensiveArticle: React.FC = () => {
       tipText: 'For optimal focus, minimize external noise, mute desktop notifications, and ensure reliable hardware before beginning.',
       demoBadge: 'Step 1: Configuration',
       demoVisual: (
-        <div className="p-5 bg-white rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F]">
-          <div className="font-extrabold text-[#07152F] mb-2">Mode Selected: Untimed Practice</div>
-          <div className="flex items-center gap-2 text-emerald-600 font-bold mb-2">
-            <CheckCircle2 className="w-4 h-4" /> Ready to challenge your reasoning
+        <div className="p-5 bg-gradient-to-br from-white to-[#F8FBFF] rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F] space-y-3">
+          <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+            <span className="font-extrabold text-[#07152F]">Practice Mode Setup</span>
+            <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+              Zero Signup
+            </span>
           </div>
-          <div className="text-[#60718B]">20 Questions • ~12–15 Minutes • No Signup</div>
+          <div className="p-3 rounded-xl bg-blue-50/80 border border-[#2453FF]/20 flex items-center justify-between">
+            <div>
+              <div className="font-extrabold text-[#2453FF]">Untimed Practice</div>
+              <div className="text-[11px] text-[#475569]">No clock pressure • Deep analysis</div>
+            </div>
+            <CheckCircle2 className="w-5 h-5 text-[#2453FF]" />
+          </div>
+          <div className="p-3 rounded-xl bg-white border border-slate-200 opacity-60 flex items-center justify-between">
+            <div>
+              <div className="font-bold text-[#07152F]">15-Minute Timed</div>
+              <div className="text-[11px] text-[#475569]">Simulate exam pacing • 45s / puzzle</div>
+            </div>
+            <Clock className="w-4 h-4 text-slate-400" />
+          </div>
+          <div className="pt-1 text-[11px] font-bold text-emerald-600 flex items-center gap-1.5">
+            <ShieldCheck className="w-4 h-4 text-emerald-600" /> 100% Free &amp; Instant Browser Access
+          </div>
         </div>
       ),
     },
@@ -104,15 +189,29 @@ export const ComprehensiveArticle: React.FC = () => {
       tipText: 'Balanced pacing across all 20 questions ensures steady mental momentum throughout the challenge.',
       demoBadge: 'Step 2: Problem Solving',
       demoVisual: (
-        <div className="p-5 bg-white rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F]">
-          <div className="flex justify-between items-center mb-2 font-extrabold text-[#07152F]">
-            <span>Question 8 of 20</span>
-            <span className="text-[#2453FF] font-bold">Logical Reasoning</span>
+        <div className="p-5 bg-gradient-to-br from-white to-[#F8FBFF] rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F] space-y-3">
+          <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+            <span className="font-extrabold text-[#07152F]">Question 1 of 20</span>
+            <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-blue-50 text-[#2453FF] border border-blue-200">
+              Numerical Reasoning
+            </span>
           </div>
-          <div className="w-full bg-[#E2EAF7] h-2 rounded-full mb-3 overflow-hidden">
-            <div className="bg-[#2453FF] h-full w-[40%]" />
+          <p className="font-bold text-[#07152F] text-[13px] leading-snug">
+            What number logically completes the sequence: 3, 7, 15, 31, 63, ?
+          </p>
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 font-medium">A: 124</div>
+            <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-800 font-bold flex items-center justify-between">
+              <span>B: 127</span>
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+            </div>
+            <div className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 font-medium">C: 131</div>
+            <div className="p-2 rounded-lg bg-white border border-slate-200 text-slate-500 font-medium">D: 135</div>
           </div>
-          <div className="text-[#60718B]">4 Single-Choice Options • Flag for Review Available</div>
+          <div className="pt-1 text-[11px] text-[#475569] flex items-center justify-between">
+            <span>Elapsed: 00:16</span>
+            <span className="text-[#2453FF] font-semibold">Flag for Review Available</span>
+          </div>
         </div>
       ),
     },
@@ -125,14 +224,28 @@ export const ComprehensiveArticle: React.FC = () => {
       guaranteeDesc: 'Unlike commercial lead-generation sites that lock scores behind paid paywalls, subscriptions, or required email forms, our results are presented freely, immediately, and transparently on-screen.',
       demoBadge: 'Step 3: Instant Calculation',
       demoVisual: (
-        <div className="p-5 bg-white rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F]">
-          <div className="flex items-center justify-between mb-2">
-            <span className="font-extrabold text-2xl text-[#07152F]">80%</span>
-            <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px]">
-              Strong Performance
+        <div className="p-5 bg-gradient-to-br from-white to-[#F8FBFF] rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F] space-y-3">
+          <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+            <span className="font-extrabold text-[#07152F]">Diagnostic Summary</span>
+            <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+              Results Ready
             </span>
           </div>
-          <div className="text-[#60718B]">Raw Score: 16 / 20 Correct • Anonymous Local Session</div>
+          <div className="flex items-center gap-4 py-1">
+            <div className="w-16 h-16 rounded-full border-4 border-[#2453FF] flex flex-col items-center justify-center font-black text-base text-[#07152F] shrink-0 shadow-inner">
+              <span>80%</span>
+              <span className="text-[8px] font-bold text-[#64748B]">ACCURACY</span>
+            </div>
+            <div className="space-y-1 text-xs">
+              <div className="font-bold text-[#07152F]">Raw Score: 16 / 20 Correct</div>
+              <div className="text-[11px] text-emerald-600 font-semibold">Strong Performance Range</div>
+              <div className="text-[10px] text-[#64748B]">Time Elapsed: ~14 Minutes</div>
+            </div>
+          </div>
+          <div className="pt-2 border-t border-slate-100 text-[11px] text-slate-600 flex items-center gap-1.5">
+            <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+            <span>100% Free • No Credit Card • No Email Gate</span>
+          </div>
         </div>
       ),
     },
@@ -148,12 +261,21 @@ export const ComprehensiveArticle: React.FC = () => {
       exportDesc: 'You can also print or export your diagnostic summary for personal study.',
       demoBadge: 'Step 4: Answer Review',
       demoVisual: (
-        <div className="p-5 bg-white rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F]">
-          <div className="flex items-center gap-2 text-[#2453FF] font-bold mb-1">
-            <BookOpen className="w-4 h-4" /> Comprehensive Answer Review
+        <div className="p-5 bg-gradient-to-br from-white to-[#F8FBFF] rounded-2xl border border-[#E2EAF7] shadow-sm text-xs text-[#07152F] space-y-2.5">
+          <div className="flex items-center gap-2 text-[#2453FF] font-bold pb-2 border-b border-slate-100">
+            <BookOpen className="w-4 h-4 text-[#2453FF]" /> Step-by-Step Logic Explanations
           </div>
-          <div className="text-[#60718B]">
-            Detailed rationale, mathematical formulas, and visual proofs for every problem.
+          <p className="text-[#475569] text-[11px] leading-relaxed">
+            Detailed formulas, cognitive traps, and alternative reasoning paths for all 20 questions.
+          </p>
+          <div className="p-2.5 bg-white rounded-xl border border-slate-200 shadow-2xs space-y-1">
+            <div className="text-[10px] font-extrabold uppercase text-[#64748B]">Governing Rule:</div>
+            <div className="text-[11px] text-[#2453FF] font-mono bg-blue-50/80 p-1.5 rounded font-bold">
+              x(n) = 2 · x(n-1) + 1 → 63 · 2 + 1 = 127
+            </div>
+          </div>
+          <div className="flex items-center gap-1 text-[11px] text-emerald-600 font-bold pt-1">
+            <CheckCircle2 className="w-3.5 h-3.5" /> Full Answer Verification Included
           </div>
         </div>
       ),
@@ -289,11 +411,240 @@ export const ComprehensiveArticle: React.FC = () => {
             How Does Our Free Online IQ Test Work?
           </h2>
           <p className="text-sm sm:text-base text-[#60718B] leading-relaxed">
-            Taking an online cognitive assessment should be clear, instructive, and completely free from misleading friction. Our platform streamlines the testing experience into four structured phases designed to test your logical, mathematical, abstract, and visual problem-solving abilities without barriers.
+            Taking an online cognitive assessment should be clear, instructive, and completely free from misleading friction. Our platform streamlines the testing experience into structured phases designed to test your logical, mathematical, abstract, and visual problem-solving abilities without barriers.
           </p>
         </div>
 
-        {/* 4 Interactive Connected Steps */}
+        {/* ========================================================================= */}
+        {/* VISUAL 3-STEP WALKTHROUGH WITH VERIFIED APP SCREENSHOTS                    */}
+        {/* Mobile and Desktop UI/UX friendly with large, crisp device mockups        */}
+        {/* ========================================================================= */}
+        <div className="mb-16">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wider text-[#2453FF] mb-1.5">
+                <Smartphone className="w-3.5 h-3.5" />
+                <span>Responsive Interface Walkthrough</span>
+              </div>
+              <h3 className="font-heading text-2xl sm:text-3xl font-black text-[#07152F] tracking-tight">
+                Assessment Experience in 3 Simple Steps
+              </h3>
+            </div>
+
+            {/* Mobile Step Segmented Selector (Shown only below md) */}
+            <div className="flex md:hidden items-center p-1 bg-slate-100 rounded-2xl w-full border border-slate-200/80">
+              {visualStepCards.map((card, idx) => (
+                <button
+                  key={card.stepNumber}
+                  type="button"
+                  onClick={() => setMobileVisualStep(idx)}
+                  className={`flex-1 py-2 px-2 text-center text-xs font-bold rounded-xl transition-all ${
+                    mobileVisualStep === idx
+                      ? 'bg-white text-[#2453FF] shadow-xs'
+                      : 'text-[#64748B] hover:text-[#07152F]'
+                  }`}
+                >
+                  Step {idx + 1}
+                </button>
+              ))}
+            </div>
+
+            <div className="hidden md:flex items-center gap-2 text-xs font-bold text-[#475569] bg-white px-4 py-2 rounded-full border border-[#E2EAF7] shadow-2xs">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Crystal-Clear Mobile &amp; Desktop UI</span>
+            </div>
+          </div>
+
+          {/* Desktop 3-Column Panoramic View (md and above) */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {visualStepCards.map((card) => (
+              <div
+                key={card.stepNumber}
+                className="group relative bg-white rounded-3xl border border-[#E2EAF7] p-6 lg:p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_45px_rgba(36,83,255,0.12)] hover:border-[#2453FF]/40 flex flex-col justify-between"
+              >
+                {/* Step Card Header */}
+                <div>
+                  <div className="flex items-center justify-between mb-3.5">
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold border ${card.accentBadge}`}>
+                      {card.badge}
+                    </span>
+                    <span className="font-heading text-sm font-black text-slate-300 group-hover:text-[#2453FF] transition-colors">
+                      {card.stepNumber}
+                    </span>
+                  </div>
+
+                  <h4 className="font-heading text-xl font-black text-[#07152F] mb-1.5">
+                    {card.title}
+                  </h4>
+                  <p className="text-xs text-[#475569] leading-relaxed mb-4">
+                    {card.desc}
+                  </p>
+                </div>
+
+                {/* Floating Realistic Device Stage */}
+                <div
+                  onClick={() =>
+                    setLightboxImage({
+                      src: card.src,
+                      title: card.badge,
+                      step: `Step ${card.stepNumber}`,
+                      desc: card.desc,
+                    })
+                  }
+                  className="relative cursor-pointer my-4 py-2 flex items-center justify-center select-none"
+                >
+                  {/* Ambient Soft Glow Behind Phone */}
+                  <div className="absolute w-52 h-52 rounded-full bg-[#2453FF]/8 blur-2xl pointer-events-none group-hover:bg-[#2453FF]/15 transition-all duration-500" />
+                  
+                  <div className="relative w-[250px] lg:w-[270px] xl:w-[285px] mx-auto transition-transform duration-300 group-hover:scale-[1.03]">
+                    <Image
+                      src={card.src}
+                      alt={card.alt}
+                      width={502}
+                      height={1024}
+                      className="w-full h-auto object-contain drop-shadow-[0_22px_36px_rgba(7,21,47,0.18)] group-hover:drop-shadow-[0_28px_45px_rgba(36,83,255,0.24)]"
+                      priority={card.stepNumber === '01'}
+                    />
+
+                    {/* Quick Hover Inspect Pill */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-[#07152F]/10 backdrop-blur-[1px] rounded-[45px]">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/95 text-[#07152F] text-xs font-bold shadow-xl">
+                        <Maximize2 className="w-3.5 h-3.5 text-[#2453FF]" />
+                        <span>Inspect Full Size</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Features & Footer Controls */}
+                <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
+                  {card.features.map((feat) => (
+                    <div key={feat} className="flex items-center gap-2 text-xs text-[#07152F]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span className="font-semibold">{feat}</span>
+                    </div>
+                  ))}
+
+                  <div className="pt-3 flex items-center justify-between border-t border-dashed border-slate-100 mt-3">
+                    <button
+                      type="button"
+                      onClick={() => setActiveStep(card.activeStepIndex)}
+                      className="text-xs font-bold text-[#2453FF] hover:text-[#1B40DF] flex items-center gap-1 cursor-pointer"
+                    >
+                      <span>Explore step guide</span>
+                      <ArrowRight className="w-3 h-3" />
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setLightboxImage({
+                          src: card.src,
+                          title: card.badge,
+                          step: `Step ${card.stepNumber}`,
+                          desc: card.desc,
+                        })
+                      }
+                      className="text-xs font-semibold text-[#64748B] hover:text-[#07152F] flex items-center gap-1 cursor-pointer"
+                    >
+                      <Eye className="w-3.5 h-3.5 text-[#2453FF]" />
+                      <span>Zoom view</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Step Carousel / Tabbed View (Below md) */}
+          <div className="block md:hidden">
+            {(() => {
+              const activeCard = visualStepCards[mobileVisualStep];
+              return (
+                <div className="bg-white rounded-3xl border border-[#E2EAF7] p-5 shadow-lg flex flex-col justify-between">
+                  {/* Step Card Header */}
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold border ${activeCard.accentBadge}`}>
+                        {activeCard.badge}
+                      </span>
+                      <span className="font-heading text-xs font-black text-[#2453FF]">
+                        {mobileVisualStep + 1} of 3
+                      </span>
+                    </div>
+
+                    <h4 className="font-heading text-lg font-black text-[#07152F] mb-1">
+                      {activeCard.title}
+                    </h4>
+                    <p className="text-xs text-[#475569] leading-relaxed mb-3">
+                      {activeCard.desc}
+                    </p>
+                  </div>
+
+                  {/* Phone Mockup at Full Readable Scale */}
+                  <div
+                    onClick={() =>
+                      setLightboxImage({
+                        src: activeCard.src,
+                        title: activeCard.badge,
+                        step: `Step ${activeCard.stepNumber}`,
+                        desc: activeCard.desc,
+                      })
+                    }
+                    className="relative cursor-pointer my-2 py-2 flex items-center justify-center select-none"
+                  >
+                    <div className="relative w-[250px] sm:w-[270px] mx-auto">
+                      <Image
+                        src={activeCard.src}
+                        alt={activeCard.alt}
+                        width={502}
+                        height={1024}
+                        className="w-full h-auto object-contain drop-shadow-[0_18px_32px_rgba(7,21,47,0.18)]"
+                        priority
+                      />
+                      <div className="mt-2 text-center">
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[#2453FF] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+                          <Eye className="w-3 h-3" /> Tap to zoom image
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="mt-3 pt-3 border-t border-slate-100 space-y-2">
+                    {activeCard.features.map((feat) => (
+                      <div key={feat} className="flex items-center gap-2 text-xs text-[#07152F]">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span className="font-semibold">{feat}</span>
+                      </div>
+                    ))}
+
+                    {/* Step Switcher Buttons */}
+                    <div className="pt-3 flex items-center justify-between gap-2 mt-2">
+                      <button
+                        type="button"
+                        disabled={mobileVisualStep === 0}
+                        onClick={() => setMobileVisualStep((prev) => Math.max(0, prev - 1))}
+                        className="flex-1 py-2.5 px-3 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 transition-colors"
+                      >
+                        ← Prev Step
+                      </button>
+                      <button
+                        type="button"
+                        disabled={mobileVisualStep === visualStepCards.length - 1}
+                        onClick={() => setMobileVisualStep((prev) => Math.min(visualStepCards.length - 1, prev + 1))}
+                        className="flex-1 py-2.5 px-3 rounded-xl bg-[#2453FF] text-xs font-bold text-white disabled:opacity-40 disabled:cursor-not-allowed hover:bg-[#1B40DF] transition-colors"
+                      >
+                        Next Step →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+
+        {/* 4 Interactive Connected Steps Tabs */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {stepsData.map((stepItem, idx) => {
             const isActive = activeStep === idx;
@@ -1945,6 +2296,78 @@ export const ComprehensiveArticle: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* ========================================================================= */}
+      {/* SCREENSHOT LIGHTBOX MODAL (Mobile and Desktop Friendly)                   */}
+      {/* ========================================================================= */}
+      {lightboxImage && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightboxImage.title}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#07152F]/80 backdrop-blur-md p-4 sm:p-6 transition-all animate-in fade-in duration-200"
+          onClick={() => setLightboxImage(null)}
+        >
+          <div
+            className="relative max-w-md w-full bg-white rounded-3xl p-5 sm:p-6 shadow-2xl border border-white/40 flex flex-col items-center animate-in zoom-in-95 duration-200 max-h-[92vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Top Bar */}
+            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
+              <div>
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#2453FF] bg-[#EEF2FF] px-2.5 py-0.5 rounded-full border border-blue-100">
+                  {lightboxImage.step}
+                </span>
+                <h3 className="font-extrabold text-base sm:text-lg text-[#07152F] mt-1">
+                  {lightboxImage.title}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setLightboxImage(null)}
+                aria-label="Close preview"
+                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-700 transition-colors cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Modal Image Frame */}
+            <div className="relative w-full flex items-center justify-center py-2">
+              <Image
+                src={lightboxImage.src}
+                alt={lightboxImage.title}
+                width={502}
+                height={1024}
+                className="max-h-[58vh] sm:max-h-[64vh] w-auto object-contain rounded-2xl drop-shadow-xl"
+                priority
+              />
+            </div>
+
+            {/* Modal Caption & Actions */}
+            <p className="text-xs text-[#60718B] mt-2 text-center leading-relaxed max-w-sm">
+              {lightboxImage.desc}
+            </p>
+
+            <div className="mt-4 pt-3 border-t border-slate-100 w-full flex items-center justify-between gap-3">
+              <button
+                type="button"
+                onClick={() => setLightboxImage(null)}
+                className="flex-1 py-2 px-4 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer text-center"
+              >
+                Close Preview
+              </button>
+              <Link
+                href="/test"
+                onClick={() => setLightboxImage(null)}
+                className="flex-1 py-2 px-4 rounded-xl bg-[#2453FF] hover:bg-[#1B40DF] text-xs font-bold text-white transition-colors text-center shadow-xs"
+              >
+                Start Test Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </article>
   );
 };

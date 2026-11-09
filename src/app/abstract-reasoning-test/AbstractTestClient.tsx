@@ -210,12 +210,12 @@ export const AbstractTestClient: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50/50">
+    <div className="flex flex-col min-h-screen bg-[#F7FAFF] text-[#07152F] relative overflow-hidden selection:bg-[#2453FF]/15 selection:text-[#2453FF]">
       {/* ONBOARDING STATE */}
       {viewState === 'onboarding' && (
         <>
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 w-full max-w-[1240px] mx-auto px-4 sm:px-6">
             {/* Resume Session Banner */}
             {hasSavedSession && savedSessionData && (
               <div className="bg-indigo-900 text-white px-4 py-3.5 border-b border-indigo-800">

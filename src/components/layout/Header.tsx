@@ -210,20 +210,20 @@ export const Header: React.FC<HeaderProps> = ({
           : 'bg-white/85 backdrop-blur-sm border-b border-[#E2EAF7]'
       }`}
     >
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 h-[70px] flex items-center justify-between gap-4">
+      <div className="max-w-[1240px] mx-auto px-3 sm:px-6 h-[70px] flex items-center justify-between gap-2 sm:gap-4">
         {/* ================================================================= */}
         {/* 1. BRAND LOGO & WORDMARK                                          */}
         {/* ================================================================= */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] rounded-xl p-1 shrink-0"
+          className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] rounded-xl p-0.5 sm:p-1 shrink-0"
           aria-label="IQ Test Homepage"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#1B40DF] via-[#2453FF] to-[#4779FF] flex items-center justify-center text-white shadow-[0_4px_12px_rgba(36,83,255,0.28)] group-hover:shadow-[0_6px_16px_rgba(36,83,255,0.4)] group-hover:scale-105 transition-all duration-200">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-[#1B40DF] via-[#2453FF] to-[#4779FF] flex items-center justify-center text-white shadow-[0_4px_12px_rgba(36,83,255,0.28)] group-hover:shadow-[0_6px_16px_rgba(36,83,255,0.4)] group-hover:scale-105 transition-all duration-200">
             {/* Geometric IQ Symbol */}
             <svg
               viewBox="0 0 24 24"
-              className="w-5 h-5"
+              className="w-4 h-4 sm:w-5 sm:h-5"
               fill="none"
               stroke="currentColor"
               strokeWidth="2.3"
@@ -237,10 +237,10 @@ export const Header: React.FC<HeaderProps> = ({
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="font-heading font-black text-lg sm:text-xl tracking-tight leading-none text-[#07152F]">
+            <span className="font-heading font-black text-base sm:text-xl tracking-tight leading-none text-[#07152F]">
               IQ <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2453FF] to-[#3B66FF]">Test</span>
             </span>
-            <span className="text-[10px] font-extrabold tracking-wider uppercase text-[#64748B] mt-0.5">
+            <span className="text-[9px] sm:text-[10px] font-extrabold tracking-wider uppercase text-[#64748B] mt-0.5">
               Reasoning Assessment
             </span>
           </div>
@@ -464,12 +464,12 @@ export const Header: React.FC<HeaderProps> = ({
         {/* ================================================================= */}
         {/* 3. RIGHT CTA & MOBILE HAMBURGER BUTTON                            */}
         {/* ================================================================= */}
-        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {!isTestActive ? (
             <Link
               href="/test"
               onClick={onStartClick}
-              className="cta-glow inline-flex items-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2453FF]"
+              className="cta-glow inline-flex items-center gap-1 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2453FF] shrink-0"
               aria-label="Start Free Online IQ Test"
             >
               <span>Start IQ Test</span>
@@ -489,9 +489,9 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={isMobileMenuOpen}
-              className="md:hidden w-10 h-10 rounded-xl border border-[#E2EAF7] bg-white hover:bg-[#F2F7FF] text-[#07152F] flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] cursor-pointer"
+              className="md:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-[#E2EAF7] bg-white hover:bg-[#F2F7FF] text-[#07152F] flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] cursor-pointer shrink-0"
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5 text-[#2453FF]" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 text-[#2453FF]" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
             </button>
           )}
         </div>

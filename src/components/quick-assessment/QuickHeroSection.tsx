@@ -266,7 +266,7 @@ export const QuickHeroSection: React.FC<QuickHeroSectionProps> = ({
               <button
                 type="button"
                 onClick={onStart}
-                className="cta-glow inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-2xl text-base font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] active:scale-[0.98] transition-all shadow-lg shadow-blue-500/20 focus:outline-none cursor-pointer"
+                className="cta-glow inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] active:scale-[0.98] transition-all shadow-lg shadow-blue-500/20 focus:outline-none cursor-pointer whitespace-nowrap"
               >
                 <span>Start Quick IQ Test</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.8]" />
@@ -275,7 +275,7 @@ export const QuickHeroSection: React.FC<QuickHeroSectionProps> = ({
               <button
                 type="button"
                 onClick={scrollToGuide}
-                className="inline-flex items-center justify-center px-7 py-3.5 sm:py-4 rounded-2xl text-base font-bold text-[#07152F] bg-white border border-[#E2EAF7] hover:bg-[#F2F7FF] hover:border-[#D0DEF2] active:scale-[0.98] transition-all shadow-[0_2px_8px_rgba(7,21,47,0.03)] focus:outline-none cursor-pointer"
+                className="inline-flex items-center justify-center px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl text-sm sm:text-base font-bold text-[#07152F] bg-white border border-[#E2EAF7] hover:bg-[#F2F7FF] hover:border-[#D0DEF2] active:scale-[0.98] transition-all shadow-[0_2px_8px_rgba(7,21,47,0.03)] focus:outline-none cursor-pointer whitespace-nowrap"
               >
                 <span>How It Works & Guide</span>
               </button>

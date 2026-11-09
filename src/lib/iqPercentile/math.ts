@@ -154,9 +154,29 @@ export function calculateIQFromPercentile(
 
 /**
  * Generates an English ordinal suffix (st, nd, rd, th).
+ * For decimals, English ordinal conventions conventionally attach based on the last pronounced digit
+ * (e.g. 97.72nd, 84.13th, 99.87th, 50th, 91st).
  */
-export function getOrdinalSuffix(n: number): string {
-  const intPart = Math.floor(n);
+export function getOrdinalSuffix(n: number | string): string {
+  const str = n.toString().trim();
+  // If decimal exists, the suffix is governed by the last digit
+  if (str.includes('.')) {
+    const lastChar = str.charAt(str.length - 1);
+    const lastTwo = str.slice(-2);
+    if (lastTwo === '11' || lastTwo === '12' || lastTwo === '13') return 'th';
+    switch (lastChar) {
+      case '1':
+        return 'st';
+      case '2':
+        return 'nd';
+      case '3':
+        return 'rd';
+      default:
+        return 'th';
+    }
+  }
+
+  const intPart = Math.floor(typeof n === 'number' ? n : parseFloat(n));
   const tens = intPart % 100;
   if (tens >= 11 && tens <= 13) return 'th';
   switch (intPart % 10) {
@@ -202,7 +222,7 @@ export function formatPercentile(
     return `${formattedNumber}%`;
   }
 
-  const suffix = getOrdinalSuffix(parseFloat(formattedNumber));
+  const suffix = getOrdinalSuffix(formattedNumber);
   return `${formattedNumber}${suffix}`;
 }
 

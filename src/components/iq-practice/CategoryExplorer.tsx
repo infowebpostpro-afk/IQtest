@@ -69,15 +69,15 @@ export const CategoryExplorer: React.FC<CategoryExplorerProps> = ({
       </div>
 
       {/* Difficulty Filters & Review Mode */}
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         {/* Difficulty */}
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           <span className="text-xs font-bold text-[#60718B] uppercase tracking-wider">Difficulty:</span>
           {difficulties.map((diff) => (
             <button
               key={diff.id}
               onClick={() => onDifficultyChange(diff.id)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 currentDifficulty === diff.id
                   ? 'bg-[#2453FF] text-white'
                   : 'bg-white border border-[#E2EAF7] text-[#60718B] hover:border-[#2453FF]/30'
@@ -89,7 +89,7 @@ export const CategoryExplorer: React.FC<CategoryExplorerProps> = ({
         </div>
 
         {/* Review Mode */}
-        <div className="flex items-center gap-2 ml-auto">
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           <button
             onClick={() => onReviewModeChange('practice')}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 ${

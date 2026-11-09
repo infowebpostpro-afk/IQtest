@@ -221,7 +221,11 @@ export function formatIQ(iq: number): string {
  * Returns human-readable relative rarity description.
  */
 export function getRarityDescription(percentile: number): string {
-  if (percentile >= 50) {
+  if (Math.abs(percentile - 50.0) < 0.01) {
+    return 'At the exact midpoint (median) of the normal reference curve';
+  }
+
+  if (percentile > 50) {
     const higherPct = 100 - percentile;
     if (higherPct <= 0.001) return 'Fewer than 1 in 100,000 score above this';
     if (higherPct <= 0.01) return 'Approximately 1 in 10,000 score above this';

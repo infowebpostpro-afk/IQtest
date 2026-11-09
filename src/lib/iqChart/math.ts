@@ -104,7 +104,11 @@ export function calculateRangePercentage(minIq: number, maxIq: number): number {
 export function getRarityDescription(iq: number): string {
   const pct = calculatePercentile(iq);
 
-  if (iq >= 100) {
+  if (Math.abs(iq - 100) < 0.001 || Math.abs(pct - 50.0) < 0.01) {
+    return 'At the exact midpoint (median) of the normal curve';
+  }
+
+  if (iq > 100) {
     const higherPct = 100 - pct;
     if (higherPct <= 0.001) return 'Fewer than 1 in 100,000 score above this';
     if (higherPct <= 0.01) return 'Approximately 1 in 10,000 score above this';

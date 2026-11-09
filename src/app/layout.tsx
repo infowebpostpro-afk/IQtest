@@ -17,6 +17,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://iqtest.org'),
+  alternates: {
+    canonical: '/',
+  },
   title: "IQ Test – Free Online Test With Instant Results",
   description:
     "Take a free online IQ test with 20 reasoning questions, instant results, and clear explanations. No signup required. Start your test now.",

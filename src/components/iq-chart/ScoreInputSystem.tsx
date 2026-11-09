@@ -33,14 +33,18 @@ export const ScoreInputSystem: React.FC<ScoreInputSystemProps> = ({
   const [inputBValue, setInputBValue] = useState<string>(scoreB.toString());
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // Sync internal text state with parent score updates
+  // Sync internal text state with parent score updates only if there's no active validation error
   React.useEffect(() => {
-    setInputValue(score.toString());
-  }, [score]);
+    if (!errorMessage) {
+      setInputValue(score.toString());
+    }
+  }, [score, errorMessage]);
 
   React.useEffect(() => {
-    setInputBValue(scoreB.toString());
-  }, [scoreB]);
+    if (!errorMessage) {
+      setInputBValue(scoreB.toString());
+    }
+  }, [scoreB, errorMessage]);
 
   // Handle direct numeric input for Score A
   const handleNumericInputChange = (val: string) => {
@@ -75,11 +79,13 @@ export const ScoreInputSystem: React.FC<ScoreInputSystemProps> = ({
   };
 
   const handleStepScore = (delta: number) => {
+    setErrorMessage(null);
     const next = Math.max(MIN_IQ, Math.min(MAX_IQ, score + delta));
     onScoreChange(next);
   };
 
   const handleStepScoreB = (delta: number) => {
+    setErrorMessage(null);
     const next = Math.max(MIN_IQ, Math.min(MAX_IQ, scoreB + delta));
     onScoreBChange(next);
   };

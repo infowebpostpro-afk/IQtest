@@ -2134,46 +2134,59 @@ export const ComprehensiveArticle: React.FC = () => {
             {
               title: 'Quick IQ Test',
               desc: 'Short on time? Take a condensed 10-question reasoning challenge designed for brief practice sessions and quick check-ins.',
+              href: '/quick-iq-test/',
+              cta: 'Take Quick Test',
             },
             {
               title: 'IQ Practice Questions',
               desc: 'Explore an expanded question bank featuring step-by-step mathematical, logical, abstract, and spatial problem breakdowns.',
+              href: '/iq-practice-questions/',
+              cta: 'Practice Questions',
             },
             {
               title: 'Logical Reasoning Test',
               desc: 'Focus specifically on formal propositional deductions, truth-teller logic puzzles, and categorical syllogism problems.',
+              href: '/logical-reasoning-test/',
+              cta: 'Start Logic Test',
             },
             {
               title: 'Abstract Reasoning Test',
               desc: 'Sharpen your fluid intelligence with visual 2×2 and 3×3 matrix progressions, geometric series, and topological transformations.',
+              href: '/abstract-reasoning-test/',
+              cta: 'Start Abstract Test',
             },
             {
               title: 'IQ Score Chart Guide',
               desc: 'Explore how clinical IQ score classifications are established, what standard deviations represent, and how population percentiles align.',
+              href: '/iq-score-chart/',
+              cta: 'View Score Chart',
             },
             {
               title: 'IQ Percentile Calculator',
               desc: 'Learn how raw test scores map to theoretical normal distribution percentiles and discover the statistical assumptions behind them.',
+              href: '/iq-percentile-calculator/',
+              cta: 'Calculate Percentile',
             },
           ].map((res) => (
-            <div
+            <Link
               key={res.title}
-              className="p-6 rounded-2xl bg-white border border-[#E2EAF7] hover:border-[#2453FF]/40 transition-all shadow-2xs hover:shadow-xs flex flex-col justify-between"
+              href={res.href}
+              className="p-6 rounded-2xl bg-white border border-[#E2EAF7] hover:border-[#2453FF]/60 hover:shadow-md transition-all flex flex-col justify-between group"
             >
               <div>
-                <h3 className="font-bold text-sm text-[#07152F] mb-2">{res.title}</h3>
+                <h3 className="font-bold text-sm text-[#07152F] group-hover:text-[#2453FF] transition-colors mb-2">{res.title}</h3>
                 <p className="text-xs text-[#60718B] leading-relaxed mb-4">{res.desc}</p>
               </div>
-              <span className="text-[11px] font-bold text-[#2453FF] flex items-center gap-1 group">
-                <span>Coming Soon</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+              <span className="text-[11px] font-bold text-[#2453FF] flex items-center gap-1">
+                <span>{res.cta}</span>
+                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </span>
-            </div>
+            </Link>
           ))}
         </div>
 
         <p className="text-xs text-center text-[#60718B]">
-          *These dedicated modules are part of our expanding open-access cognitive library. Links will activate as individual guides complete peer review.*
+          Explore our complete collection of free, open-access cognitive tests, practice modules, and interactive statistical calculators.
         </p>
       </section>
 

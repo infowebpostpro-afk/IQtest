@@ -51,7 +51,7 @@ export const AnswerReview: React.FC<AnswerReviewProps> = ({
             Comprehensive Answer Review
           </h3>
           <p className="text-xs text-slate-500 mt-0.5">
-            Detailed step-by-step logic and explanations for all 20 problems
+            Detailed step-by-step logic and explanations for all {questions.length} problems
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export const AnswerReview: React.FC<AnswerReviewProps> = ({
                 : 'text-slate-600 hover:text-slate-900'
             }`}
           >
-            All (20)
+            All ({questions.length})
           </button>
           <button
             type="button"

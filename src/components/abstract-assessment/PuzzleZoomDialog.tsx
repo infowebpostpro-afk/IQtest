@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { PuzzleDiagramData } from '@/types/abstractAssessment';
+import { PuzzleDiagramData, AbstractOption } from '@/types/abstractAssessment';
 import { PuzzleDiagramRenderer } from './PuzzleDiagramRenderer';
+import { FrameBox } from './AbstractSvgPrimitives';
 import { X, ZoomIn } from 'lucide-react';
 
 interface PuzzleZoomDialogProps {
@@ -12,6 +13,9 @@ interface PuzzleZoomDialogProps {
   prompt?: string;
   questionNumber?: number;
   title?: string;
+  options?: AbstractOption[];
+  selectedOptionId?: string;
+  onSelectOption?: (optionId: string) => void;
 }
 
 export const PuzzleZoomDialog: React.FC<PuzzleZoomDialogProps> = ({
@@ -21,6 +25,9 @@ export const PuzzleZoomDialog: React.FC<PuzzleZoomDialogProps> = ({
   prompt,
   questionNumber,
   title,
+  options,
+  selectedOptionId,
+  onSelectOption,
 }) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -78,6 +85,47 @@ export const PuzzleZoomDialog: React.FC<PuzzleZoomDialogProps> = ({
         <div className="p-4 sm:p-8 bg-[#F8FAFF] rounded-2xl border border-blue-100 flex items-center justify-center">
           <PuzzleDiagramRenderer diagram={diagram} className="w-full max-w-xl" />
         </div>
+
+        {options && options.length > 0 && (
+          <div className="mt-6 pt-4 border-t border-slate-100">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">
+              Answer Options
+            </h4>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {options.map((opt) => {
+                const isSelected = selectedOptionId === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => onSelectOption?.(opt.id)}
+                    className={`p-2.5 rounded-xl border flex flex-col items-center justify-between transition-all ${
+                      isSelected
+                        ? 'bg-[#2453FF]/6 border-[#2453FF] ring-2 ring-[#2453FF]/20 shadow-xs'
+                        : 'bg-white border-slate-200 hover:border-slate-300'
+                    }`}
+                  >
+                    <div className="w-full flex items-center justify-between mb-1 px-1">
+                      <span
+                        className={`w-5 h-5 rounded-md flex items-center justify-center text-[11px] font-black ${
+                          isSelected ? 'bg-[#2453FF] text-white' : 'bg-slate-100 text-slate-600'
+                        }`}
+                      >
+                        {opt.id}
+                      </span>
+                      {isSelected && (
+                        <span className="text-[10px] font-bold text-[#2453FF]">Selected</span>
+                      )}
+                    </div>
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
+                      <FrameBox frame={opt.figure} showBorder={false} />
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="flex items-center justify-end pt-4 mt-4 border-t border-slate-100">
           <button

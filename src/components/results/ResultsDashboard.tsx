@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { AssessmentResult, Question } from '@/types/assessment';
+import { estimatePracticeIQ } from '@/lib/scoring/practiceEstimate';
 import { ScoreCircle } from './ScoreCircle';
 import { CategoryBreakdown } from './CategoryBreakdown';
 import { AnswerReview } from './AnswerReview';
@@ -125,6 +126,34 @@ Completed on ${new Date(result.completedAt).toLocaleDateString()} (Practice Asse
                 </span>
               </div>
             </div>
+
+            {/* Estimated Practice IQ Score Card */}
+            {(() => {
+              const estimate = estimatePracticeIQ(result.correctCount, result.totalQuestions);
+              return (
+                <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50/70 via-indigo-50/50 to-blue-50/70 border border-blue-200/80 text-left">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1.5">
+                    <span className="text-xs font-bold text-blue-900 uppercase tracking-wider">
+                      Estimated Practice IQ Band
+                    </span>
+                    <span className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-blue-100 text-[#2453FF]">
+                      {estimate.rarityTier}
+                    </span>
+                  </div>
+                  <div className="flex items-baseline gap-2 mb-1">
+                    <span className="text-2xl sm:text-3xl font-black text-[#0B1220]">
+                      IQ {estimate.minIQ} – {estimate.maxIQ}
+                    </span>
+                    <span className="text-xs font-medium text-slate-500">
+                      (~{estimate.percentileRange})
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 leading-tight">
+                    * {estimate.disclaimer}
+                  </p>
+                </div>
+              );
+            })()}
           </div>
         </div>
 

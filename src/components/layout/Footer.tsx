@@ -191,12 +191,21 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Row */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <span>© 2026 IQ Test Practice Platform. All rights reserved.</span>
+            <div className="flex items-center gap-3 text-slate-400">
+              <Link href="/about/" className="hover:text-white transition-colors">About</Link>
+              <span>•</span>
+              <Link href="/contact/" className="hover:text-white transition-colors">Contact</Link>
+              <span>•</span>
+              <Link href="/privacy/" className="hover:text-white transition-colors">Privacy</Link>
+              <span>•</span>
+              <Link href="/terms/" className="hover:text-white transition-colors">Terms</Link>
+            </div>
           </div>
 
           <div className="flex flex-wrap items-center gap-4 text-slate-400 font-medium text-[11px]">
-            <span>5 Verified Practice &amp; Analysis Tools</span>
+            <span>Open-Access Cognitive Tools</span>
             <span>•</span>
             <span>Anonymous Session</span>
             <span>•</span>

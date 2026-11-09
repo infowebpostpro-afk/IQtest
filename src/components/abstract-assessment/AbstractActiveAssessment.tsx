@@ -401,7 +401,7 @@ export const AbstractActiveAssessment: React.FC<AbstractActiveAssessmentProps> =
                     </div>
 
                     {/* Scalable SVG Figure Option */}
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                    <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 flex items-center justify-center p-1">
                       <FrameBox frame={opt.figure} showBorder={false} />
                     </div>
 
@@ -553,6 +553,9 @@ export const AbstractActiveAssessment: React.FC<AbstractActiveAssessmentProps> =
         diagram={currentQ.diagram}
         prompt={currentQ.prompt}
         questionNumber={currentIndex + 1}
+        options={currentQ.options}
+        selectedOptionId={selectedOptionId}
+        onSelectOption={(optId) => handleOptionClick(optId)}
       />
 
       {/* 4. POPUP MODAL: MOBILE QUESTION NAVIGATOR DRAWER */}

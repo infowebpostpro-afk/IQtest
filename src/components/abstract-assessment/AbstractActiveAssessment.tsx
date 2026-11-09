@@ -205,12 +205,12 @@ export const AbstractActiveAssessment: React.FC<AbstractActiveAssessmentProps> =
     <div className="w-full h-full flex flex-col justify-between overflow-hidden bg-[#F7FAFF] select-none">
       {/* 1. TOP HEADER BAR */}
       <header className="w-full shrink-0 bg-white/95 backdrop-blur-md border-b border-[#E2EAF7] relative z-30">
-        <div className="max-w-6xl mx-auto px-3 sm:px-6 h-12 sm:h-13 flex items-center justify-between gap-3">
+        <div className="max-w-6xl mx-auto px-2 sm:px-6 h-12 sm:h-13 flex items-center justify-between gap-1.5 sm:gap-3">
           {/* Left: Exit button */}
           <button
             type="button"
             onClick={onCancelTest}
-            className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-slate-900 px-2.5 py-1.5 rounded-xl hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
+            className="flex items-center gap-1 text-xs font-bold text-slate-600 hover:text-slate-900 px-2 py-1.5 rounded-xl hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer shrink-0"
             title="Exit assessment"
           >
             <ArrowLeft className="w-3.5 h-3.5 text-slate-500" />
@@ -218,19 +218,19 @@ export const AbstractActiveAssessment: React.FC<AbstractActiveAssessmentProps> =
           </button>
 
           {/* Center: Question Counter Pill */}
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF2FF] border border-[#2453FF]/20 text-[#2453FF] text-xs font-extrabold shadow-2xs">
+          <div className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[#EAF2FF] border border-[#2453FF]/20 text-[#2453FF] text-xs font-extrabold shadow-2xs whitespace-nowrap shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2453FF] animate-pulse" />
             <span>
-              Question {currentIndex + 1} of {totalQuestions}
+              Q {currentIndex + 1} of {totalQuestions}
             </span>
           </div>
 
           {/* Right: Sound toggle, Live Timer, Zoom, Mobile Grid Trigger */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={() => setIsZoomOpen(true)}
-              className="p-1.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
+              className="p-1 sm:p-1.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
               title="Expand diagram zoom (Shortcut: Z)"
               aria-label="Expand diagram zoom"
             >
@@ -240,7 +240,7 @@ export const AbstractActiveAssessment: React.FC<AbstractActiveAssessmentProps> =
             <button
               type="button"
               onClick={toggleSound}
-              className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
+              className="p-1 sm:p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
               title={soundActive ? 'Mute sound effects' : 'Enable sound effects'}
               aria-label={soundActive ? 'Mute audio' : 'Enable audio'}
             >
@@ -252,7 +252,7 @@ export const AbstractActiveAssessment: React.FC<AbstractActiveAssessmentProps> =
             </button>
 
             <div
-              className={`flex items-center gap-1.5 text-xs font-mono font-bold px-2.5 py-1 rounded-xl border transition-colors ${
+              className={`flex items-center gap-1 sm:gap-1.5 text-xs font-mono font-bold px-2 sm:px-2.5 py-1 rounded-xl border transition-colors shrink-0 ${
                 isTimeLow
                   ? 'bg-amber-50 text-amber-900 border-amber-300 font-black animate-pulse'
                   : 'bg-slate-50 text-[#07152F] border-slate-200'
@@ -270,10 +270,10 @@ export const AbstractActiveAssessment: React.FC<AbstractActiveAssessmentProps> =
             <button
               type="button"
               onClick={() => setIsMobileNavOpen(true)}
-              className="lg:hidden inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none cursor-pointer"
+              className="lg:hidden inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none cursor-pointer shrink-0"
             >
               <Grid className="w-3.5 h-3.5 text-slate-500" />
-              <span className="text-[11px] font-semibold">
+              <span className="text-[11px] font-semibold whitespace-nowrap">
                 {answeredCount}/{totalQuestions}
               </span>
             </button>

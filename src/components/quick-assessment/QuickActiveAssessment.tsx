@@ -141,33 +141,33 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
       {/* 1. COMPACT UNIFIED TOP HEADER BAR (h-14 on mobile)        */}
       {/* ========================================================= */}
       <header className="w-full shrink-0 bg-white/95 backdrop-blur-md border-b border-[#E2EAF7] relative z-30">
-        <div className="max-w-4xl mx-auto px-3 sm:px-6 h-13 sm:h-14 flex items-center justify-between gap-3">
+        <div className="max-w-4xl mx-auto px-2 sm:px-6 h-12 sm:h-14 flex items-center justify-between gap-1.5 sm:gap-3">
           {/* Left: Exit button */}
           <button
             type="button"
             onClick={onCancelTest}
-            className="flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-slate-900 px-2.5 py-1.5 rounded-xl hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
+            className="flex items-center gap-1 text-xs font-bold text-slate-600 hover:text-slate-900 px-2 py-1.5 rounded-xl hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer shrink-0"
             title="Exit assessment"
           >
-            <ArrowLeft className="w-4 h-4 text-slate-500" />
+            <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-500" />
             <span className="text-xs font-semibold">Exit</span>
           </button>
 
           {/* Center: Question Counter Pill */}
-          <div className="flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EAF2FF] border border-[#2453FF]/25 text-[#2453FF] text-xs font-extrabold shadow-2xs">
+          <div className="flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3.5 py-1 rounded-full bg-[#EAF2FF] border border-[#2453FF]/25 text-[#2453FF] text-xs font-extrabold shadow-2xs whitespace-nowrap shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2453FF] animate-pulse" />
             <span>
-              Question {currentIndex + 1} of {totalQuestions}
+              Q {currentIndex + 1} of {totalQuestions}
             </span>
           </div>
 
           {/* Right: Sound toggle, Live Timer, Navigator Sheet button */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             {/* Sound Mute/Unmute */}
             <button
               type="button"
               onClick={toggleSound}
-              className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
+              className="p-1 sm:p-1.5 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none cursor-pointer"
               title={soundActive ? 'Mute sound effects' : 'Enable sound effects'}
               aria-label={soundActive ? 'Mute audio' : 'Enable audio'}
             >
@@ -191,11 +191,11 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
             <button
               type="button"
               onClick={() => setIsNavigatorOpen(true)}
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none cursor-pointer"
+              className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-xl text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none cursor-pointer shrink-0"
               title="Overview of all 10 questions"
             >
               <Grid className="w-3.5 h-3.5 text-slate-500" />
-              <span className="text-[11px] font-semibold">
+              <span className="text-[11px] font-semibold whitespace-nowrap">
                 {answeredCount}/{totalQuestions}
               </span>
             </button>
@@ -215,7 +215,7 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
       {/* 2. MAIN CENTER QUESTION CANVAS                            */}
       {/* ========================================================= */}
       <main className="flex-1 min-h-0 w-full max-w-3xl mx-auto px-3 sm:px-6 py-2 sm:py-3 flex flex-col justify-start overflow-y-auto">
-        <div className="my-auto w-full">
+        <div className="w-full pt-1 sm:pt-4">
           <QuestionCard
             question={currentQuestion}
             questionNumber={currentIndex + 1}
@@ -229,25 +229,25 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
       {/* ========================================================= */}
       {/* 3. DOCKED BOTTOM NAVIGATION DOCK (Always visible)        */}
       {/* ========================================================= */}
-      <footer className="w-full shrink-0 bg-white/95 backdrop-blur-md border-t border-[#E2EAF7] py-2 sm:py-3 px-3 sm:px-6 z-30">
+      <footer className="w-full shrink-0 bg-white/95 backdrop-blur-md border-t border-[#E2EAF7] py-2.5 sm:py-3 px-3 sm:px-6 z-30">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
           {/* Left: Previous Button */}
           <button
             type="button"
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className="inline-flex items-center gap-1 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 active:scale-95 disabled:opacity-35 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
+            className="inline-flex items-center justify-center gap-1 min-h-[42px] px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 active:scale-95 disabled:opacity-35 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>Prev</span>
           </button>
 
           {/* Center: Flag & Skip */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-2 sm:gap-2.5">
             <button
               type="button"
               onClick={handleToggleFlagClick}
-              className={`inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl text-xs font-semibold active:scale-95 transition-all cursor-pointer ${
+              className={`inline-flex items-center justify-center gap-1.5 min-h-[42px] px-3 sm:px-3.5 py-2 rounded-xl text-xs font-semibold active:scale-95 transition-all cursor-pointer ${
                 isFlagged
                   ? 'bg-amber-100 text-amber-900 border border-amber-300 shadow-2xs'
                   : 'text-slate-600 hover:bg-slate-100 border border-slate-200'
@@ -255,19 +255,19 @@ export const QuickActiveAssessment: React.FC<QuickActiveAssessmentProps> = ({
               title={isFlagged ? 'Remove flag' : 'Flag question for review'}
             >
               <Flag
-                className={`w-3.5 h-3.5 ${
+                className={`w-4 h-4 ${
                   isFlagged ? 'fill-amber-500 text-amber-600' : 'text-slate-400'
                 }`}
               />
-              <span className="hidden sm:inline">
-                {isFlagged ? 'Flagged' : 'Flag for Review'}
+              <span className="text-xs">
+                {isFlagged ? 'Flagged' : 'Flag'}
               </span>
             </button>
 
             <button
               type="button"
               onClick={handleSkip}
-              className="text-xs font-semibold text-slate-500 hover:text-slate-800 px-2 sm:px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer"
+              className="min-h-[42px] text-xs font-semibold text-slate-500 hover:text-slate-800 px-3 py-2 rounded-xl border border-transparent hover:border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer flex items-center justify-center"
             >
               Skip
             </button>

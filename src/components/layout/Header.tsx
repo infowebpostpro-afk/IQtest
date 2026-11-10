@@ -210,16 +210,16 @@ export const Header: React.FC<HeaderProps> = ({
           : 'bg-white/85 backdrop-blur-sm border-b border-[#E2EAF7]'
       }`}
     >
-      <div className="max-w-[1240px] mx-auto px-3 sm:px-6 h-[70px] flex items-center justify-between gap-2 sm:gap-4">
+      <div className="max-w-[1240px] mx-auto px-2.5 sm:px-6 h-[64px] sm:h-[70px] flex items-center justify-between gap-1.5 sm:gap-4">
         {/* ================================================================= */}
         {/* 1. BRAND LOGO & WORDMARK                                          */}
         {/* ================================================================= */}
         <Link
           href="/"
-          className="flex items-center gap-2 sm:gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] rounded-xl p-0.5 sm:p-1 shrink-0"
+          className="flex items-center gap-1.5 sm:gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] rounded-xl p-0.5 sm:p-1 shrink-0"
           aria-label="IQ Test Homepage"
         >
-          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-[#1B40DF] via-[#2453FF] to-[#4779FF] flex items-center justify-center text-white shadow-[0_4px_12px_rgba(36,83,255,0.28)] group-hover:shadow-[0_6px_16px_rgba(36,83,255,0.4)] group-hover:scale-105 transition-all duration-200">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-[#1B40DF] via-[#2453FF] to-[#4779FF] flex items-center justify-center text-white shadow-[0_4px_12px_rgba(36,83,255,0.28)] group-hover:shadow-[0_6px_16px_rgba(36,83,255,0.4)] group-hover:scale-105 transition-all duration-200 shrink-0">
             {/* Geometric IQ Symbol */}
             <svg
               viewBox="0 0 24 24"
@@ -237,10 +237,10 @@ export const Header: React.FC<HeaderProps> = ({
             </svg>
           </div>
           <div className="flex flex-col">
-            <span className="font-heading font-black text-base sm:text-xl tracking-tight leading-none text-[#07152F]">
+            <span className="font-heading font-black text-sm sm:text-xl tracking-tight leading-none text-[#07152F]">
               IQ <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2453FF] to-[#3B66FF]">Test</span>
             </span>
-            <span className="text-[9px] sm:text-[10px] font-extrabold tracking-wider uppercase text-[#64748B] mt-0.5">
+            <span className="hidden sm:inline text-[8.5px] sm:text-[10px] font-extrabold tracking-wider uppercase text-[#64748B] mt-0.5">
               Reasoning Assessment
             </span>
           </div>

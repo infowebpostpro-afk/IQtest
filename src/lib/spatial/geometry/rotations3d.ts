@@ -25,3 +25,4 @@ export function projectIsometric(p: Point3D, scale = 25, origin = { x: 100, y: 1
   const isoY = origin.y + (p.x + p.y) * scale * 0.5 - p.z * scale;
   return { x: Math.round(isoX * 10) / 10, y: Math.round(isoY * 10) / 10 };
 }
+

@@ -352,3 +352,4 @@ export const SpatialActiveAssessment: React.FC<SpatialActiveAssessmentProps> = (
     </div>
   );
 };
+

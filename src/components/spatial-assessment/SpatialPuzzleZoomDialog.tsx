@@ -94,3 +94,4 @@ export const SpatialPuzzleZoomDialog: React.FC<SpatialPuzzleZoomDialogProps> = (
     </div>
   );
 };
+

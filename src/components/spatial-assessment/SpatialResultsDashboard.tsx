@@ -325,3 +325,4 @@ export const SpatialResultsDashboard: React.FC<SpatialResultsDashboardProps> = (
     </div>
   );
 };
+

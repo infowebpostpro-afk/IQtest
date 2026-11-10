@@ -32,3 +32,4 @@ export function reflectPointVertical(p: Point2D, axisX: number): Point2D {
 export function pointsToSvgString(pts: Point2D[]): string {
   return pts.map((p) => `${p.x},${p.y}`).join(' ');
 }
+

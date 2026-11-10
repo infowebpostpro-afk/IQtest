@@ -56,3 +56,4 @@ export function loadSpatialResult(): SpatialAssessmentResult | null {
     return null;
   }
 }
+

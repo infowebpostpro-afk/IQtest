@@ -146,3 +146,4 @@ export const SpatialTestHero: React.FC<SpatialTestHeroProps> = ({
     </section>
   );
 };
+

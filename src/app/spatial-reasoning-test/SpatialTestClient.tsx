@@ -249,3 +249,4 @@ export const SpatialTestClient: React.FC = () => {
     </div>
   );
 };
+

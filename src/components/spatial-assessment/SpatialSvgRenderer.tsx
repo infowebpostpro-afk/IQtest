@@ -163,3 +163,4 @@ export const SpatialSvgRenderer: React.FC<SpatialSvgRendererProps> = ({
     </div>
   );
 };
+

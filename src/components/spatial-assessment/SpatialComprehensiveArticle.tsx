@@ -930,3 +930,4 @@ export const SpatialComprehensiveArticle: React.FC<SpatialComprehensiveArticlePr
     </article>
   );
 };
+

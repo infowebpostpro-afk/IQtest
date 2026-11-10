@@ -79,6 +79,60 @@ export default function SpatialReasoningTestPage() {
           },
         ],
       },
+      {
+        '@type': 'FAQPage',
+        '@id': 'https://iqtest.org/spatial-reasoning-test/#faq',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: 'What is a spatial reasoning test?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'A spatial reasoning test asks you to visualize and manipulate two-dimensional or three-dimensional objects. Common tasks include mental rotation, cube folding, mirror reflections, paper folding, spatial orientation, and block counting. These tests are often used for aptitude practice and some technical recruitment assessments.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is a spatial reasoning test the same as a spatial awareness test?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The terms are often used interchangeably on aptitude-testing websites. Both may involve understanding objects, positions, directions, and visual transformations. However, the exact question types and skills assessed depend on the provider and purpose of the test.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'What questions appear in a spatial reasoning test?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Typical questions involve rotated shapes, folded cube nets, mirror images, paper hole-punching patterns, different views of three-dimensional objects, and counting cubes in block structures.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Is this spatial reasoning practice test free?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The interactive spatial reasoning test is free and does not require an account. It includes 20 visual questions and worked explanations after submission.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'How long does a spatial reasoning test take?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'The duration depends on the assessment. Our planned Test Mode offers an optional 15-minute timer for 20 questions.',
+            },
+          },
+          {
+            '@type': 'Question',
+            name: 'Can spatial reasoning improve with practice?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Yes, research supports the trainability of spatial skills. Practice can help people learn transformation strategies and improve performance on spatial tasks.',
+            },
+          },
+        ],
+      },
     ],
   };
 

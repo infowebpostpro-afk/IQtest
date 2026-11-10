@@ -22,6 +22,7 @@ import { SPATIAL_ASSESSMENT_VERSION, SPATIAL_QUESTION_BANK } from '@/lib/spatial
 import { SpatialTestHero } from '@/components/spatial-assessment/SpatialTestHero';
 import { SpatialActiveAssessment } from '@/components/spatial-assessment/SpatialActiveAssessment';
 import { SpatialResultsDashboard } from '@/components/spatial-assessment/SpatialResultsDashboard';
+import { SpatialComprehensiveArticle } from '@/components/spatial-assessment/SpatialComprehensiveArticle';
 
 export const SpatialTestClient: React.FC = () => {
   const [viewState, setViewState] = useState<'intro' | 'active' | 'results'>('intro');
@@ -195,26 +196,8 @@ export const SpatialTestClient: React.FC = () => {
               onToggleTimer={setTimed}
             />
 
-            {/* Clean Educational Context Section (Reserved for article content) */}
-            <section className="py-12 bg-white border-t border-[#E2EAF7]">
-              <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
-                <div className="max-w-3xl mx-auto space-y-6 text-[#475569] leading-relaxed">
-                  <h2 className="text-xl sm:text-2xl font-heading font-black text-[#07152F]">
-                    About the Spatial Reasoning Practice Assessment
-                  </h2>
-                  <p>
-                    Spatial reasoning involves mentally manipulating, reorienting, and evaluating
-                    two- and three-dimensional shapes. It is widely assessed in engineering,
-                    aviation, STEM recruitment, and standardized aptitude testing.
-                  </p>
-                  <p>
-                    This practice assessment features 20 original questions across six core domains:
-                    mental rotation, cube folding and nets, mirror reflections, paper folding,
-                    spatial orientation and views, and 3D block counting.
-                  </p>
-                </div>
-              </div>
-            </section>
+            {/* Complete Educational & Guide Article */}
+            <SpatialComprehensiveArticle onStartClick={handleStartTest} />
           </>
         )}
 

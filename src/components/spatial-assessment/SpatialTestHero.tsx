@@ -1,7 +1,22 @@
 'use client';
 
-import React from 'react';
-import { ArrowRight, Clock, ShieldCheck, CheckCircle2, RotateCw, Box, Layers, Eye, Grid } from 'lucide-react';
+import React, { useState } from 'react';
+import {
+  ArrowRight,
+  Clock,
+  ShieldCheck,
+  CheckCircle2,
+  RotateCw,
+  Box,
+  Layers,
+  Eye,
+  Grid,
+  Sparkles,
+  Compass,
+  Check,
+  X,
+  Zap,
+} from 'lucide-react';
 import { SPATIAL_CATEGORIES, SpatialCategory } from '@/lib/spatial/types';
 
 interface SpatialTestHeroProps {
@@ -15,6 +30,15 @@ export const SpatialTestHero: React.FC<SpatialTestHeroProps> = ({
   timed,
   onToggleTimer,
 }) => {
+  // Interactive Live Hero Demonstration: Mental Rotation 90°
+  const [demoSelected, setDemoSelected] = useState<string | null>(null);
+
+  const demoOptions = [
+    { id: 'A', isCorrect: false, label: 'Chiral reflection' },
+    { id: 'B', isCorrect: true, label: '90° Clockwise rotation' },
+    { id: 'C', isCorrect: false, label: '180° Inversion' },
+  ];
+
   const categoryList: SpatialCategory[] = [
     'mental_rotation',
     'cube_folding',
@@ -25,125 +49,279 @@ export const SpatialTestHero: React.FC<SpatialTestHeroProps> = ({
   ];
 
   return (
-    <section className="relative pt-8 pb-12 sm:pt-12 sm:pb-16 bg-gradient-to-b from-[#F7FAFF] to-[#FFFFFF] border-b border-[#E2EAF7]">
-      <div className="max-w-[1240px] mx-auto px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EEF4FF] border border-[#2453FF]/20 text-[#2453FF] text-xs font-bold uppercase tracking-wider mb-5">
-            <span className="w-2 h-2 rounded-full bg-[#2453FF] animate-pulse" />
-            20 Original Visual Questions
-          </div>
+    <section className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 lg:pt-12 lg:pb-20 overflow-visible no-print">
+      {/* Background Atmosphere Lights */}
+      <div
+        className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[600px] h-[380px] bg-[#2453FF]/7 blur-[140px] rounded-full pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1/3 right-[10%] w-[520px] h-[340px] bg-[#4779FF]/8 blur-[130px] rounded-full pointer-events-none -z-10"
+        aria-hidden="true"
+      />
 
-          {/* Single H1 Tag */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-[#07152F] leading-tight mb-4">
-            Spatial Reasoning Test
-          </h1>
+      <div className="max-w-[1240px] mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
+          {/* LEFT COLUMN: Presentation, Features, & Start Card */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
+            {/* Top Eyebrow Tag */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EEF4FF] border border-[#2453FF]/25 text-[#2453FF] text-xs font-black tracking-wide uppercase mb-4 shadow-2xs">
+              <Compass className="w-3.5 h-3.5" />
+              <span>Free Online Spatial Aptitude Test</span>
+            </div>
 
-          {/* Hero Supporting Text */}
-          <p className="text-base sm:text-lg text-[#475569] leading-relaxed mb-8">
-            Take a free spatial reasoning test with 20 visual questions covering mental rotation,
-            cube folding, mirror images, paper folding and 3D shapes. Review step-by-step
-            explanations after submitting your answers.
-          </p>
+            {/* H1: Spatial Reasoning Test */}
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-[46px] xl:text-[54px] font-black tracking-tight text-[#07152F] leading-[1.08] mb-4 sm:mb-5">
+              Spatial{' '}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#2453FF] via-[#3867FF] to-[#4779FF]">
+                Reasoning Test
+              </span>
+            </h1>
 
-          {/* Feature Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 text-xs font-semibold text-[#07152F]">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E2EAF7] shadow-xs">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
-              20 Visual Questions
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E2EAF7] shadow-xs">
-              <Clock className="w-3.5 h-3.5 text-[#2453FF]" />
-              Optional 15-Minute Timer
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E2EAF7] shadow-xs">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#2453FF]" />
-              Free Practice • No Sign-up
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#E2EAF7] shadow-xs">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
-              Worked Visual Answers
-            </span>
-          </div>
+            {/* Supporting Copy */}
+            <p className="text-base sm:text-lg text-[#475569] leading-relaxed max-w-xl mb-6 font-medium">
+              Take a free spatial reasoning test with 20 visual questions covering mental rotation,
+              cube folding, mirror images, paper folding and 3D shapes. Review step-by-step
+              explanations after submitting your answers.
+            </p>
 
-          {/* Controls Card */}
-          <div className="p-6 bg-white rounded-2xl border border-[#E2EAF7] shadow-sm max-w-lg mx-auto mb-8 text-left">
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#F1F5F9]">
-              <div>
-                <span className="text-sm font-bold text-[#07152F] block">Assessment Timer</span>
-                <span className="text-xs text-[#64748B]">
-                  {timed ? '15 minutes standard countdown' : 'Untimed practice mode'}
-                </span>
+            {/* Feature Badges */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-7 w-full sm:w-auto">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#E2EAF7] shadow-[0_2px_6px_rgba(7,21,47,0.03)] text-xs font-bold text-[#07152F]">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 stroke-[2.2]" />
+                <span>20 Visual Questions</span>
               </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => onToggleTimer(false)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                    !timed
-                      ? 'bg-[#EEF4FF] text-[#2453FF] border border-[#2453FF]/30 shadow-xs'
-                      : 'bg-gray-100 text-[#64748B] hover:bg-gray-200'
-                  }`}
-                >
-                  Untimed
-                </button>
-                <button
-                  type="button"
-                  onClick={() => onToggleTimer(true)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                    timed
-                      ? 'bg-[#2453FF] text-white shadow-xs'
-                      : 'bg-gray-100 text-[#64748B] hover:bg-gray-200'
-                  }`}
-                >
-                  15-Min
-                </button>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#E2EAF7] shadow-[0_2px_6px_rgba(7,21,47,0.03)] text-xs font-bold text-[#07152F]">
+                <Layers className="w-3.5 h-3.5 text-purple-500 shrink-0 stroke-[2.2]" />
+                <span>6 Core Domains</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#E2EAF7] shadow-[0_2px_6px_rgba(7,21,47,0.03)] text-xs font-bold text-[#07152F]">
+                <Clock className="w-3.5 h-3.5 text-[#2453FF] shrink-0 stroke-[2.2]" />
+                <span>Optional 15-Min Timer</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#E2EAF7] shadow-[0_2px_6px_rgba(7,21,47,0.03)] text-xs font-bold text-[#07152F]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#2453FF] shrink-0 stroke-[2.2]" />
+                <span>No Sign-up Required</span>
               </div>
             </div>
 
-            {/* Primary CTA */}
-            <button
-              type="button"
-              onClick={onStartClick}
-              className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-base font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] shadow-[0_4px_16px_rgba(36,83,255,0.25)] hover:shadow-[0_6px_20px_rgba(36,83,255,0.35)] active:scale-[0.98] transition-all cursor-pointer"
-            >
-              <span>Start Free Spatial Reasoning Test</span>
-              <ArrowRight className="w-4 h-4 stroke-[2.5]" />
-            </button>
+            {/* Premium Assessment Launcher Card */}
+            <div className="w-full max-w-xl p-5 sm:p-6 rounded-2xl bg-white border-2 border-[#2453FF] shadow-[0_10px_30px_rgba(36,83,255,0.1)] flex flex-col justify-between mb-8 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 px-3.5 py-1 rounded-bl-xl bg-[#2453FF] text-[10px] font-black uppercase tracking-wider text-white shadow-2xs">
+                Formal Assessment
+              </div>
+
+              <div className="mb-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#2453FF] flex items-center justify-center font-bold text-xs">
+                    <Sparkles className="w-4 h-4" />
+                  </div>
+                  <span className="font-heading font-black text-lg text-[#07152F]">
+                    Test Mode
+                  </span>
+                </div>
+                <p className="text-xs text-[#60718B] leading-relaxed">
+                  20 randomized visual problems with full answer explanations and category performance metrics upon completion.
+                </p>
+              </div>
+
+              {/* Mode Timer Toggle */}
+              <div className="flex items-center justify-between p-2.5 bg-slate-50 rounded-xl border border-slate-200/80 mb-5">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#07152F]">
+                  <Clock className="w-4 h-4 text-[#2453FF]" />
+                  <span>Test Duration:</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-white p-1 rounded-lg border border-slate-200 shadow-2xs">
+                  <button
+                    type="button"
+                    onClick={() => onToggleTimer(false)}
+                    className={`px-3 py-1 text-xs font-extrabold rounded-md transition-all cursor-pointer ${
+                      !timed
+                        ? 'bg-[#EEF4FF] text-[#2453FF] shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    Untimed
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onToggleTimer(true)}
+                    className={`px-3 py-1 text-xs font-extrabold rounded-md transition-all flex items-center gap-1 cursor-pointer ${
+                      timed
+                        ? 'bg-[#2453FF] text-white shadow-2xs'
+                        : 'text-slate-600 hover:text-slate-900'
+                    }`}
+                  >
+                    <Clock className="w-3 h-3" />
+                    <span>15 Minutes</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Primary Action Button */}
+              <button
+                type="button"
+                onClick={onStartClick}
+                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] text-white font-extrabold text-sm sm:text-base transition-all shadow-[0_4px_16px_rgba(36,83,255,0.25)] hover:shadow-[0_6px_22px_rgba(36,83,255,0.35)] flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
+              >
+                <span>Start Free Spatial Reasoning Test</span>
+                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+              </button>
+            </div>
+
+            {/* 6 Category Badges Grid */}
+            <div className="w-full max-w-xl grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              {categoryList.map((catKey) => {
+                const cat = SPATIAL_CATEGORIES[catKey];
+                return (
+                  <div
+                    key={cat.id}
+                    className="p-2.5 bg-white rounded-xl border border-[#E2EAF7] shadow-2xs flex items-center gap-2 hover:border-[#2453FF]/40 transition-colors"
+                  >
+                    <div className="w-7 h-7 rounded-lg bg-[#EEF4FF] text-[#2453FF] flex items-center justify-center shrink-0">
+                      {catKey === 'mental_rotation' && <RotateCw className="w-3.5 h-3.5" />}
+                      {catKey === 'cube_folding' && <Box className="w-3.5 h-3.5" />}
+                      {catKey === 'mirror_reflection' && <RotateCw className="w-3.5 h-3.5" />}
+                      {catKey === 'paper_folding' && <Layers className="w-3.5 h-3.5" />}
+                      {catKey === 'spatial_orientation' && <Eye className="w-3.5 h-3.5" />}
+                      {catKey === 'block_counting' && <Grid className="w-3.5 h-3.5" />}
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[11px] font-bold text-[#07152F] block truncate">
+                        {cat.shortName}
+                      </span>
+                      <span className="text-[9.5px] text-[#64748B] block">
+                        {cat.testCount} Questions
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          {/* Categories Grid Overview */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
-            {categoryList.map((catKey) => {
-              const cat = SPATIAL_CATEGORIES[catKey];
-              return (
-                <div
-                  key={cat.id}
-                  className="p-3 bg-white/80 rounded-xl border border-[#E2EAF7] flex items-center gap-2.5"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-[#EEF4FF] text-[#2453FF] flex items-center justify-center shrink-0">
-                    {catKey === 'mental_rotation' && <RotateCw className="w-4 h-4" />}
-                    {catKey === 'cube_folding' && <Box className="w-4 h-4" />}
-                    {catKey === 'mirror_reflection' && <RotateCw className="w-4 h-4" />}
-                    {catKey === 'paper_folding' && <Layers className="w-4 h-4" />}
-                    {catKey === 'spatial_orientation' && <Eye className="w-4 h-4" />}
-                    {catKey === 'block_counting' && <Grid className="w-4 h-4" />}
+          {/* RIGHT COLUMN: Interactive Live Spatial Rotation Preview */}
+          <div className="lg:col-span-5 relative flex justify-center w-full">
+            <div className="w-full max-w-md bg-white rounded-3xl border border-[#E2EAF7] p-5 sm:p-6 shadow-[0_12px_36px_rgba(7,21,47,0.06)] relative overflow-hidden">
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#2453FF] flex items-center justify-center font-bold text-xs">
+                    <RotateCw className="w-3.5 h-3.5" />
                   </div>
-                  <div className="min-w-0">
-                    <span className="text-xs font-bold text-[#07152F] block truncate">
-                      {cat.shortName}
-                    </span>
-                    <span className="text-[10px] text-[#64748B] block">
-                      {cat.testCount} Questions
-                    </span>
-                  </div>
+                  <span className="font-heading font-black text-xs text-[#07152F]">
+                    Live Spatial Demo
+                  </span>
                 </div>
-              );
-            })}
+                <span className="text-[10px] font-bold text-[#2453FF] bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">
+                  Try A Question
+                </span>
+              </div>
+
+              {/* Stimulus Showcase */}
+              <div className="text-center text-xs font-bold text-[#07152F] mb-2">
+                Rotate stimulus 90° clockwise without reflection:
+              </div>
+
+              <div className="w-36 h-36 mx-auto mb-4 p-2 bg-[#F8FBFF] rounded-2xl border border-[#E2EAF7] shadow-inner flex items-center justify-center">
+                <svg viewBox="0 0 100 100" className="w-full h-full">
+                  {/* Stimulus: Asymmetric L-Block with corner marker pip */}
+                  <path
+                    d="M30,20 L65,20 L65,40 L45,40 L45,80 L30,80 Z"
+                    fill="#2453FF"
+                    stroke="#1B40DF"
+                    strokeWidth="2.5"
+                  />
+                  <circle cx="65" cy="30" r="4.5" fill="#FFFFFF" stroke="#07152F" strokeWidth="1.5" />
+                  <rect x="32" y="66" width="10" height="10" rx="2" fill="#F59E0B" />
+                </svg>
+              </div>
+
+              {/* Interactive 3 Option Choices */}
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                {demoOptions.map((opt) => {
+                  const isPicked = demoSelected === opt.id;
+                  let btnStyle = 'bg-white border-slate-200 text-slate-700 hover:border-slate-300';
+                  if (isPicked) {
+                    btnStyle = opt.isCorrect
+                      ? 'bg-emerald-50 border-emerald-500 text-emerald-800'
+                      : 'bg-rose-50 border-rose-400 text-rose-800';
+                  }
+                  return (
+                    <button
+                      key={opt.id}
+                      type="button"
+                      onClick={() => setDemoSelected(opt.id)}
+                      className={`p-2 rounded-xl border text-[11px] font-bold text-center transition-all cursor-pointer ${btnStyle}`}
+                      aria-label={`Demo Option ${opt.id}`}
+                    >
+                      <div className="w-14 h-14 mx-auto mb-1 flex items-center justify-center">
+                        {opt.id === 'A' && (
+                          // Chiral reflection (Distractor)
+                          <svg viewBox="0 0 100 100" className="w-full h-full">
+                            <g transform="translate(50,50) scale(-1,1) rotate(90) translate(-50,-50)">
+                              <path d="M30,20 L65,20 L65,40 L45,40 L45,80 L30,80 Z" fill="#64748B" stroke="#07152F" strokeWidth="2.5" />
+                              <circle cx="65" cy="30" r="4.5" fill="#FFFFFF" stroke="#07152F" strokeWidth="1.5" />
+                              <rect x="32" y="66" width="10" height="10" rx="2" fill="#F59E0B" />
+                            </g>
+                          </svg>
+                        )}
+                        {opt.id === 'B' && (
+                          // Exact 90 deg clockwise rotation (Correct)
+                          <svg viewBox="0 0 100 100" className="w-full h-full">
+                            <g transform="translate(50,50) rotate(90) translate(-50,-50)">
+                              <path d="M30,20 L65,20 L65,40 L45,40 L45,80 L30,80 Z" fill="#2453FF" stroke="#1B40DF" strokeWidth="2.5" />
+                              <circle cx="65" cy="30" r="4.5" fill="#FFFFFF" stroke="#07152F" strokeWidth="1.5" />
+                              <rect x="32" y="66" width="10" height="10" rx="2" fill="#F59E0B" />
+                            </g>
+                          </svg>
+                        )}
+                        {opt.id === 'C' && (
+                          // 180 deg rotation (Distractor)
+                          <svg viewBox="0 0 100 100" className="w-full h-full">
+                            <g transform="translate(50,50) rotate(180) translate(-50,-50)">
+                              <path d="M30,20 L65,20 L65,40 L45,40 L45,80 L30,80 Z" fill="#64748B" stroke="#07152F" strokeWidth="2.5" />
+                              <circle cx="65" cy="30" r="4.5" fill="#FFFFFF" stroke="#07152F" strokeWidth="1.5" />
+                              <rect x="32" y="66" width="10" height="10" rx="2" fill="#F59E0B" />
+                            </g>
+                          </svg>
+                        )}
+                      </div>
+                      <span className="block">Option {opt.id}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Instant Interactive Feedback Banner */}
+              {demoSelected && (
+                <div
+                  className={`p-3 rounded-xl text-xs flex items-center gap-2 animate-in fade-in duration-200 ${
+                    demoSelected === 'B'
+                      ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                      : 'bg-rose-50 text-rose-800 border border-rose-200'
+                  }`}
+                >
+                  {demoSelected === 'B' ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[2.5]" />
+                      <span>
+                        <strong>Correct!</strong> Rotating 90° clockwise points the long stem to the right while keeping the white pip on the leading edge.
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <X className="w-4 h-4 text-rose-600 shrink-0 stroke-[2.5]" />
+                      <span>
+                        <strong>Incorrect.</strong> {demoSelected === 'A' ? 'Option A is a chiral mirror reflection.' : 'Option C is rotated by 180° instead of 90°.'}
+                      </span>
+                    </>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 };
-

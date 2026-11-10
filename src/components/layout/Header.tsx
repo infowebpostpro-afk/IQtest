@@ -510,15 +510,15 @@ export const Header: React.FC<HeaderProps> = ({
           />
 
           {/* Drawer Panel */}
-          <div className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl flex flex-col z-50 animate-in slide-in-from-right duration-250 border-l border-[#E2EAF7]">
+          <div className="fixed inset-y-0 right-0 w-full max-w-xs sm:max-w-sm bg-white shadow-2xl flex flex-col z-50 animate-in slide-in-from-right duration-250 border-l border-[#E2EAF7]">
             {/* Drawer Header */}
-            <div className="px-5 h-[70px] border-b border-[#E2EAF7] flex items-center justify-between">
+            <div className="px-4 sm:px-5 h-[64px] border-b border-[#E2EAF7] flex items-center justify-between shrink-0 bg-white">
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-2 focus:outline-none"
               >
-                <div className="w-8 h-8 rounded-xl bg-[#2453FF] flex items-center justify-center text-white">
+                <div className="w-8 h-8 rounded-xl bg-[#2453FF] flex items-center justify-center text-white shadow-xs">
                   <svg
                     viewBox="0 0 24 24"
                     className="w-4 h-4"
@@ -548,13 +548,13 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Drawer Body (Scrollable) */}
-            <div className="flex-1 overflow-y-auto px-5 py-5 space-y-6">
+            <div className="flex-1 overflow-y-auto px-4 sm:px-5 py-4 space-y-5">
               {/* Home Direct Link */}
               <div>
                 <Link
                   href="/"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center justify-between p-3.5 rounded-2xl text-sm font-bold transition-all ${
+                  className={`flex items-center justify-between p-3 rounded-xl text-sm font-bold transition-all ${
                     pathname === '/'
                       ? 'bg-[#EEF4FF] text-[#2453FF] border border-[#2453FF]/20'
                       : 'text-[#07152F] hover:bg-[#F8FBFF] border border-transparent'

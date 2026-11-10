@@ -61,6 +61,13 @@ const IQ_TESTS_ITEMS: NavItem[] = [
     badge: 'Visual',
   },
   {
+    title: 'Spatial Reasoning Test',
+    href: '/spatial-reasoning-test/',
+    description: '20 questions on mental rotation, cube folding nets, reflections, paper folds, and 3D views.',
+    icon: Sparkles,
+    badge: 'New',
+  },
+  {
     title: 'Quick IQ Test',
     href: '/quick-iq-test/',
     description: '10-question rapid reasoning challenge with instant scoring in about 5 minutes.',

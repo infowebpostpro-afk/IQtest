@@ -117,6 +117,15 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
+                  href="/spatial-reasoning-test/"
+                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Spatial Reasoning Test</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/quick-iq-test/"
                   className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >

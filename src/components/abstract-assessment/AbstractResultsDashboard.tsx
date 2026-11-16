@@ -552,7 +552,7 @@ Completed on ${new Date(result.completedAt).toLocaleDateString()} (Visual Abstra
             </p>
           </div>
           <Link
-            href="/logical-reasoning-test"
+            href="/logical-reasoning-test/"
             className="px-5 py-3 rounded-xl bg-white text-blue-900 hover:bg-blue-50 font-bold text-sm shadow-lg whitespace-nowrap transition-all"
           >
             Start Logical Reasoning Test

@@ -255,7 +255,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="animate-fade-up-delay-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
               {/* Primary CTA */}
               <Link
-                href="/test"
+                href="/test/"
                 className="cta-glow inline-flex items-center justify-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-2xl text-base font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2453FF]"
               >
                 <span>Start Free IQ Test</span>

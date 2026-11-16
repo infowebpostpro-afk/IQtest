@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  trailingSlash: true,
   cacheComponents: true,
   partialPrefetching: true,
   allowedDevOrigins: [
@@ -11,6 +11,32 @@ const nextConfig = {
     '192.168.100.33',
     '192.168.100.33:3000',
   ],
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.theiqtest.org',
+          },
+        ],
+        destination: 'https://theiqtest.org/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'iqtest-puce.vercel.app',
+          },
+        ],
+        destination: 'https://theiqtest.org/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

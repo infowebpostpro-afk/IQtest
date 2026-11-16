@@ -1,96 +1,96 @@
 import { MetadataRoute } from 'next';
+import { absoluteUrl } from '@/lib/siteConfig';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://theiqtest.org';
-  const currentDate = new Date().toISOString();
+  const migrationDate = '2026-11-16';
+  const baselineDate = '2026-11-09';
 
-  const routes = [
+  const routes: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      url: absoluteUrl('/'),
+      lastModified: migrationDate,
+      changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/test/`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      url: absoluteUrl('/test/'),
+      lastModified: migrationDate,
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/quick-iq-test/`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      url: absoluteUrl('/quick-iq-test/'),
+      lastModified: migrationDate,
+      changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/iq-score-chart/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      url: absoluteUrl('/logical-reasoning-test/'),
+      lastModified: migrationDate,
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/iq-percentile-calculator/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      url: absoluteUrl('/abstract-reasoning-test/'),
+      lastModified: migrationDate,
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/iq-practice-questions/`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      url: absoluteUrl('/spatial-reasoning-test/'),
+      lastModified: migrationDate,
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/logical-reasoning-test/`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      url: absoluteUrl('/iq-score-chart/'),
+      lastModified: baselineDate,
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/abstract-reasoning-test/`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      url: absoluteUrl('/iq-percentile-calculator/'),
+      lastModified: baselineDate,
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/spatial-reasoning-test/`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly' as const,
+      url: absoluteUrl('/average-iq-by-age/'),
+      lastModified: baselineDate,
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/average-iq-by-age/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      url: absoluteUrl('/iq-practice-questions/'),
+      lastModified: baselineDate,
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/about/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      url: absoluteUrl('/about/'),
+      lastModified: baselineDate,
+      changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/contact/`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
+      url: absoluteUrl('/contact/'),
+      lastModified: migrationDate,
+      changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/privacy/`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
+      url: absoluteUrl('/privacy/'),
+      lastModified: baselineDate,
+      changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/terms/`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly' as const,
+      url: absoluteUrl('/terms/'),
+      lastModified: baselineDate,
+      changeFrequency: 'yearly',
       priority: 0.3,
     },
   ];
 
   return routes;
 }
-

@@ -123,7 +123,7 @@ export const SpatialResultsDashboard: React.FC<SpatialResultsDashboardProps> = (
             </button>
 
             <Link
-              href="/abstract-reasoning-test"
+              href="/abstract-reasoning-test/"
               className="flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-extrabold text-[#07152F] bg-white border border-[#E2EAF7] hover:bg-[#EEF4FF] shadow-xs transition-all"
             >
               <span>Explore Abstract Reasoning Test</span>

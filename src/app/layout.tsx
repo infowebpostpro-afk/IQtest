@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
+import { SITE_URL } from "@/lib/siteConfig";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -17,7 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://theiqtest.org'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
   },

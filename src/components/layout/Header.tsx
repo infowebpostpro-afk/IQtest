@@ -474,7 +474,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {!isTestActive ? (
             <Link
-              href="/test"
+              href="/test/"
               onClick={onStartClick}
               className="cta-glow inline-flex items-center gap-1 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2453FF] shrink-0"
               aria-label="Start Free Online IQ Test"
@@ -729,7 +729,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Drawer Footer CTA */}
             <div className="p-5 border-t border-[#E2EAF7] bg-[#F8FBFF]">
               <Link
-                href="/test"
+                href="/test/"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onStartClick?.();

@@ -825,7 +825,7 @@ export const ComprehensiveArticle: React.FC = () => {
               )}
 
               <Link
-                href="/test"
+                href="/test/"
                 className="inline-flex items-center gap-2 text-xs font-bold text-[#2453FF] hover:text-[#1B40DF] group"
               >
                 <span>Try this step in the assessment</span>
@@ -2300,7 +2300,7 @@ export const ComprehensiveArticle: React.FC = () => {
           </div>
           <div className="pt-4">
             <Link
-              href="/test"
+              href="/test/"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#2453FF] hover:bg-[#1B40DF] transition-all shadow-md cta-glow"
             >
               <span>Start Your Free IQ Test Now</span>
@@ -2371,7 +2371,7 @@ export const ComprehensiveArticle: React.FC = () => {
                 Close Preview
               </button>
               <Link
-                href="/test"
+                href="/test/"
                 onClick={() => setLightboxImage(null)}
                 className="flex-1 py-2 px-4 rounded-xl bg-[#2453FF] hover:bg-[#1B40DF] text-xs font-bold text-white transition-colors text-center shadow-xs"
               >

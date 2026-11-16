@@ -20,8 +20,8 @@ export default function HomePage() {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://iqtest.org/#website',
-        url: 'https://iqtest.org/',
+        '@id': 'https://theiqtest.org/#website',
+        url: 'https://theiqtest.org/',
         name: 'IQ Test – Free Online Cognitive Reasoning Assessment',
         description:
           'Free online cognitive reasoning assessment with 20 original questions covering numerical, logical, abstract, and spatial domains.',
@@ -29,7 +29,7 @@ export default function HomePage() {
       },
       {
         '@type': 'WebApplication',
-        '@id': 'https://iqtest.org/#app',
+        '@id': 'https://theiqtest.org/#app',
         name: 'Free Online IQ Test',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',

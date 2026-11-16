@@ -43,10 +43,10 @@ export default function ContactPage() {
                 <span>Editorial &amp; Review Team Email:</span>
               </div>
               <a
-                href="mailto:contact@iqtest.org"
+                href="mailto:contact@theiqtest.org"
                 className="text-base font-semibold text-[#2453FF] hover:underline"
               >
-                contact@iqtest.org
+                contact@theiqtest.org
               </a>
               <p className="text-xs text-slate-500">
                 Typical response time: 24–48 business hours.

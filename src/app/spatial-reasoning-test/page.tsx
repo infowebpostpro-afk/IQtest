@@ -30,8 +30,8 @@ export default function SpatialReasoningTestPage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://iqtest.org/spatial-reasoning-test/#webpage',
-        url: 'https://iqtest.org/spatial-reasoning-test/',
+        '@id': 'https://theiqtest.org/spatial-reasoning-test/#webpage',
+        url: 'https://theiqtest.org/spatial-reasoning-test/',
         name: 'Spatial Reasoning Test – Free Practice With Answers',
         description:
           'Take a free spatial reasoning test with 20 visual questions on mental rotation, cube folding, mirror images and 3D shapes. Get worked answers online.',
@@ -39,7 +39,7 @@ export default function SpatialReasoningTestPage() {
       },
       {
         '@type': 'Quiz',
-        '@id': 'https://iqtest.org/spatial-reasoning-test/#quiz',
+        '@id': 'https://theiqtest.org/spatial-reasoning-test/#quiz',
         name: 'Spatial Reasoning Test – 20 Visual Questions With Instant Answers',
         description:
           'A free visual assessment platform evaluating mental rotation, cube folding nets, mirror reflections, paper folding, orthographic views, and 3D block counting.',
@@ -81,7 +81,7 @@ export default function SpatialReasoningTestPage() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://iqtest.org/spatial-reasoning-test/#faq',
+        '@id': 'https://theiqtest.org/spatial-reasoning-test/#faq',
         mainEntity: [
           {
             '@type': 'Question',

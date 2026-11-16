@@ -17,7 +17,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://iqtest.org'),
+  metadataBase: new URL('https://theiqtest.org'),
   alternates: {
     canonical: '/',
   },

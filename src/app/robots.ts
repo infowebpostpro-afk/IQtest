@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://iqtest.org/sitemap.xml',
+    sitemap: 'https://theiqtest.org/sitemap.xml',
   };
 }
 

@@ -27,7 +27,7 @@ export const ExplorerActions: React.FC<ExplorerActionsProps> = ({
 • Theoretical Percentile: ${calculation.formattedPercentile}
 
 Educational reference model (Mean 100, SD 15). Actual standardized test results depend on test-specific norms and clinical evaluation.
-Learn more: https://iqtest.org/average-iq-by-age/`;
+Learn more: https://theiqtest.org/average-iq-by-age/`;
 
     try {
       if (navigator?.clipboard?.writeText) {

@@ -30,8 +30,8 @@ export default function AbstractReasoningTestPage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://iqtest.org/abstract-reasoning-test/#webpage',
-        url: 'https://iqtest.org/abstract-reasoning-test/',
+        '@id': 'https://theiqtest.org/abstract-reasoning-test/#webpage',
+        url: 'https://theiqtest.org/abstract-reasoning-test/',
         name: 'Abstract Reasoning Test – Free Practice With Answers',
         description:
           'Take a free abstract reasoning test with 20 visual questions, instant results and worked answers. Practise shape patterns, matrices and sequences online.',
@@ -39,7 +39,7 @@ export default function AbstractReasoningTestPage() {
       },
       {
         '@type': 'Quiz',
-        '@id': 'https://iqtest.org/abstract-reasoning-test/#quiz',
+        '@id': 'https://theiqtest.org/abstract-reasoning-test/#quiz',
         name: 'Abstract Reasoning Test – 20 Visual Questions With Instant Answers',
         description:
           'A free visual assessment platform evaluating figure sequences, 2x2 and 3x3 matrices, odd-one-out figures, and visual analogies with vector SVG graphics and worked explanations.',
@@ -71,7 +71,7 @@ export default function AbstractReasoningTestPage() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://iqtest.org/abstract-reasoning-test/#faq',
+        '@id': 'https://theiqtest.org/abstract-reasoning-test/#faq',
         mainEntity: [
           {
             '@type': 'Question',

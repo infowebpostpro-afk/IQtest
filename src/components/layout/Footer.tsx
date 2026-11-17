@@ -65,17 +65,17 @@ export const Footer: React.FC = () => {
               </div>
             </Link>
 
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md">
               Explore reasoning practice tools, IQ score references and educational resources designed to make cognitive puzzles easier to understand.
             </p>
 
             {/* Platform Badges */}
-            <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-semibold text-slate-300">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0F2244] border border-[#1E3A6E] text-slate-300">
+            <div className="flex flex-wrap items-center gap-2 pt-1 text-[11px] font-semibold text-slate-200">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0F2244] border border-[#1E3A6E] text-slate-200">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                 <span>100% Free Access</span>
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0F2244] border border-[#1E3A6E] text-slate-300">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#0F2244] border border-[#1E3A6E] text-slate-200">
                 <ShieldCheck className="w-3.5 h-3.5 text-blue-400" />
                 <span>No Account Required</span>
               </span>
@@ -84,14 +84,14 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: IQ Tests (2 cols on lg) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-white">
+            <h3 className="text-xs font-black uppercase tracking-wider text-white">
               IQ Tests
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs font-medium">
               <li>
                 <Link
                   href="/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Brain className="w-3.5 h-3.5 text-[#3884FF]" />
                   <span>Full IQ Test (20 Qs)</span>
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/logical-reasoning-test/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <GitBranch className="w-3.5 h-3.5 text-blue-400" />
                   <span>Logical Reasoning Test</span>
@@ -109,7 +109,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/abstract-reasoning-test/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Shapes className="w-3.5 h-3.5 text-indigo-400" />
                   <span>Abstract Reasoning Test</span>
@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/spatial-reasoning-test/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Spatial Reasoning Test</span>
@@ -127,7 +127,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/quick-iq-test/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Zap className="w-3.5 h-3.5 text-amber-400" />
                   <span>Quick IQ Test (10 Qs)</span>
@@ -136,7 +136,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/iq-practice-questions/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
                   <span>Practice Questions</span>
@@ -147,14 +147,14 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: IQ Tools (2 cols on lg) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-wider text-white">
+            <h3 className="text-xs font-black uppercase tracking-wider text-white">
               IQ Tools
-            </h4>
+            </h3>
             <ul className="space-y-2 text-xs font-medium">
               <li>
                 <Link
                   href="/iq-score-chart/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <BarChart3 className="w-3.5 h-3.5 text-emerald-400" />
                   <span>IQ Score Chart</span>
@@ -163,7 +163,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/iq-percentile-calculator/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Calculator className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Percentile Calculator</span>
@@ -172,7 +172,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="/average-iq-by-age/"
-                  className="text-slate-400 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
+                  className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-blue-400" />
                   <span>Average IQ by Age</span>
@@ -183,10 +183,10 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Assessment Notice & Disclaimer (3 cols on lg) */}
           <div className="lg:col-span-3 space-y-2.5">
-            <h4 className="text-xs font-black uppercase tracking-wider text-white">
+            <h3 className="text-xs font-black uppercase tracking-wider text-white">
               Assessment Notice
-            </h4>
-            <div className="p-3.5 rounded-2xl bg-[#0B1A35] border border-[#182C50] text-[11px] text-slate-400 leading-relaxed space-y-1.5">
+            </h3>
+            <div className="p-3.5 rounded-2xl bg-[#0B1A35] border border-[#182C50] text-[11px] text-slate-300 leading-relaxed space-y-1.5">
               <div className="flex items-center gap-1.5 font-bold text-slate-300">
                 <Sparkles className="w-3.5 h-3.5 text-[#3884FF]" />
                 <span>Educational Platform</span>
@@ -199,10 +199,10 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <span>© 2026 IQ Test Practice Platform. All rights reserved.</span>
-            <div className="flex items-center gap-3 text-slate-400">
+            <div className="flex items-center gap-3 text-slate-300">
               <Link href="/about/" className="hover:text-white transition-colors">About</Link>
               <span>•</span>
               <Link href="/contact/" className="hover:text-white transition-colors">Contact</Link>
@@ -213,7 +213,7 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 text-slate-400 font-medium text-[11px]">
+          <div className="flex flex-wrap items-center gap-4 text-slate-300 font-medium text-[11px]">
             <span>Open-Access Cognitive Tools</span>
             <span>•</span>
             <span>Anonymous Session</span>
@@ -225,7 +225,7 @@ export const Footer: React.FC = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="inline-flex items-center gap-1 text-slate-400 hover:text-white transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1 text-slate-300 hover:text-white transition-colors cursor-pointer"
               aria-label="Back to top"
             >
               <span>Back to Top</span>

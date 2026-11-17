@@ -468,7 +468,7 @@ export const ComprehensiveArticle: React.FC = () => {
                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-extrabold border ${card.accentBadge}`}>
                       {card.badge}
                     </span>
-                    <span className="font-heading text-sm font-black text-slate-300 group-hover:text-[#2453FF] transition-colors">
+                    <span className="font-heading text-sm font-black text-slate-500 group-hover:text-[#2453FF] transition-colors">
                       {card.stepNumber}
                     </span>
                   </div>
@@ -502,6 +502,7 @@ export const ComprehensiveArticle: React.FC = () => {
                       alt={card.alt}
                       width={502}
                       height={1024}
+                      sizes="(max-width: 640px) 270px, (max-width: 1024px) 33vw, 290px"
                       className="w-full h-auto object-contain drop-shadow-[0_22px_36px_rgba(7,21,47,0.18)] group-hover:drop-shadow-[0_28px_45px_rgba(36,83,255,0.24)]"
                       priority={card.stepNumber === '01'}
                     />
@@ -598,6 +599,7 @@ export const ComprehensiveArticle: React.FC = () => {
                         alt={activeCard.alt}
                         width={502}
                         height={1024}
+                        sizes="270px"
                         className="w-full h-auto object-contain drop-shadow-[0_18px_32px_rgba(7,21,47,0.18)]"
                         priority
                       />
@@ -1264,9 +1266,9 @@ export const ComprehensiveArticle: React.FC = () => {
 
           {/* Category Breakdown Horizontal Bars */}
           <div className="space-y-3.5 mb-6">
-            <h4 className="text-xs font-extrabold text-[#07152F] uppercase tracking-wider">
+            <h3 className="text-xs font-extrabold text-[#07152F] uppercase tracking-wider">
               Category Performance Breakdown
-            </h4>
+            </h3>
             {[
               { label: 'Numerical Reasoning', score: '4/5', pct: '80%', w: 'w-[80%]', col: 'bg-[#2453FF]' },
               { label: 'Logical Deduction', score: '5/5', pct: '100%', w: 'w-[100%]', col: 'bg-purple-600' },
@@ -1602,7 +1604,7 @@ export const ComprehensiveArticle: React.FC = () => {
             </p>
           </div>
           <div className="p-5 rounded-2xl bg-white border border-[#E2EAF7] shadow-2xs">
-            <span className="w-6 h-6 rounded-lg bg-emerald-50 text-emerald-600 text-xs font-black flex items-center justify-center mb-2">03</span>
+            <span className="w-6 h-6 rounded-lg bg-emerald-50 text-emerald-800 text-xs font-black flex items-center justify-center mb-2">03</span>
             <span className="font-extrabold text-[#07152F] block mb-1 text-sm">Population Standardization</span>
             <p className="text-xs text-[#60718B] leading-relaxed">
               Standardization requires establishing normative baselines across thousands of individuals. Without calibrated age-matched sample norms, online quizzes cannot legitimately output clinical IQ numbers.
@@ -1614,7 +1616,7 @@ export const ComprehensiveArticle: React.FC = () => {
         <div className="p-6 sm:p-8 bg-white rounded-3xl border border-[#E2EAF7] shadow-2xs text-xs sm:text-sm text-[#60718B] leading-relaxed">
           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-100">
             <Activity className="w-4 h-4 text-[#2453FF]" />
-            <h4 className="font-bold text-sm text-[#07152F]">Confounding Factors That Affect Practice Performance</h4>
+            <h3 className="font-bold text-sm text-[#07152F]">Confounding Factors That Affect Practice Performance</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-2xl bg-[#F8FBFF] border border-[#E2EAF7]">
@@ -1725,9 +1727,9 @@ export const ComprehensiveArticle: React.FC = () => {
                     {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-[#07152F] mb-0.5">
+                    <h3 className="font-bold text-sm text-[#07152F] mb-0.5">
                       {item.title}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-[#60718B] leading-relaxed">
                       {item.desc}
                     </p>
@@ -1928,7 +1930,7 @@ export const ComprehensiveArticle: React.FC = () => {
                   <Clock className="w-3.5 h-3.5" />
                   <span>Alfred Binet &amp; Théodore Simon (Early 1900s)</span>
                 </div>
-                <h4 className="font-bold text-sm text-[#07152F] mb-1.5">Historical Ratio IQ vs. Modern Deviation IQ</h4>
+                <h3 className="font-bold text-sm text-[#07152F] mb-1.5">Historical Ratio IQ vs. Modern Deviation IQ</h3>
                 <p className="text-[#07152F]">
                   In the early 1900s, French psychologist Alfred Binet and Théodore Simon introduced the original ratio IQ formula: (Mental Age ÷ Chronological Age) × 100. While functional for evaluating school children, this formula broke down in adulthood as chronological age progressed without equivalent mental age changes.
                 </p>

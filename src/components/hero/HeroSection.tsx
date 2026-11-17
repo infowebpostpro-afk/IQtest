@@ -388,9 +388,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                               )}
                             </div>
 
-                            <h3 className="text-xs xl:text-sm font-bold text-[#07152F] mb-2.5">
+                            <p className="text-xs xl:text-sm font-bold text-[#07152F] mb-2.5">
                               Which shape completes the pattern?
-                            </h3>
+                            </p>
 
                             {/* Pattern Sequence Box */}
                             <div className="p-2 bg-[#F8FBFF] rounded-lg border border-[#E2EAF7] mb-3 flex items-center justify-between gap-1.5">
@@ -530,9 +530,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </div>
 
                 {/* Prompt Question */}
-                <h3 className="text-base font-bold text-[#07152F] mb-4 text-left">
+                <p className="text-base font-bold text-[#07152F] mb-4 text-left">
                   Which shape completes the pattern?
-                </h3>
+                </p>
 
                 {/* Pattern Stimulus Row (6 shapes) */}
                 <div className="p-3 bg-[#F8FBFF] rounded-2xl border border-[#E2EAF7] mb-5 flex items-center justify-between gap-1.5">

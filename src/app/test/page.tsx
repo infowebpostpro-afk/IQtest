@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     'Take our free 20-question online IQ test. Solve original numerical, logical, abstract, and spatial puzzles with instant results, accuracy analysis, and clear explanations. No signup needed.',
   alternates: {
-    canonical: '/test/',
+    canonical: '/test',
   },
 };
 

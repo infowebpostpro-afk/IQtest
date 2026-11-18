@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Get in touch with the IQ Test platform team for editorial feedback, mathematical corrections, psychometric inquiries, or technical support.',
   alternates: {
-    canonical: '/contact/',
+    canonical: '/contact',
   },
 };
 

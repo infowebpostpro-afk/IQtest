@@ -890,11 +890,11 @@ export const AverageIQByAgeArticle: React.FC = () => {
             </p>
             <p className="text-base text-[#60718B] leading-relaxed">
               If you want to explore these theoretical conversions, use our{' '}
-              <Link href="/iq-percentile-calculator/" className="text-[#2453FF] font-bold hover:underline">
+              <Link href="/iq-percentile-calculator" className="text-[#2453FF] font-bold hover:underline">
                 IQ Percentile Calculator
               </Link>
               . You can also view the distribution visually on our{' '}
-              <Link href="/iq-score-chart/" className="text-[#2453FF] font-bold hover:underline">
+              <Link href="/iq-score-chart" className="text-[#2453FF] font-bold hover:underline">
                 IQ Score Chart
               </Link>
               .

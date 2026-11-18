@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  trailingSlash: true,
+  trailingSlash: false,
   cacheComponents: true,
   partialPrefetching: true,
   allowedDevOrigins: [

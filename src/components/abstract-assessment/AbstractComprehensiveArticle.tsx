@@ -1279,7 +1279,7 @@ export const AbstractComprehensiveArticle: React.FC<AbstractComprehensiveArticle
           {/* Internal Cross-Links */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
             <Link
-              href="/logical-reasoning-test/"
+              href="/logical-reasoning-test"
               className="p-3.5 rounded-xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition-all block group"
             >
               <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-0.5">
@@ -1294,7 +1294,7 @@ export const AbstractComprehensiveArticle: React.FC<AbstractComprehensiveArticle
             </Link>
 
             <Link
-              href="/iq-practice-questions/"
+              href="/iq-practice-questions"
               className="p-3.5 rounded-xl border border-slate-200 hover:border-indigo-400 hover:bg-indigo-50/30 transition-all block group"
             >
               <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider block mb-0.5">

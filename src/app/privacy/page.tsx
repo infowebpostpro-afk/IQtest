@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Our strict zero-signup, anonymous session privacy policy. Learn how we safeguard your data and respect your anonymity.',
   alternates: {
-    canonical: '/privacy/',
+    canonical: '/privacy',
   },
 };
 

@@ -827,7 +827,7 @@ export const ComprehensiveArticle: React.FC = () => {
               )}
 
               <Link
-                href="/test/"
+                href="/test"
                 className="inline-flex items-center gap-2 text-xs font-bold text-[#2453FF] hover:text-[#1B40DF] group"
               >
                 <span>Try this step in the assessment</span>
@@ -2136,37 +2136,37 @@ export const ComprehensiveArticle: React.FC = () => {
             {
               title: 'Quick IQ Test',
               desc: 'Short on time? Take a condensed 10-question reasoning challenge designed for brief practice sessions and quick check-ins.',
-              href: '/quick-iq-test/',
+              href: '/quick-iq-test',
               cta: 'Take Quick Test',
             },
             {
               title: 'IQ Practice Questions',
               desc: 'Explore an expanded question bank featuring step-by-step mathematical, logical, abstract, and spatial problem breakdowns.',
-              href: '/iq-practice-questions/',
+              href: '/iq-practice-questions',
               cta: 'Practice Questions',
             },
             {
               title: 'Logical Reasoning Test',
               desc: 'Focus specifically on formal propositional deductions, truth-teller logic puzzles, and categorical syllogism problems.',
-              href: '/logical-reasoning-test/',
+              href: '/logical-reasoning-test',
               cta: 'Start Logic Test',
             },
             {
               title: 'Abstract Reasoning Test',
               desc: 'Sharpen your fluid intelligence with visual 2×2 and 3×3 matrix progressions, geometric series, and topological transformations.',
-              href: '/abstract-reasoning-test/',
+              href: '/abstract-reasoning-test',
               cta: 'Start Abstract Test',
             },
             {
               title: 'IQ Score Chart Guide',
               desc: 'Explore how clinical IQ score classifications are established, what standard deviations represent, and how population percentiles align.',
-              href: '/iq-score-chart/',
+              href: '/iq-score-chart',
               cta: 'View Score Chart',
             },
             {
               title: 'IQ Percentile Calculator',
               desc: 'Learn how raw test scores map to theoretical normal distribution percentiles and discover the statistical assumptions behind them.',
-              href: '/iq-percentile-calculator/',
+              href: '/iq-percentile-calculator',
               cta: 'Calculate Percentile',
             },
           ].map((res) => (
@@ -2302,7 +2302,7 @@ export const ComprehensiveArticle: React.FC = () => {
           </div>
           <div className="pt-4">
             <Link
-              href="/test/"
+              href="/test"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#2453FF] hover:bg-[#1B40DF] transition-all shadow-md cta-glow"
             >
               <span>Start Your Free IQ Test Now</span>
@@ -2373,7 +2373,7 @@ export const ComprehensiveArticle: React.FC = () => {
                 Close Preview
               </button>
               <Link
-                href="/test/"
+                href="/test"
                 onClick={() => setLightboxImage(null)}
                 className="flex-1 py-2 px-4 rounded-xl bg-[#2453FF] hover:bg-[#1B40DF] text-xs font-bold text-white transition-colors text-center shadow-xs"
               >

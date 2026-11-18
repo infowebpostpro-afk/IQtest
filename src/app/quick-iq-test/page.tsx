@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Take a quick IQ test with 10 original reasoning questions. Get free instant results and clear explanations in about 5 minutes. No signup needed.',
   alternates: {
-    canonical: '/quick-iq-test/',
+    canonical: '/quick-iq-test',
   },
   openGraph: {
     title: 'Quick IQ Test – 10 Questions With Free Instant Results',
     description:
       'Take a quick IQ test with 10 original reasoning questions. Get free instant results and clear explanations in about 5 minutes. No signup needed.',
-    url: '/quick-iq-test/',
+    url: '/quick-iq-test',
     type: 'website',
   },
   twitter: {
@@ -30,8 +30,8 @@ export default function QuickIQTestPage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://theiqtest.org/quick-iq-test/#webpage',
-        url: 'https://theiqtest.org/quick-iq-test/',
+        '@id': 'https://theiqtest.org/quick-iq-test#webpage',
+        url: 'https://theiqtest.org/quick-iq-test',
         name: 'Quick IQ Test – 10 Questions With Free Instant Results',
         description:
           'Take a quick IQ test with 10 original reasoning questions. Get free instant results and clear explanations in about 5 minutes. No signup needed.',
@@ -39,7 +39,7 @@ export default function QuickIQTestPage() {
       },
       {
         '@type': 'Quiz',
-        '@id': 'https://theiqtest.org/quick-iq-test/#quiz',
+        '@id': 'https://theiqtest.org/quick-iq-test#quiz',
         name: 'Quick IQ Test – 10 Questions in About 5 Minutes',
         description:
           'A short 10-question reasoning practice test covering numerical sequences, abstract patterns, logical deductions, and spatial rotations with free instant scoring.',
@@ -71,7 +71,7 @@ export default function QuickIQTestPage() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://theiqtest.org/quick-iq-test/#faq',
+        '@id': 'https://theiqtest.org/quick-iq-test#faq',
         mainEntity: [
           {
             '@type': 'Question',

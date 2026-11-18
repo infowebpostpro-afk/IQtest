@@ -48,28 +48,28 @@ const IQ_TESTS_ITEMS: NavItem[] = [
   },
   {
     title: 'Logical Reasoning Test',
-    href: '/logical-reasoning-test/',
+    href: '/logical-reasoning-test',
     description: '20-question test covering deductive syllogisms, conditional logic, ordering, and sequences.',
     icon: GitBranch,
     badge: '20 Qs',
   },
   {
     title: 'Abstract Reasoning Test',
-    href: '/abstract-reasoning-test/',
+    href: '/abstract-reasoning-test',
     description: '20 visual puzzles testing geometric patterns, matrix rules, analogies, and sequences.',
     icon: Shapes,
     badge: 'Visual',
   },
   {
     title: 'Spatial Reasoning Test',
-    href: '/spatial-reasoning-test/',
+    href: '/spatial-reasoning-test',
     description: '20 questions on mental rotation, cube folding nets, reflections, paper folds, and 3D views.',
     icon: Sparkles,
     badge: 'New',
   },
   {
     title: 'Quick IQ Test',
-    href: '/quick-iq-test/',
+    href: '/quick-iq-test',
     description: '10-question rapid reasoning challenge with instant scoring in about 5 minutes.',
     icon: Zap,
     badge: '5 Min',
@@ -79,21 +79,21 @@ const IQ_TESTS_ITEMS: NavItem[] = [
 const TOOLS_ITEMS: NavItem[] = [
   {
     title: 'IQ Score Chart',
-    href: '/iq-score-chart/',
+    href: '/iq-score-chart',
     description: 'Explore normal distribution bell curves, classification ranges, and population percentages.',
     icon: BarChart3,
     badge: 'Interactive',
   },
   {
     title: 'IQ Percentile Calculator',
-    href: '/iq-percentile-calculator/',
+    href: '/iq-percentile-calculator',
     description: 'Convert between standardized IQ scores and theoretical normal distribution percentiles.',
     icon: Calculator,
     badge: 'Two-Way',
   },
   {
     title: 'Average IQ by Age',
-    href: '/average-iq-by-age/',
+    href: '/average-iq-by-age',
     description: 'Reference chart and guide explaining age-normed scores and cognitive development across the lifespan.',
     icon: BookOpen,
     badge: 'Guide',
@@ -137,7 +137,7 @@ export const Header: React.FC<HeaderProps> = ({
 
   const isIqTestsActive = IQ_TESTS_ITEMS.some((item) => isRouteActive(item.href));
   const isToolsActive = TOOLS_ITEMS.some((item) => isRouteActive(item.href));
-  const isPracticeActive = isRouteActive('/iq-practice-questions/');
+  const isPracticeActive = isRouteActive('/iq-practice-questions');
 
   // Handle sticky scroll styling
   useEffect(() => {
@@ -366,7 +366,7 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* 2.3 Practice Link */}
             <Link
-              href="/iq-practice-questions/"
+              href="/iq-practice-questions"
               className={`px-3 py-2 rounded-xl transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2453FF] ${
                 isPracticeActive
                   ? 'text-[#2453FF] bg-[#EEF4FF] font-bold'
@@ -474,7 +474,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {!isTestActive ? (
             <Link
-              href="/test/"
+              href="/test"
               onClick={onStartClick}
               className="cta-glow inline-flex items-center gap-1 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-gradient-to-r from-[#2453FF] to-[#3B66FF] hover:from-[#1B40DF] hover:to-[#2B54E6] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#2453FF] shrink-0"
               aria-label="Start Free Online IQ Test"
@@ -637,7 +637,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
                 <div className="pl-1">
                   <Link
-                    href="/iq-practice-questions/"
+                    href="/iq-practice-questions"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`flex items-start gap-3 p-3 rounded-xl transition-all ${
                       isPracticeActive
@@ -729,7 +729,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Drawer Footer CTA */}
             <div className="p-5 border-t border-[#E2EAF7] bg-[#F8FBFF]">
               <Link
-                href="/test/"
+                href="/test"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   onStartClick?.();

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Practise 48 original IQ-style questions with answers, hints and step-by-step explanations. Explore number patterns, logic, abstract and spatial puzzles.',
   alternates: {
-    canonical: '/iq-practice-questions/',
+    canonical: '/iq-practice-questions',
   },
   openGraph: {
     title: 'IQ Practice Questions With Answers & Explanations',
     description:
       'Practise 48 original IQ-style questions with answers, hints and step-by-step explanations. Explore number patterns, logic, abstract and spatial puzzles.',
-    url: '/iq-practice-questions/',
+    url: '/iq-practice-questions',
     type: 'website',
   },
   twitter: {
@@ -33,8 +33,8 @@ export default function IQPracticeQuestionsPage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://theiqtest.org/iq-practice-questions/#webpage',
-        url: 'https://theiqtest.org/iq-practice-questions/',
+        '@id': 'https://theiqtest.org/iq-practice-questions#webpage',
+        url: 'https://theiqtest.org/iq-practice-questions',
         name: 'IQ Practice Questions With Answers & Explanations',
         description:
           'Practise 48 original IQ-style questions with answers, hints and step-by-step explanations. Explore number patterns, logic, abstract and spatial puzzles.',
@@ -42,7 +42,7 @@ export default function IQPracticeQuestionsPage() {
       },
       {
         '@type': 'WebApplication',
-        '@id': 'https://theiqtest.org/iq-practice-questions/#app',
+        '@id': 'https://theiqtest.org/iq-practice-questions#app',
         name: 'IQ Practice Lab',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',

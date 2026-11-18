@@ -99,7 +99,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/logical-reasoning-test/"
+                  href="/logical-reasoning-test"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <GitBranch className="w-3.5 h-3.5 text-blue-400" />
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/abstract-reasoning-test/"
+                  href="/abstract-reasoning-test"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Shapes className="w-3.5 h-3.5 text-indigo-400" />
@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/spatial-reasoning-test/"
+                  href="/spatial-reasoning-test"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/quick-iq-test/"
+                  href="/quick-iq-test"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Zap className="w-3.5 h-3.5 text-amber-400" />
@@ -135,7 +135,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/iq-practice-questions/"
+                  href="/iq-practice-questions"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
@@ -153,7 +153,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs font-medium">
               <li>
                 <Link
-                  href="/iq-score-chart/"
+                  href="/iq-score-chart"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <BarChart3 className="w-3.5 h-3.5 text-emerald-400" />
@@ -162,7 +162,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/iq-percentile-calculator/"
+                  href="/iq-percentile-calculator"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <Calculator className="w-3.5 h-3.5 text-cyan-400" />
@@ -171,7 +171,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  href="/average-iq-by-age/"
+                  href="/average-iq-by-age"
                   className="text-slate-300 hover:text-white hover:translate-x-0.5 inline-flex items-center gap-1.5 transition-all"
                 >
                   <BookOpen className="w-3.5 h-3.5 text-blue-400" />
@@ -203,13 +203,13 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <span>© 2026 IQ Test Practice Platform. All rights reserved.</span>
             <div className="flex items-center gap-3 text-slate-300">
-              <Link href="/about/" className="hover:text-white transition-colors">About</Link>
+              <Link href="/about" className="hover:text-white transition-colors">About</Link>
               <span>•</span>
-              <Link href="/contact/" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
               <span>•</span>
-              <Link href="/privacy/" className="hover:text-white transition-colors">Privacy</Link>
+              <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
               <span>•</span>
-              <Link href="/terms/" className="hover:text-white transition-colors">Terms</Link>
+              <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
             </div>
           </div>
 

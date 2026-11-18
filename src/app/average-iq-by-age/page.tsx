@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Discover the average IQ by age, with a clear chart for children, teens and adults. Learn why age-normed IQ averages 100 and how cognitive skills change.',
   alternates: {
-    canonical: '/average-iq-by-age/',
+    canonical: '/average-iq-by-age',
   },
   openGraph: {
     title: 'Average IQ by Age: Chart for Kids, Teens & Adults',
     description:
       'Discover the average IQ by age, with a clear chart for children, teens and adults. Learn why age-normed IQ averages 100 and how cognitive skills change.',
-    url: '/average-iq-by-age/',
+    url: '/average-iq-by-age',
     type: 'website',
   },
   twitter: {
@@ -34,8 +34,8 @@ export default function AverageIQByAgePage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://theiqtest.org/average-iq-by-age/#webpage',
-        url: 'https://theiqtest.org/average-iq-by-age/',
+        '@id': 'https://theiqtest.org/average-iq-by-age#webpage',
+        url: 'https://theiqtest.org/average-iq-by-age',
         name: 'Average IQ by Age: Chart for Kids, Teens & Adults',
         description:
           'Discover the average IQ by age, with a clear chart for children, teens and adults. Learn why age-normed IQ averages 100 and how cognitive skills change.',
@@ -43,7 +43,7 @@ export default function AverageIQByAgePage() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://theiqtest.org/average-iq-by-age/#faq',
+        '@id': 'https://theiqtest.org/average-iq-by-age#faq',
         mainEntity: [
           {
             '@type': 'Question',

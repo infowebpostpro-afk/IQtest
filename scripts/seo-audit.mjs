@@ -5,24 +5,25 @@ const SITE_URL = 'https://theiqtest.org';
 const OLD_DOMAIN = 'iqtest-puce.vercel.app';
 const EXPECTED_ROUTES = [
   '/',
-  '/test/',
-  '/quick-iq-test/',
-  '/logical-reasoning-test/',
-  '/abstract-reasoning-test/',
-  '/spatial-reasoning-test/',
-  '/iq-score-chart/',
-  '/iq-percentile-calculator/',
-  '/average-iq-by-age/',
-  '/iq-practice-questions/',
-  '/about/',
-  '/contact/',
-  '/privacy/',
-  '/terms/'
+  '/test',
+  '/quick-iq-test',
+  '/logical-reasoning-test',
+  '/abstract-reasoning-test',
+  '/spatial-reasoning-test',
+  '/iq-score-chart',
+  '/iq-percentile-calculator',
+  '/average-iq-by-age',
+  '/iq-practice-questions',
+  '/about',
+  '/contact',
+  '/privacy',
+  '/terms'
 ];
 
 console.log('================================================================================');
 console.log('ANTIGRAVITY — FULL WEBSITE TECHNICAL SEO AUDIT & DOMAIN MIGRATION VERIFIER');
 console.log(`Primary Production Origin: ${SITE_URL}`);
+console.log('Clean Non-Trailing Slash Standard Enforced');
 console.log('================================================================================\n');
 
 const auditResults = {
@@ -34,7 +35,7 @@ const auditResults = {
     totalChecked: 0,
     valid: 0,
     broken: 0,
-    missingTrailingSlash: 0,
+    hasTrailingSlash: 0,
     issues: []
   },
   sitemapAudit: {},
@@ -126,7 +127,7 @@ if (fs.existsSync(nextServerApp)) {
       r.renderedCanonical = renderedCanMatch ? renderedCanMatch[1] : 'NOT_FOUND';
       
       const expectedFullCanonical = r.route === '/' ? `${SITE_URL}/` : `${SITE_URL}${r.route}`;
-      // In next.js metadataBase, canonical '/' resolves to SITE_URL or SITE_URL/
+      // In next.js metadataBase with clean URLs, canonical resolves to SITE_URL/ for root or SITE_URL/path
       const expectedVariants = [expectedFullCanonical, expectedFullCanonical.replace(/\/$/, '')];
       if (!expectedVariants.includes(r.renderedCanonical)) {
         r.issues.push(`Rendered canonical mismatch: "${r.renderedCanonical}" vs "${expectedFullCanonical}"`);
@@ -216,19 +217,19 @@ for (const file of allTsx) {
     const link = m[1];
     auditResults.internalLinks.totalChecked++;
     
-    // Check trailing slash
-    if (link !== '/' && !link.endsWith('/')) {
-      auditResults.internalLinks.missingTrailingSlash++;
+    // Check if internal link accidentally has a trailing slash (except root '/')
+    if (link !== '/' && link.endsWith('/')) {
+      auditResults.internalLinks.hasTrailingSlash++;
       auditResults.internalLinks.issues.push({
         file,
         link,
-        issue: 'Internal link missing trailing slash'
+        issue: 'Internal link has unnecessary trailing slash'
       });
     }
 
     // Check if target exists
-    const normalizedTarget = link.endsWith('/') ? link : `${link}/`;
-    if (!EXPECTED_ROUTES.includes(normalizedTarget) && !normalizedTarget.startsWith('/api/')) {
+    const cleanTarget = link === '/' ? '/' : link.replace(/\/$/, '');
+    if (!EXPECTED_ROUTES.includes(cleanTarget) && !cleanTarget.startsWith('/api/')) {
       auditResults.internalLinks.broken++;
       auditResults.internalLinks.issues.push({
         file,
@@ -264,9 +265,8 @@ console.log(`- Robots.txt valid with sitemap: ${auditResults.robotsAudit.hasSite
 console.log('\nINTERNAL LINK & RETIRED DOMAIN AUDIT:');
 console.log(`- Total Internal Hrefs Audited: ${auditResults.internalLinks.totalChecked}`);
 console.log(`- Valid Links: ${auditResults.internalLinks.valid}`);
-console.log(`- Missing Trailing Slashes: ${auditResults.internalLinks.missingTrailingSlash}`);
+console.log(`- Trailing Slashes Found: ${auditResults.internalLinks.hasTrailingSlash}`);
 console.log(`- Unmapped / Broken Routes: ${auditResults.internalLinks.broken}`);
 console.log(`- Old Domain References in src/: ${auditResults.oldDomainReferences.length}`);
 
 console.log('\nAudit complete. Machine-readable report saved to scripts/seo-audit-results.json');
-

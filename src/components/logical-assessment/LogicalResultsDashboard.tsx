@@ -298,7 +298,7 @@ Completed on ${new Date(result.completedAt).toLocaleDateString()} (Practice Asse
           </p>
         </div>
         <Link
-          href="/iq-practice-questions/"
+          href="/iq-practice-questions"
           className="px-5 py-2.5 rounded-xl bg-[#2453FF] hover:bg-[#1B40DF] text-white font-extrabold text-xs shadow-xs transition-all flex items-center gap-1.5 shrink-0"
         >
           <span>Practise More Questions</span>

@@ -798,7 +798,7 @@ export const IQPercentileArticle: React.FC = () => {
               This is a position in the theoretical upper tail, not a verified personal assessment result.
             </p>
             <p className="text-base text-[#60718B] leading-relaxed">
-              For a detailed visual presentation of score ranges and standard deviations, use our <Link href="/iq-score-chart/" className="font-semibold text-[#2453FF] hover:underline">IQ Score Chart</Link>.
+              For a detailed visual presentation of score ranges and standard deviations, use our <Link href="/iq-score-chart" className="font-semibold text-[#2453FF] hover:underline">IQ Score Chart</Link>.
             </p>
           </div>
         </div>
@@ -1225,7 +1225,7 @@ export const IQPercentileArticle: React.FC = () => {
               Use the result to review your answers and understand the reasoning techniques involved.
             </p>
             <p className="text-base text-[#60718B] leading-relaxed">
-              If you want another challenge, take our <Link href="/" className="font-semibold text-[#2453FF] hover:underline">full IQ Test</Link> or <Link href="/quick-iq-test/" className="font-semibold text-[#2453FF] hover:underline">Quick IQ Test</Link>.
+              If you want another challenge, take our <Link href="/" className="font-semibold text-[#2453FF] hover:underline">full IQ Test</Link> or <Link href="/quick-iq-test" className="font-semibold text-[#2453FF] hover:underline">Quick IQ Test</Link>.
             </p>
             <p className="text-base text-[#60718B] leading-relaxed">
               If you need a formally interpretable IQ result, consult an appropriately qualified assessment professional or an approved testing provider.

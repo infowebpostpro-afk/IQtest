@@ -714,7 +714,7 @@ export const LogicalComprehensiveArticle: React.FC<LogicalComprehensiveArticlePr
           </div>
           <p className="text-xs sm:text-sm text-[#475569] pt-2">
             You can find additional self-paced exercises in our{' '}
-            <Link href="/iq-practice-questions/" className="font-bold text-[#2453FF] hover:underline">
+            <Link href="/iq-practice-questions" className="font-bold text-[#2453FF] hover:underline">
               IQ Practice Questions
             </Link>{' '}
             tool.
@@ -1296,7 +1296,7 @@ export const LogicalComprehensiveArticle: React.FC<LogicalComprehensiveArticlePr
           </p>
           <p>
             For individual exercises with hints and worked solutions, explore the{' '}
-            <Link href="/iq-practice-questions/" className="font-bold text-[#2453FF] hover:underline">
+            <Link href="/iq-practice-questions" className="font-bold text-[#2453FF] hover:underline">
               IQ Practice Questions
             </Link>{' '}
             page.

@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Take a free logical reasoning test with 20 questions, instant results and clear answer explanations. Practise deduction, conditional logic and more.',
   alternates: {
-    canonical: '/logical-reasoning-test/',
+    canonical: '/logical-reasoning-test',
   },
   openGraph: {
     title: 'Logical Reasoning Test – Free Online Test With Answers',
     description:
       'Take a free logical reasoning test with 20 questions, instant results and clear answer explanations. Practise deduction, conditional logic and more.',
-    url: '/logical-reasoning-test/',
+    url: '/logical-reasoning-test',
     type: 'website',
   },
   twitter: {
@@ -30,8 +30,8 @@ export default function LogicalReasoningTestPage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://theiqtest.org/logical-reasoning-test/#webpage',
-        url: 'https://theiqtest.org/logical-reasoning-test/',
+        '@id': 'https://theiqtest.org/logical-reasoning-test#webpage',
+        url: 'https://theiqtest.org/logical-reasoning-test',
         name: 'Logical Reasoning Test – Free Online Test With Answers',
         description:
           'Take a free logical reasoning test with 20 questions, instant results and clear answer explanations. Practise deduction, conditional logic and more.',
@@ -39,7 +39,7 @@ export default function LogicalReasoningTestPage() {
       },
       {
         '@type': 'Quiz',
-        '@id': 'https://theiqtest.org/logical-reasoning-test/#quiz',
+        '@id': 'https://theiqtest.org/logical-reasoning-test#quiz',
         name: 'Logical Reasoning Test – 20 Questions With Free Instant Results',
         description:
           'A comprehensive 20-question practice assessment covering deductive syllogisms, conditional if-then logic, arrangement constraints, and inductive sequences with instant scoring and explanations.',
@@ -71,7 +71,7 @@ export default function LogicalReasoningTestPage() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://theiqtest.org/logical-reasoning-test/#faq',
+        '@id': 'https://theiqtest.org/logical-reasoning-test#faq',
         mainEntity: [
           {
             '@type': 'Question',

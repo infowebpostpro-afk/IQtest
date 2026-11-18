@@ -240,7 +240,7 @@ export const MiniDistributionChart: React.FC<MiniDistributionChartProps> = ({
           Looking to compare multiple scores and view full frequency tables?
         </span>
         <Link
-          href="/iq-score-chart/"
+          href="/iq-score-chart"
           className="inline-flex items-center gap-1.5 font-bold text-[#2453FF] hover:text-[#1a44e6] hover:underline transition-colors shrink-0"
         >
           <span>Explore the Full IQ Score Chart</span>

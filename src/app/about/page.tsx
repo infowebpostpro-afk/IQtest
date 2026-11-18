@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'Learn about the IQ Test reasoning platform, our psychometric methodology, mission for open-access cognitive education, and commitment to transparency.',
   alternates: {
-    canonical: '/about/',
+    canonical: '/about',
   },
 };
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-[#07152F]">4. Contact &amp; Inquiries</h2>
             <p className="text-sm text-[#60718B] leading-relaxed">
-              Have questions regarding our questions, mathematical models, or statistical calculations? Reach out to our editorial and psychometric review team via our <Link href="/contact/" className="text-[#2453FF] font-semibold underline">contact page</Link>.
+              Have questions regarding our questions, mathematical models, or statistical calculations? Reach out to our editorial and psychometric review team via our <Link href="/contact" className="text-[#2453FF] font-semibold underline">contact page</Link>.
             </p>
           </section>
         </div>

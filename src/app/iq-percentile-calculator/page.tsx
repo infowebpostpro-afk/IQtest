@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Convert IQ scores to theoretical percentiles or percentiles to IQ scores instantly. Free calculator with adjustable standard deviation and clear results.',
   alternates: {
-    canonical: '/iq-percentile-calculator/',
+    canonical: '/iq-percentile-calculator',
   },
   openGraph: {
     title: 'IQ Percentile Calculator – IQ to Percentile Converter',
     description:
       'Convert IQ scores to theoretical percentiles or percentiles to IQ scores instantly. Free calculator with adjustable standard deviation and clear results.',
-    url: '/iq-percentile-calculator/',
+    url: '/iq-percentile-calculator',
     type: 'website',
   },
   twitter: {
@@ -34,8 +34,8 @@ export default function IQPercentileCalculatorPage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://theiqtest.org/iq-percentile-calculator/#webpage',
-        url: 'https://theiqtest.org/iq-percentile-calculator/',
+        '@id': 'https://theiqtest.org/iq-percentile-calculator#webpage',
+        url: 'https://theiqtest.org/iq-percentile-calculator',
         name: 'IQ Percentile Calculator – IQ to Percentile Converter',
         description:
           'Convert IQ scores to theoretical percentiles or percentiles to IQ scores instantly. Free calculator with adjustable standard deviation and clear results.',
@@ -43,7 +43,7 @@ export default function IQPercentileCalculatorPage() {
       },
       {
         '@type': 'WebApplication',
-        '@id': 'https://theiqtest.org/iq-percentile-calculator/#app',
+        '@id': 'https://theiqtest.org/iq-percentile-calculator#app',
         name: 'IQ Percentile Calculator',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',

@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description:
     'Explore our interactive IQ score chart with IQ ranges, a bell curve, and theoretical percentiles. Enter a score to see where it falls on the scale.',
   alternates: {
-    canonical: '/iq-score-chart/',
+    canonical: '/iq-score-chart',
   },
   openGraph: {
     title: 'IQ Score Chart – IQ Scale, Ranges & Bell Curve',
     description:
       'Explore our interactive IQ score chart with IQ ranges, a bell curve, and theoretical percentiles. Enter a score to see where it falls on the scale.',
-    url: '/iq-score-chart/',
+    url: '/iq-score-chart',
     type: 'website',
   },
   twitter: {
@@ -34,8 +34,8 @@ export default function IQScoreChartPage() {
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': 'https://theiqtest.org/iq-score-chart/#webpage',
-        url: 'https://theiqtest.org/iq-score-chart/',
+        '@id': 'https://theiqtest.org/iq-score-chart#webpage',
+        url: 'https://theiqtest.org/iq-score-chart',
         name: 'IQ Score Chart – IQ Scale, Ranges & Bell Curve',
         description:
           'Explore our interactive IQ score chart with IQ ranges, a bell curve, and theoretical percentiles. Enter a score to see where it falls on the scale.',
@@ -43,7 +43,7 @@ export default function IQScoreChartPage() {
       },
       {
         '@type': 'WebApplication',
-        '@id': 'https://theiqtest.org/iq-score-chart/#app',
+        '@id': 'https://theiqtest.org/iq-score-chart#app',
         name: 'Interactive IQ Score Chart & Bell Curve',
         applicationCategory: 'EducationalApplication',
         operatingSystem: 'All',
@@ -58,7 +58,7 @@ export default function IQScoreChartPage() {
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://theiqtest.org/iq-score-chart/#faq',
+        '@id': 'https://theiqtest.org/iq-score-chart#faq',
         mainEntity: [
           {
             '@type': 'Question',

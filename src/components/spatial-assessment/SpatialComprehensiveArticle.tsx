@@ -510,7 +510,7 @@ export const SpatialComprehensiveArticle: React.FC<SpatialComprehensiveArticlePr
                   </tr>
                   <tr>
                     <td className="p-3 sm:p-4 font-bold text-[#07152F]">
-                      <Link href="/abstract-reasoning-test/" className="text-[#2453FF] hover:underline">
+                      <Link href="/abstract-reasoning-test" className="text-[#2453FF] hover:underline">
                         Abstract Reasoning →
                       </Link>
                     </td>
@@ -519,7 +519,7 @@ export const SpatialComprehensiveArticle: React.FC<SpatialComprehensiveArticlePr
                   </tr>
                   <tr>
                     <td className="p-3 sm:p-4 font-bold text-[#07152F]">
-                      <Link href="/logical-reasoning-test/" className="text-[#2453FF] hover:underline">
+                      <Link href="/logical-reasoning-test" className="text-[#2453FF] hover:underline">
                         Logical Reasoning →
                       </Link>
                     </td>

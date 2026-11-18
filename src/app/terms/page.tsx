@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Terms of service and psychometric usage guidelines for using our educational IQ assessments and interactive calculators.',
   alternates: {
-    canonical: '/terms/',
+    canonical: '/terms',
   },
 };
 

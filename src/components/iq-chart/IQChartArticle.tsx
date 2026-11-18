@@ -461,7 +461,7 @@ export const IQChartArticle: React.FC = () => {
             </p>
             <p className="text-base text-[#60718B] leading-relaxed">
               That means you should not assume the same raw performance has the same standardized meaning at every age. Our IQ scale chart does not accept age as an input and does not calculate age-adjusted scores. For detailed age-related explanations, see our{' '}
-              <Link href="/average-iq-by-age/" className="font-semibold text-[#2453FF] hover:underline">
+              <Link href="/average-iq-by-age" className="font-semibold text-[#2453FF] hover:underline">
                 Average IQ by Age
               </Link>{' '}
               guide.
@@ -784,7 +784,7 @@ export const IQChartArticle: React.FC = () => {
               Yes. Tests can have different norm groups, score distributions, scale definitions, rounding conventions, and measurement precision.
             </p>
             <p className="text-base text-[#60718B] leading-relaxed">
-              If you have a formal assessment report, use the percentile and interpretation supplied by that test’s publisher or qualified administrator. For dedicated score-to-percentile conversion, visit our <Link href="/iq-percentile-calculator/" className="font-semibold text-[#2453FF] hover:underline">IQ Percentile Calculator</Link>.
+              If you have a formal assessment report, use the percentile and interpretation supplied by that test’s publisher or qualified administrator. For dedicated score-to-percentile conversion, visit our <Link href="/iq-percentile-calculator" className="font-semibold text-[#2453FF] hover:underline">IQ Percentile Calculator</Link>.
             </p>
           </div>
         </div>

@@ -374,9 +374,9 @@ export const QuickHeroSection: React.FC<QuickHeroSectionProps> = ({
                             )}
                           </div>
 
-                          <h3 className="text-xs sm:text-sm font-bold text-[#07152F] mb-2.5">
+                          <p className="text-xs sm:text-sm font-bold text-[#07152F] mb-2.5">
                             Identify the rule and choose the figure that completes Frame 4:
-                          </h3>
+                          </p>
 
                           {/* 4-Frame Sequence Preview */}
                           <div className="p-2 sm:p-2.5 bg-[#F8FBFF] rounded-xl border border-[#E2EAF7] mb-3">

@@ -250,9 +250,9 @@ export const LogicalHeroSection: React.FC<LogicalHeroSectionProps> = ({
                     <div className="w-7 h-7 rounded-lg bg-blue-50 text-[#2453FF] flex items-center justify-center font-bold text-xs">
                       <Sparkles className="w-4 h-4" />
                     </div>
-                    <h3 className="font-heading font-black text-base text-[#07152F]">
+                    <p className="font-heading font-black text-base text-[#07152F]">
                       Test Mode
-                    </h3>
+                    </p>
                   </div>
                   <p className="text-xs text-[#60718B] leading-relaxed mb-4">
                     Take a complete logical reasoning assessment and review your answers after submitting.
@@ -303,9 +303,9 @@ export const LogicalHeroSection: React.FC<LogicalHeroSectionProps> = ({
                     <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-xs">
                       <GraduationCap className="w-4 h-4" />
                     </div>
-                    <h3 className="font-heading font-black text-base text-[#07152F]">
+                    <p className="font-heading font-black text-base text-[#07152F]">
                       Learn Mode
-                    </h3>
+                    </p>
                   </div>
                   <p className="text-xs text-[#60718B] leading-relaxed mb-4">
                     Solve questions at your own pace and learn from detailed explanations after each answer.
